@@ -1,0 +1,16 @@
+//
+//  CommonApp-Prefix.pch
+//  CommonApp
+//
+//  Created by issuser on 15/6/3.
+//  Copyright (c) 2015年 iss. All rights reserved.
+//
+
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define YjqLog(...)NSLog(__VA_ARGS__)
+#else
+#define YjqLog(...)
+#endif
