@@ -18,6 +18,14 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor redColor];
+    
+    NSString *ssss = Service_Address;
+    
+    
+    
+    DLog(@"%@", ssss);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
