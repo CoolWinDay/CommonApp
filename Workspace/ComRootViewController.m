@@ -7,6 +7,7 @@
 //
 
 #import "ComRootViewController.h"
+#import "LoginRequest.h"
 
 @interface ComRootViewController ()
 
@@ -19,13 +20,8 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-    NSString *ssss = Service_Address;
-    
-    
-    
-    DLog(@"%@", ssss);
-    
-    
+    LoginRequest *request = [[LoginRequest alloc] init];
+    [request sendRequest];
 }
 
 - (void)didReceiveMemoryWarning {
