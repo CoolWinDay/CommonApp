@@ -21,7 +21,15 @@
     self.view.backgroundColor = [UIColor redColor];
     
     LoginRequest *request = [[LoginRequest alloc] init];
-    [request sendRequest];
+    request.username = @"105100050817";
+    request.password = @"123456";
+    request.deviceToken = @"";
+    
+    [request sendRequestOnSuccess:^(UserModel *userModel) {
+        
+    } onFailed:^(NSError *error) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

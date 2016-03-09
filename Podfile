@@ -1,7 +1,7 @@
 platform:ios,'7.0'
 
 pod 'AFNetworking', '~> 3.0.4'
-pod 'YYModel'
+pod 'YYModel', '~> 1.0.1'
 pod 'PureLayout', '~> 3.0.1'
 pod 'KDCycleBannerView', '1.1.1'
 pod 'Toast', '2.4'

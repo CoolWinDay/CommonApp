@@ -13,23 +13,29 @@
 - (instancetype)init
 {
     if (self = [super initWithMethod:[NSString stringWithFormat:@"%@%@", Login_Url, Login_Path]]) {
-        
+        self.responseDataType = DATA_TYPE_JSON;
     }
     return self;
 }
 
-- (void)sendRequest
+//- (void)sendRequest
+//{
+//    [self addDataParam:@"data" forKey:[self yy_modelToJSONString]];
+//}
+
+// json
+- (Class)responseJsonModelClass
 {
-    _username = @"105100050817";
-    _password = @"123456";
-    _deviceToken = @"";
-    
-    [self addDataParam:@"data" forKey:[self yy_modelToJSONString]];
-    
-//    [self addDataParam:@"105100050817" forKey:@"username"];
-//    [self addDataParam:@"123456" forKey:@"password"];
-//    [self addDataParam:@"" forKey:@"deviceToken"];
-    [super sendRequest];
+    return [UserModel class];
+}
+
+// userself
+- (id)buildResponse
+{
+    if (self.responseData){
+        
+    }
+    return nil;
 }
 
 @end

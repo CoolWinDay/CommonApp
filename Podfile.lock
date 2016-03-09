@@ -41,7 +41,7 @@ DEPENDENCIES:
   - SDWebImage (= 3.7.2)
   - Toast (= 2.4)
   - UMengMessage-NO-IDFA (~> 1.2.3)
-  - YYModel
+  - YYModel (~> 1.0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -55,4 +55,4 @@ SPEC CHECKSUMS:
   UMengMessage-NO-IDFA: e9a70fd41afe9b8e68ece0aa1b6eefed7da4774a
   YYModel: 794f0820a9a9703615bc166aa8e336abaf422c2b
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.39.0
