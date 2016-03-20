@@ -11,15 +11,15 @@
 
 @implementation ComNetworking
 {
-    NSString *_urlString;
     NSDictionary *_parameters;
     NSURLSessionDataTask *_requestTask;
 }
 
-- (instancetype)initWithUrl:(NSString *)urlString
+- (instancetype)initWithBaseUrl:(NSString *)baseString path:(NSString *)pathString
 {
     if (self = [super init]) {
-        _urlString = urlString;
+        _urlBaseString = baseString;
+        _urlPathString = pathString;
         _parameters = [NSMutableDictionary dictionary];
     }
     return self;
@@ -33,11 +33,11 @@
 - (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock
 {
     // 初始化Manager
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_urlBaseString]];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     // post请求
-    _requestTask = [manager POST:_urlString parameters:_parameters constructingBodyWithBlock:^(id  _Nonnull formData) {
+    _requestTask = [manager POST:_urlPathString parameters:_parameters constructingBodyWithBlock:^(id  _Nonnull formData) {
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         

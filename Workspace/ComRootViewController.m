@@ -7,9 +7,12 @@
 //
 
 #import "ComRootViewController.h"
-#import "LoginRequest.h"
+#import "BookRequest.h"
+#import "UserModel.h"
 
 @interface ComRootViewController ()
+
+@property(nonatomic, strong) BookRequest *request;
 
 @end
 
@@ -20,12 +23,9 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-    LoginRequest *request = [[LoginRequest alloc] init];
-    request.username = @"105100050817";
-    request.password = @"123456";
-    request.deviceToken = @"";
+    self.request = [[BookRequest alloc] init];
     
-    [request sendRequestOnSuccess:^(UserModel *userModel) {
+    [_request sendRequestOnSuccess:^(UserModel *userModel) {
         
     } onFailed:^(NSError *error) {
         

@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserModel.h"
+
+@protocol RequestDelegate <NSObject>
+
+@required
+- (NSString *)requestPath;
+
+@end
 
 @protocol ResponseDelegate <NSObject>
 
@@ -19,16 +25,13 @@
 
 typedef void (^SuccessBlock)(id data);
 typedef void (^FailedBlock)(NSError *error);
-//typedef void (^StartBlock)(TBSDKServer      *server);
-//typedef void (^ReciveResponseHeadersBlock)(NSDictionary *responseHeaders);
-//typedef void (^DidLoadCache)(TBSDKServer    *server, NSDictionary *responseHeaders, NSString *responseString);
-//typedef NSArray* (^RequestCache)(TBSDKServer    *server, NSDictionary *responseHeaders, NSString *responseString);
 
-@interface ComRequest : NSObject
+@interface ComRequest : NSObject <RequestDelegate>
 
-@property(nonatomic, strong) id<ResponseDelegate> responseDelegate;
+@property(nonatomic, copy) NSString *urlPathString;
+@property(nonatomic, assign) id<RequestDelegate> requestDelegate;
+@property(nonatomic, assign) id<ResponseDelegate> responseDelegate;
 
-- (instancetype)initWithMethod:(NSString*)method;
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
 - (void)cancel;

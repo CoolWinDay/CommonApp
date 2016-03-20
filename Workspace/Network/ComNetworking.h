@@ -10,12 +10,12 @@
 
 @interface ComNetworking : NSObject
 
-- (instancetype)initWithUrl:(NSString *)urlString;
+@property(nonatomic, copy) NSString *urlBaseString;
+@property(nonatomic, copy) NSString *urlPathString;
 
+- (instancetype)initWithBaseUrl:(NSString *)baseString path:(NSString *)pathString;
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
-
 - (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
-
 - (void)cancel;
 
 @end

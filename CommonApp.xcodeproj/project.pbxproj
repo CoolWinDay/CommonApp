@@ -12,11 +12,13 @@
 		E800B5BF1C8EF4F500F8BDEE /* LoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E800B5BE1C8EF4F500F8BDEE /* LoginRequest.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
 		E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* ComModel.m */; };
+		E8690AC41C93BCAF00BFC155 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC31C93BCAF00BFC155 /* BookModel.m */; };
+		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
+		E8690ACA1C93BF9000BFC155 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC91C93BF9000BFC155 /* BookRequest.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
-		E86A22491C91B73100E34A62 /* ComJsonResponseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22481C91B73100E34A62 /* ComJsonResponseAdapter.m */; };
-		E86A224C1C91C49400E34A62 /* ComXmlResponseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A224B1C91C49400E34A62 /* ComXmlResponseAdapter.m */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
+		E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D908A61C9E63620022DA2D /* JsonRequest.m */; };
 		E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C03F1C8D6D6900625004 /* ComApplication.m */; };
 		E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */; };
 		E8F7C0461C8D6E8300625004 /* ComRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C0451C8D6E8300625004 /* ComRootViewController.m */; };
@@ -33,16 +35,20 @@
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E84BD2231C8FBF16003EF94A /* ComModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComModel.h; sourceTree = "<group>"; };
 		E84BD2241C8FBF16003EF94A /* ComModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComModel.m; sourceTree = "<group>"; };
+		E8690AC21C93BCAF00BFC155 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
+		E8690AC31C93BCAF00BFC155 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		E8690AC51C93BEC300BFC155 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
+		E8690AC61C93BEC300BFC155 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
+		E8690AC81C93BF9000BFC155 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
+		E8690AC91C93BF9000BFC155 /* BookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
 		E86A22441C91A9B300E34A62 /* ComNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetworking.h; sourceTree = "<group>"; };
 		E86A22451C91A9B300E34A62 /* ComNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetworking.m; sourceTree = "<group>"; };
-		E86A22471C91B73100E34A62 /* ComJsonResponseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComJsonResponseAdapter.h; sourceTree = "<group>"; };
-		E86A22481C91B73100E34A62 /* ComJsonResponseAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComJsonResponseAdapter.m; sourceTree = "<group>"; };
-		E86A224A1C91C49400E34A62 /* ComXmlResponseAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComXmlResponseAdapter.h; sourceTree = "<group>"; };
-		E86A224B1C91C49400E34A62 /* ComXmlResponseAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComXmlResponseAdapter.m; sourceTree = "<group>"; };
 		E897D3B11C8E64D80067B3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8D908A51C9E63620022DA2D /* JsonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonRequest.h; sourceTree = "<group>"; };
+		E8D908A61C9E63620022DA2D /* JsonRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonRequest.m; sourceTree = "<group>"; };
 		E8F7C03E1C8D6D6900625004 /* ComApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComApplication.h; sourceTree = "<group>"; };
 		E8F7C03F1C8D6D6900625004 /* ComApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComApplication.m; sourceTree = "<group>"; };
 		E8F7C0411C8D6DDA00625004 /* ComAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComAppDelegate.h; sourceTree = "<group>"; };
@@ -92,12 +98,12 @@
 				E86A22451C91A9B300E34A62 /* ComNetworking.m */,
 				E800B5BA1C8EF4CB00F8BDEE /* ComRequest.h */,
 				E800B5BB1C8EF4CB00F8BDEE /* ComRequest.m */,
+				E8D908A51C9E63620022DA2D /* JsonRequest.h */,
+				E8D908A61C9E63620022DA2D /* JsonRequest.m */,
 				E800B5BD1C8EF4F500F8BDEE /* LoginRequest.h */,
 				E800B5BE1C8EF4F500F8BDEE /* LoginRequest.m */,
-				E86A22471C91B73100E34A62 /* ComJsonResponseAdapter.h */,
-				E86A22481C91B73100E34A62 /* ComJsonResponseAdapter.m */,
-				E86A224A1C91C49400E34A62 /* ComXmlResponseAdapter.h */,
-				E86A224B1C91C49400E34A62 /* ComXmlResponseAdapter.m */,
+				E8690AC81C93BF9000BFC155 /* BookRequest.h */,
+				E8690AC91C93BF9000BFC155 /* BookRequest.m */,
 			);
 			name = Network;
 			path = Workspace/Network;
@@ -110,6 +116,10 @@
 				E84BD2241C8FBF16003EF94A /* ComModel.m */,
 				E84BD2201C8FB19F003EF94A /* UserModel.h */,
 				E84BD2211C8FB19F003EF94A /* UserModel.m */,
+				E8690AC21C93BCAF00BFC155 /* BookModel.h */,
+				E8690AC31C93BCAF00BFC155 /* BookModel.m */,
+				E8690AC51C93BEC300BFC155 /* TagModel.h */,
+				E8690AC61C93BEC300BFC155 /* TagModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,15 +301,17 @@
 			files = (
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
+				E8690AC41C93BCAF00BFC155 /* BookModel.m in Sources */,
 				E8F7C0461C8D6E8300625004 /* ComRootViewController.m in Sources */,
-				E86A224C1C91C49400E34A62 /* ComXmlResponseAdapter.m in Sources */,
-				E86A22491C91B73100E34A62 /* ComJsonResponseAdapter.m in Sources */,
+				E8690ACA1C93BF9000BFC155 /* BookRequest.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
 				E8C326461C891B7E00628824 /* main.m in Sources */,
 				E800B5BF1C8EF4F500F8BDEE /* LoginRequest.m in Sources */,
 				E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */,
+				E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
+				E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

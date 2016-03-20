@@ -8,40 +8,57 @@
 
 #import "ComRequest.h"
 #import "ComNetworking.h"
-#import "UserModel.h"
 
 @interface ComRequest()
 
 @property(nonatomic, strong) ComNetworking *netWorking;
-@property(nonatomic, copy) NSString *urlString;
 
 @end
 
 @implementation ComRequest
 
-- (instancetype)initWithMethod:(NSString*)method
-{
+- (instancetype)init {
     if (self = [super init]) {
-        _urlString = [NSString stringWithFormat:@"%@%@", BaseUrl, method];
-        _netWorking = [[ComNetworking alloc] initWithUrl:_urlString];
+        _requestDelegate = self;
     }
     return self;
 }
 
-- (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString
-{
-    [_netWorking setValue:param forKey:keyString];
+- (NSString *)requestPath {
+    return @"";
 }
 
-- (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock
-{
-//    __weak __typeof(self)weakSelf = self;
-    [_netWorking sendRequestOnSuccess:^(id data) {
-//        __strong __typeof(self)strongSelf = weakSelf;
+- (NSString *)urlPathString {
+    if (!_urlPathString) {
+        if ([self.requestDelegate respondsToSelector:@selector(requestPath)]) {
+            _urlPathString = [self.requestDelegate requestPath];
+        }
+        else {
+            _urlPathString = @"";
+        }
+    }
+    return _urlPathString;
+}
+
+- (ComNetworking *)netWorking {
+    if (!_netWorking) {
+        _netWorking = [[ComNetworking alloc] initWithBaseUrl:BaseUrl path:self.urlPathString];
+    }
+    return _netWorking;
+}
+
+- (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString {
+    [self.netWorking setValue:param forKey:keyString];
+}
+
+- (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
+    __weak __typeof(self)weakSelf = self;
+    [self.netWorking sendRequestOnSuccess:^(id data) {
+        __strong __typeof(self)strongSelf = weakSelf;
         
         id buildData = nil;
-        if ([self.responseDelegate respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [self.responseDelegate buildResponse:data];
+        if ([strongSelf.responseDelegate respondsToSelector:@selector(buildResponse:)]) {
+            buildData = [strongSelf.responseDelegate buildResponse:data];
         }
         
         if (successBlock) {
@@ -54,9 +71,8 @@
     }];
 }
 
-- (void)cancel
-{
-    [_netWorking cancel];
+- (void)cancel {
+    [self.netWorking cancel];
 }
 
 

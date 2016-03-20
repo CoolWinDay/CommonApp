@@ -24,11 +24,14 @@
 #endif
 
 
-#define RootUrl     @"http://yidongguoyi.zonetime.net/"
-#define BaseUrl     RootUrl@"Api/"
-
+#define RootUrl     @"https://api.douban.com/"
+#define BaseUrl     RootUrl@"v2/"
 
 // 登陆接口
-#define Login_Url      @"Login/"
-#define Login_Path     @"checkNamePwd"
+#define Login_Url      @"book/"
+#define Login_Path     @"1220562"
+
+// 图书接口
+#define Book_Url      @"book/"
+#define Book_Path     @"1220562"
 

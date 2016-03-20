@@ -7,22 +7,16 @@
 //
 
 #import "LoginRequest.h"
-#import "ComJsonResponseAdapter.h"
+#import "UserModel.h"
 
 @implementation LoginRequest
 
-- (instancetype)init
-{
-    NSString *urlString = [NSString stringWithFormat:@"%@%@", Login_Url, Login_Path];
-    if (self = [super initWithMethod:urlString]) {
-        self.responseDelegate = [[ComJsonResponseAdapter alloc] initWithModelClass:[UserModel class]];
-    }
-    return self;
+- (NSString *)requestPath {
+    return [NSString stringWithFormat:@"%@%@", Login_Url, Login_Path];
 }
 
-//- (void)sendRequest
-//{
-//    [self addDataParam:@"data" forKey:[self yy_modelToJSONString]];
-//}
+- (Class)modelClass {
+    return [UserModel class];
+}
 
 @end
