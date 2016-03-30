@@ -53,7 +53,27 @@
 
 - (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
     __weak __typeof(self)weakSelf = self;
-    [self.netWorking sendRequestOnSuccess:^(id data) {
+    [self.netWorking postRequestOnSuccess:^(id data) {
+        __strong __typeof(self)strongSelf = weakSelf;
+        
+        id buildData = nil;
+        if ([strongSelf.responseDelegate respondsToSelector:@selector(buildResponse:)]) {
+            buildData = [strongSelf.responseDelegate buildResponse:data];
+        }
+        
+        if (successBlock) {
+            successBlock(buildData);
+        }
+    } onFailed:^(NSError *error) {
+        if (failedBlock) {
+            failedBlock(error);
+        }
+    }];
+}
+
+- (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
+    __weak __typeof(self)weakSelf = self;
+    [self.netWorking getRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
         
         id buildData = nil;

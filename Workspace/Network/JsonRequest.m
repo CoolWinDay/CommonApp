@@ -8,7 +8,8 @@
 
 #import "JsonRequest.h"
 #import "ComModel.h"
-
+#import "BookModel.h"
+#import "BookListModel.h"
 @implementation JsonRequest
 
 - (instancetype)init {
@@ -21,7 +22,10 @@
 
 - (id)buildResponse:(id)responseData {
     if (responseData){
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves error:nil];
+        NSError *error = nil;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        if (error)
+            return nil;
         DLog(@"%@", dic);
         
         if ([self.jsonReqDelegate respondsToSelector:@selector(modelClass)]) {

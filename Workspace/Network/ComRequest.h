@@ -34,6 +34,7 @@ typedef void (^FailedBlock)(NSError *error);
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
+- (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
 - (void)cancel;
 
 @end

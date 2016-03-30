@@ -7,12 +7,17 @@
 //
 
 #import "ComRootViewController.h"
+#import "BookListRequest.h"
+#import "BookListModel.h"
 #import "BookRequest.h"
 #import "UserModel.h"
+#import "BookModel.h"
 
 @interface ComRootViewController ()
 
 @property(nonatomic, strong) BookRequest *request;
+@property(nonatomic, strong) UserModel *userModel;
+@property(nonatomic, strong) BookListRequest *booksRequest;
 
 @end
 
@@ -25,7 +30,16 @@
     
     self.request = [[BookRequest alloc] init];
     
-    [_request sendRequestOnSuccess:^(UserModel *userModel) {
+    __weak typeof(self)weakSelf = self;
+    [_request sendRequestOnSuccess:^(BookModel *userModel) {
+        
+    } onFailed:^(NSError *error) {
+        
+    }];
+    
+    
+    self.booksRequest = [[BookListRequest alloc] init];
+    [_booksRequest getRequestOnSuccess:^(BookListModel *bookListModel) {
         
     } onFailed:^(NSError *error) {
         

@@ -34,4 +34,5 @@
 // 图书接口
 #define Book_Url      @"book/"
 #define Book_Path     @"1220562"
+#define BookSearch_Path     @"search?q=q"
 
