@@ -13,6 +13,8 @@
 #import "UserModel.h"
 #import "BookModel.h"
 
+#import "BookTableView.h"
+
 @interface ComRootViewController ()
 
 @property(nonatomic, strong) BookRequest *request;
@@ -28,22 +30,26 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-    self.request = [[BookRequest alloc] init];
+    BookTableView *table = [[BookTableView alloc] initWithFrame:self.view.bounds];
+//    table.backgroundColor = [UIColor purpleColor];
+    [self.view addSubview:table];
     
-    __weak typeof(self)weakSelf = self;
-    [_request sendRequestOnSuccess:^(BookModel *userModel) {
-        
-    } onFailed:^(NSError *error) {
-        
-    }];
-    
-    
-    self.booksRequest = [[BookListRequest alloc] init];
-    [_booksRequest getRequestOnSuccess:^(BookListModel *bookListModel) {
-        
-    } onFailed:^(NSError *error) {
-        
-    }];
+//    self.request = [[BookRequest alloc] init];
+//    
+//    __weak typeof(self)weakSelf = self;
+//    [_request sendRequestOnSuccess:^(BookModel *userModel) {
+//        
+//    } onFailed:^(NSError *error) {
+//        
+//    }];
+//    
+//    
+//    self.booksRequest = [[BookListRequest alloc] init];
+//    [_booksRequest getRequestOnSuccess:^(BookListModel *bookListModel) {
+//        
+//    } onFailed:^(NSError *error) {
+//        
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

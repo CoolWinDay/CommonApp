@@ -32,9 +32,16 @@ typedef void (^FailedBlock)(NSError *error);
 @property(nonatomic, assign) id<RequestDelegate> requestDelegate;
 @property(nonatomic, assign) id<ResponseDelegate> responseDelegate;
 
+@property(nonatomic, copy) SuccessBlock successBlock;
+@property(nonatomic, copy) FailedBlock failedBlock;
+
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
 - (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
+- (void)load;
 - (void)cancel;
+
+- (void)succeed:(id)response;
+- (void)failed:(NSError *)error;
 
 @end

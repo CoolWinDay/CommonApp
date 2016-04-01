@@ -6,8 +6,11 @@
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "JsonRequest.h"
+#import "ComListRequest.h"
 
-@interface BookListRequest : JsonRequest
+@interface BookListRequest : ComListRequest
+
+
+
 
 @end

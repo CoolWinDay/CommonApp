@@ -19,4 +19,9 @@
     return [BookListModel class];
 }
 
+- (NSArray*)constructDataArray:(BookListModel *)requestData
+{
+    return requestData.books;
+}
+
 @end
