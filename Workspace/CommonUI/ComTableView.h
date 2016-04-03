@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComListModel.h"
 
 @interface ComTableView : UITableView
+
+@property (nonatomic, strong) ComListModel* listModel;
+@property (nonatomic, strong) Class tableViewCellClass;
 
 @end

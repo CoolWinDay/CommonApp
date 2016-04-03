@@ -9,11 +9,13 @@
 #import "ComTableView.h"
 #import "MJRefresh.h"
 #import "ComTableViewCell.h"
-#import "ComListRequest.h"
+#import "ComTableViewDataSource.h"
 
-@interface ComTableView() <UITableViewDataSource,UITableViewDelegate>
+#define CellReuseIdentifier @"Cell"
 
-@property (nonatomic, strong) ComListRequest* listRequest;
+@interface ComTableView()
+
+@property(nonatomic, strong) ComTableViewDataSource *tableDataSource;
 
 @end
 
@@ -36,8 +38,15 @@
 - (void)initView {
     __weak typeof(self) weakSelf = self;
     
-    self.dataSource = self;
-    self.delegate = self;
+    
+    _tableDataSource = [[ComTableViewDataSource alloc] initWithItems:self.listModel.listArray cellIdentifier:CellReuseIdentifier configureCellBlock:^(UITableViewCell *cell, id item) {
+        if ([cell isKindOfClass:[ComTableViewCell class]]) {
+//            ((ComTableViewCell*)cell).indexPath = indexPath;
+            ((ComTableViewCell*)cell).item = item;
+        }
+    }];
+    
+    self.dataSource = _tableDataSource;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // 添加下拉/上滑刷新更多
@@ -46,7 +55,7 @@
 //        self.pageNum = 1;
 //        [self getDoorToDoorServiceDataFromService];
         
-        [weakSelf.listRequest reload];
+        [weakSelf.listModel reload];
 //        [self.header endRefreshing];
     }];
     // 底部上拉刷出更多
@@ -56,7 +65,7 @@
 //            [self getDoorToDoorServiceDataFromService];
 //        }
         
-        [weakSelf.listRequest load];
+        [weakSelf.listModel load];
 //        [self.footer endRefreshing];
     }];
 //    header.lastUpdatedTimeLabel.hidden = YES;
@@ -68,7 +77,7 @@
 - (void)dragDown {
 //    [TDDErrorViewManager removeErrorViewFromView:self.view];
 //    self.tableView.hasMoreData = NO;
-    [self.listRequest load];
+    [self.listModel load];
 }
 
 //上拉
@@ -79,29 +88,39 @@
 //    else [self.tableView stopRefresh];
 }
 
-- (Class)listRequestClass {
-    return nil;
+- (void)setTableViewCellClass:(Class)tableViewCellClass {
+    _tableViewCellClass = tableViewCellClass;
+    [self registerClass:_tableViewCellClass forCellReuseIdentifier:CellReuseIdentifier];
 }
 
-- (Class)tableViewCellClass {
-    return [ComTableViewCell class];
-}
-
-- (ComListRequest *)listRequest {
-    Class requestClass = [self listRequestClass];
-    if (!_listRequest && requestClass) {
-        _listRequest = [requestClass new];
-        __weak typeof(self) weakSelf = self;
-        _listRequest.successBlock = ^(id data) {
-            [weakSelf loadSuccess];
-        };
-        _listRequest.failedBlock = ^(NSError *error) {
-            [weakSelf loadFail];
+- (void)setListModel:(ComListModel *)listModel {
+    _listModel = listModel;
+    
+    __weak typeof(self) weakSelf = self;
+    _listModel.successBlock = ^(id data) {
+        [weakSelf loadSuccess];
+    };
+    _listModel.failedBlock = ^(NSError *error) {
+        [weakSelf loadFail];
 //            [TDDErrorViewManager showErrorViewInView:weakSelf.view withError:error];
-        };
-    }
-    return _listRequest;
+    };
 }
+
+//- (ComListModel *)listModel {
+//    Class requestClass = [self listModelClass];
+//    if (!_listModel && requestClass) {
+//        _listModel = [requestClass new];
+//        __weak typeof(self) weakSelf = self;
+//        _listModel.successBlock = ^(id data) {
+//            [weakSelf loadSuccess];
+//        };
+//        _listModel.failedBlock = ^(NSError *error) {
+//            [weakSelf loadFail];
+////            [TDDErrorViewManager showErrorViewInView:weakSelf.view withError:error];
+//        };
+//    }
+//    return _listModel;
+//}
 
 - (void)autoLoad {
 //    [self autoRefresh];
@@ -118,6 +137,7 @@
 
 - (void)loadSuccess {
 //    [TDDErrorViewManager removeErrorViewFromView:self.view];
+    self.tableDataSource.items = self.listModel.listArray;
     [self reloadData];
     [self.header endRefreshing];
 //    self.tableView.hasMoreData = self.listModel.moreData;
@@ -126,29 +146,6 @@
 //    }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.listRequest.listArray count];
-}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
-}
-
-//每一行的界面
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *indetify = @"Cell";
-    //使用自定义的cell
-    id cell = [tableView dequeueReusableCellWithIdentifier:indetify];
-    if (!cell) {
-        cell = [[[self tableViewCellClass] alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indetify];
-    }
-    
-    ((ComTableViewCell*)cell).indexPath = indexPath;
-    if (self.listRequest.listArray.count > indexPath.row) {
-        ((ComTableViewCell*)cell).item = [self.listRequest.listArray objectAtIndex:indexPath.row];
-    }
-    
-    return cell;
-}
 
 @end
