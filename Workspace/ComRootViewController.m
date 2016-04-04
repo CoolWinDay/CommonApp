@@ -8,7 +8,7 @@
 
 #import "ComRootViewController.h"
 #import "BookListModel.h"
-#import "BookRequest.h"
+#import "BookModel.h"
 #import "UserModel.h"
 #import "BookModel.h"
 #import "BookTableViewCell.h"
@@ -16,7 +16,7 @@
 
 @interface ComRootViewController ()
 
-@property(nonatomic, strong) BookRequest *request;
+@property(nonatomic, strong) BookModel *bookModel;
 @property(nonatomic, strong) UserModel *userModel;
 @property(nonatomic, strong) BookListModel *bookListModel;
 
@@ -29,19 +29,24 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
+    __weak typeof(self)weakSelf = self;
+    
     ComTableView *table = [[ComTableView alloc] initWithFrame:self.view.bounds];
     table.listModel = [[BookListModel alloc] init];
     table.tableViewCellClass = [BookTableViewCell class];
+//    table.configureCellBlock = ^(UITableViewCell *cell, BookModel *item, NSIndexPath *indexPath) {
+//        cell.textLabel.text = item.title;
+//        cell.textLabel.textColor = [UIColor redColor];
+//    };
     [self.view addSubview:table];
     
-//    self.request = [[BookRequest alloc] init];
-//    
-//    __weak typeof(self)weakSelf = self;
-//    [_request sendRequestOnSuccess:^(BookModel *userModel) {
-//        
-//    } onFailed:^(NSError *error) {
-//        
-//    }];
+    self.bookModel = [[BookModel alloc] init];
+    [self.bookModel loadOnSuccess:^(BookModel *model) {
+        
+    } onFailed:^(NSError *error) {
+        
+    }];
+
     
 //    self.bookListModel = [[BookListModel alloc] init];
 //    [self.bookListModel loadOnSuccess:^(id data) {

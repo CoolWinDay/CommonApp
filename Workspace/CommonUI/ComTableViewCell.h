@@ -11,6 +11,6 @@
 @interface ComTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) id             item;
-@property (nonatomic, strong) NSIndexPath*                  indexPath;
+@property (nonatomic, strong) NSIndexPath   *indexPath;
 
 @end

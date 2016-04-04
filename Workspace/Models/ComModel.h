@@ -13,11 +13,11 @@ typedef void (^FailedBlock)(NSError *error);
 
 @interface ComModel : NSObject
 
-@property(nonatomic, assign) NSInteger status;
-@property(nonatomic, copy) NSString *statusInfo;
+@property(nonatomic, assign) NSInteger              status;
+@property(nonatomic, copy)   NSString*              statusInfo;
 
-@property(nonatomic, copy) SuccessBlock successBlock;
-@property(nonatomic, copy) FailedBlock failedBlock;
+@property(nonatomic, copy)   SuccessBlock           successBlock;
+@property(nonatomic, copy)   FailedBlock            failedBlock;
 
 - (void)load;
 - (void)cancel;

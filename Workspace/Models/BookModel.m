@@ -10,4 +10,8 @@
 
 @implementation BookModel
 
+- (NSString *)requestPath {
+    return [NSString stringWithFormat:@"%@%@", Book_Url, Book_Path];
+}
+
 @end

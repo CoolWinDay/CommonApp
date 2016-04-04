@@ -38,11 +38,15 @@
 - (void)initView {
     __weak typeof(self) weakSelf = self;
     
-    
-    _tableDataSource = [[ComTableViewDataSource alloc] initWithItems:self.listModel.listArray cellIdentifier:CellReuseIdentifier configureCellBlock:^(UITableViewCell *cell, id item) {
+    _tableDataSource = [[ComTableViewDataSource alloc] initWithItems:self.listModel.listArray cellIdentifier:CellReuseIdentifier configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         if ([cell isKindOfClass:[ComTableViewCell class]]) {
-//            ((ComTableViewCell*)cell).indexPath = indexPath;
-            ((ComTableViewCell*)cell).item = item;
+            ComTableViewCell *comCell = (ComTableViewCell *)cell;
+            comCell.indexPath = indexPath;
+            comCell.item = item;
+        }
+        
+        if (self.configureCellBlock) {
+            self.configureCellBlock(cell, item, indexPath);
         }
     }];
     

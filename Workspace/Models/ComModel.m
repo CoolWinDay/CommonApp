@@ -8,10 +8,12 @@
 
 #import "ComModel.h"
 #import "ComNetworking.h"
+#import "JsonDataHandler.h"
 
 @interface ComModel()
 
 @property(nonatomic, strong) ComNetworking *netWorking;
+@property(nonatomic, strong) id<DataHandleDelegate> dataHandler;
 
 @end
 
@@ -26,10 +28,6 @@
         _netWorking = [[ComNetworking alloc] initWithBaseUrl:BaseUrl path:[self requestPath]];
     }
     return _netWorking;
-}
-
-- (void)buildResponse:(id)responseData {
-    
 }
 
 - (NSDictionary*)dataParams {
@@ -59,9 +57,7 @@
     [self.netWorking postRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
         
-        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
-            [strongSelf buildResponse:data];
-        }
+        [strongSelf handleResponse:data];
         
         if (successBlock) {
             successBlock(strongSelf);
@@ -81,26 +77,38 @@
     [self.netWorking postRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
         
-        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
-            [strongSelf buildResponse:data];
-        }
-        
-        if ([weakSelf respondsToSelector:@selector(succeed:)]) {
-            [weakSelf succeed:weakSelf];
-        }
+        [strongSelf handleResponse:data];
+        [strongSelf succeed:weakSelf];
         
         //        if (weakSelf.successBlock) {
         //            weakSelf.successBlock(buildData);
         //        }
     } onFailed:^(NSError *error) {
-        if ([weakSelf respondsToSelector:@selector(failed:)]) {
-            [weakSelf failed:error];
-        }
+        [weakSelf failed:error];
         
         //        if (weakSelf.failedBlock) {
         //            weakSelf.failedBlock(error);
         //        }
     }];
+}
+
+- (id<DataHandleDelegate>)dataHandler {
+    if (!_dataHandler) {
+        _dataHandler = [[JsonDataHandler alloc] init];
+    }
+    return _dataHandler;
+}
+
+- (void)handleResponse:(id)responseData {
+    if ([self.dataHandler respondsToSelector:@selector(handleResponse:)]) {
+        NSDictionary *dic = [self.dataHandler handleResponse:responseData];
+        DLog(@"%@", dic);
+        [self buildModel:dic];
+    }
+}
+
+- (void)buildModel:(NSDictionary *)dic {
+    [self yy_modelSetWithDictionary:dic];
 }
 
 - (void)succeed:(id)response {

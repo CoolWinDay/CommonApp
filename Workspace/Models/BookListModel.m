@@ -11,26 +11,18 @@
 
 @implementation BookListModel
 
+#pragma mark - build
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"books" : [BookModel class]};
 }
 
+
+#pragma mark - request
 - (NSString *)requestPath {
     return [NSString stringWithFormat:@"%@%@", Book_Url, BookSearch_Path];
 }
 
-- (void)buildResponse:(id)responseData {
-    if (responseData){
-        NSError *error = nil;
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-        if (!error) {
-            DLog(@"%@", dic);
-            [self yy_modelSetWithDictionary:dic];
-        }
-    }
-}
-
-- (NSArray*)constructDataArray
+- (NSArray *)constructDataArray
 {
     return self.books;
 }

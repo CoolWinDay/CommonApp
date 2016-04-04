@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef void (^ConfigureCell)(UITableViewCell *cell, id data);
+#import "ComTableView.h"
 
 @interface ComTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property(nonatomic, strong) NSArray *items;
 
-- (instancetype)initWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(ConfigureCell)configureCell;
+- (instancetype)initWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(ConfigureCell)configureCellBlock;
 
 @end

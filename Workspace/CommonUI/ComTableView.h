@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ComListModel.h"
 
+typedef void (^ConfigureCell)(UITableViewCell *cell, id data, NSIndexPath *indexPath);
+
 @interface ComTableView : UITableView
 
-@property (nonatomic, strong) ComListModel* listModel;
-@property (nonatomic, strong) Class tableViewCellClass;
+@property(nonatomic, strong) ComListModel*  listModel;
+@property(nonatomic, strong) Class          tableViewCellClass;
+@property(nonatomic, copy)   ConfigureCell  configureCellBlock;
 
 @end
