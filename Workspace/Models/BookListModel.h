@@ -10,10 +10,10 @@
 
 @interface BookListModel : ComListModel
 
-@property NSString *alt;
-@property NSInteger count;
-@property NSInteger start;
-@property NSInteger total;
-@property NSArray *books;
+@property NSString*     alt;
+@property NSInteger     count;
+@property NSInteger     start;
+@property NSInteger     total;
+@property NSArray*      books;
 
 @end

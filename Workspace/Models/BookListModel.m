@@ -16,10 +16,15 @@
     return @{@"books" : [BookModel class]};
 }
 
-
 #pragma mark - request
 - (NSString *)requestPath {
     return [NSString stringWithFormat:@"%@%@", Book_Url, BookSearch_Path];
+}
+
+- (NSDictionary*)dataParams {
+    return @{
+             @"q" : @"我的老家就住在这个屯"
+             };
 }
 
 - (NSArray *)constructDataArray

@@ -32,22 +32,22 @@
     __weak typeof(self)weakSelf = self;
     
     ComTableView *table = [[ComTableView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:table];
     table.listModel = [[BookListModel alloc] init];
     table.tableViewCellClass = [BookTableViewCell class];
 //    table.configureCellBlock = ^(UITableViewCell *cell, BookModel *item, NSIndexPath *indexPath) {
 //        cell.textLabel.text = item.title;
 //        cell.textLabel.textColor = [UIColor redColor];
 //    };
-    [self.view addSubview:table];
+    [table loadData];
     
-    self.bookModel = [[BookModel alloc] init];
-    [self.bookModel loadOnSuccess:^(BookModel *model) {
-        
-    } onFailed:^(NSError *error) {
-        
-    }];
-
-    
+//    self.bookModel = [[BookModel alloc] init];
+//    [self.bookModel loadOnSuccess:^(BookModel *model) {
+//        
+//    } onFailed:^(NSError *error) {
+//        
+//    }];
+//    
 //    self.bookListModel = [[BookListModel alloc] init];
 //    [self.bookListModel loadOnSuccess:^(id data) {
 //        

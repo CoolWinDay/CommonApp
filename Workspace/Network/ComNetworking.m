@@ -11,7 +11,6 @@
 
 @implementation ComNetworking
 {
-    NSDictionary *_parameters;
     NSURLSessionDataTask *_requestTask;
 }
 
@@ -28,6 +27,10 @@
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString
 {
     [_parameters setValue:param forKey:keyString];
+}
+
+- (void)addDataParamFromDictionary:(NSDictionary *)paramDic {
+    [_parameters addEntriesFromDictionary:paramDic];
 }
 
 - (void)postRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock

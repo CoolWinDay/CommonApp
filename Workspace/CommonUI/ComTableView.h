@@ -17,4 +17,7 @@ typedef void (^ConfigureCell)(UITableViewCell *cell, id data, NSIndexPath *index
 @property(nonatomic, strong) Class          tableViewCellClass;
 @property(nonatomic, copy)   ConfigureCell  configureCellBlock;
 
+- (void)loadData;
+- (void)reLoadData;
+
 @end

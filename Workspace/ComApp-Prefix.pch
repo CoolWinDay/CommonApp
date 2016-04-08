@@ -15,5 +15,6 @@
 #import "ComUIDefine.h"
 #import <YYModel/YYModel.h>
 #import "PureLayout.h"
+#import "ComUIViewAdditions.h"
 
 #endif

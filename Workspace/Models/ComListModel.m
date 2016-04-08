@@ -27,42 +27,24 @@
     [self load];
 }
 
-- (NSDictionary*)dataParams {
-    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-    //    [dic setObject:@(self.currentPage) forKey:@"pageNum"];
-    //    [dic setObject:@(2) forKey:@"from"];
-    //    [dic setObject:@(self.status) forKey:@"status"];
-    //    if (self.status == TDDWMChooseOrderStatusWait) {
-    //        [dic setObject:@(1) forKey:@"pageSize"];
-    //    }
-    //    else {
-    //        [dic setObject:@([self pageSize]) forKey:@"pageSize"];
-    //    }
-    //    if ([self.shopId length]>0) {
-    //        [dic setObject:self.shopId forKey:@"shopId"];
-    //    }
-    //    if ([self.buyerPhone length]>0) {
-    //        [dic setObject:self.buyerPhone forKey:@"buyerPhone"];
-    //    }
-    return dic;
+- (void)beforeLoad {
+    [self addDataParam:[NSNumber numberWithInteger:(self.currentPage-1)*[self pageSize]] forKey:@"start"];
+    [self addDataParam:[NSNumber numberWithInteger:[self pageSize]] forKey:@"count"];
+    [super beforeLoad];
 }
 
-- (void)succeed:(ComListModel *)response {
+- (void)loadSucceed:(ComListModel *)response {
     if (_currentPage == 1) {
         self.listArray = [NSMutableArray array];
     }
     NSArray *array = [self constructDataArray];
     self.moreData = NO;
-    if ([array count]>0) {
-        self.moreData = [array count]>= [self pageSize] ? YES : NO;
+    if ([array count] > 0) {
+        self.moreData = [array count] >= [self pageSize] ? YES : NO;
         self.currentPage ++;
         [self.listArray addObjectsFromArray:array];
     }
-    [super succeed:response];
-}
-
-- (Class)listModelClass {
-    return self.class;
+    [super loadSucceed:response];
 }
 
 - (NSArray*)constructDataArray

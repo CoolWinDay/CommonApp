@@ -20,10 +20,13 @@ typedef void (^FailedBlock)(NSError *error);
 @property(nonatomic, copy)   FailedBlock            failedBlock;
 
 - (void)load;
-- (void)cancel;
 - (void)loadOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
+- (void)beforeLoad;
+- (void)loadSucceed:(id)response;
+- (void)loadFailed:(NSError *)error;
+- (void)cancelLoad;
 
-- (void)succeed:(id)response;
-- (void)failed:(NSError *)error;
+- (NSDictionary*)dataParams;
+- (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 
 @end

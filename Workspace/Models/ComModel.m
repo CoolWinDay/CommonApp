@@ -30,8 +30,12 @@
     return _netWorking;
 }
 
-- (NSDictionary*)dataParams {
+- (NSMutableDictionary *)dataParams {
     return nil;
+}
+
+- (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString {
+    [self.netWorking addDataParam:param forKey:keyString];
 }
 
 - (void)setParams {
@@ -42,9 +46,9 @@
     //    }
     NSDictionary *dataParams = [self dataParams];
     if (dataParams) {
-        NSLog(@"\n%@",dataParams);
-        [self.netWorking setValuesForKeysWithDictionary:dataParams];
+        [self.netWorking addDataParamFromDictionary:dataParams];
     }
+    NSLog(@"\n%@",self.netWorking.parameters);
     //    // 添加额外的扩展参数, 和mtop系统参数平级
     //    NSDictionary *mtopParams = [self mtopParams];
     //    if (mtopParams) {
@@ -53,14 +57,13 @@
 }
 
 - (void)loadOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
+    [self beforeLoad];
     __weak __typeof(self)weakSelf = self;
     [self.netWorking postRequestOnSuccess:^(id data) {
-        __strong __typeof(self)strongSelf = weakSelf;
-        
-        [strongSelf handleResponse:data];
+        [weakSelf handleResponse:data];
         
         if (successBlock) {
-            successBlock(strongSelf);
+            successBlock(weakSelf);
         }
     } onFailed:^(NSError *error) {
         if (failedBlock) {
@@ -70,21 +73,19 @@
 }
 
 - (void)load {
-    [self cancel];
-    [self setParams];
+    [self beforeLoad];
     
     __weak __typeof(self)weakSelf = self;
     [self.netWorking postRequestOnSuccess:^(id data) {
-        __strong __typeof(self)strongSelf = weakSelf;
         
-        [strongSelf handleResponse:data];
-        [strongSelf succeed:weakSelf];
+        [weakSelf handleResponse:data];
+        [weakSelf loadSucceed:weakSelf];
         
         //        if (weakSelf.successBlock) {
         //            weakSelf.successBlock(buildData);
         //        }
     } onFailed:^(NSError *error) {
-        [weakSelf failed:error];
+        [weakSelf loadFailed:error];
         
         //        if (weakSelf.failedBlock) {
         //            weakSelf.failedBlock(error);
@@ -111,7 +112,12 @@
     [self yy_modelSetWithDictionary:dic];
 }
 
-- (void)succeed:(id)response {
+- (void)beforeLoad {
+    [self cancelLoad];
+    [self setParams];
+}
+
+- (void)loadSucceed:(id)response {
     //    NSLog(@"\n%@",response.json);
     //    [self constructSuccessData:[self responseJSONData:response]];
     if (self.successBlock) {
@@ -126,7 +132,7 @@
     //    }
 }
 
-- (void)failed:(NSError *)error {
+- (void)loadFailed:(NSError *)error {
     //    response.error.msg = [self userFriendlyErrorMsg:response.error];
     //    NSLog(@"\n%@\n%@",response.error,response.json);
     if (self.failedBlock) {
@@ -141,7 +147,7 @@
     //    }
 }
 
-- (void)cancel {
+- (void)cancelLoad {
     [self.netWorking cancel];
 }
 

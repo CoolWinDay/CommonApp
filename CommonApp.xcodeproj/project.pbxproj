@@ -11,11 +11,13 @@
 		E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E800B5BB1C8EF4CB00F8BDEE /* ComRequest.m */; };
 		E8019A031CAE21D200336897 /* ComTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8019A021CAE21D200336897 /* ComTableViewCell.m */; };
 		E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8019A051CAE223900336897 /* BookTableViewCell.m */; };
+		E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */; };
+		E807D2231CB7A91200ADCF87 /* ComUIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */; };
 		E82565E61CB16AC20045BBD3 /* ComTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */; };
 		E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AA51CB21DF800E40B88 /* BookRequest.m */; };
-		E83D0AAD1CB22EE500E40B88 /* JsonDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AAC1CB22EE500E40B88 /* JsonDataHandler.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
 		E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* ComModel.m */; };
+		E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8667C621CB4A54F00212310 /* JsonDataHandler.m */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
@@ -39,17 +41,21 @@
 		E8019A021CAE21D200336897 /* ComTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTableViewCell.m; sourceTree = "<group>"; };
 		E8019A041CAE223900336897 /* BookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableViewCell.h; sourceTree = "<group>"; };
 		E8019A051CAE223900336897 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
+		E807D21C1CB7A6F000ADCF87 /* ComErrorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComErrorViewManager.h; sourceTree = "<group>"; };
+		E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComErrorViewManager.m; sourceTree = "<group>"; };
+		E807D2211CB7A91200ADCF87 /* ComUIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComUIViewAdditions.h; sourceTree = "<group>"; };
+		E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComUIViewAdditions.m; sourceTree = "<group>"; };
 		E82565E41CB16AC20045BBD3 /* ComTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTableViewDataSource.h; sourceTree = "<group>"; };
 		E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTableViewDataSource.m; sourceTree = "<group>"; };
 		E83D0AA41CB21DF800E40B88 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
 		E83D0AA51CB21DF800E40B88 /* BookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
-		E83D0AAA1CB2259D00E40B88 /* ComDataHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComDataHandler.h; sourceTree = "<group>"; };
-		E83D0AAB1CB22EE500E40B88 /* JsonDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDataHandler.h; sourceTree = "<group>"; };
-		E83D0AAC1CB22EE500E40B88 /* JsonDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDataHandler.m; sourceTree = "<group>"; };
 		E84BD2201C8FB19F003EF94A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E84BD2231C8FBF16003EF94A /* ComModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComModel.h; sourceTree = "<group>"; };
 		E84BD2241C8FBF16003EF94A /* ComModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComModel.m; sourceTree = "<group>"; };
+		E8667C601CB4A54F00212310 /* ComDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComDataHandler.h; sourceTree = "<group>"; };
+		E8667C611CB4A54F00212310 /* JsonDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDataHandler.h; sourceTree = "<group>"; };
+		E8667C621CB4A54F00212310 /* JsonDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDataHandler.m; sourceTree = "<group>"; };
 		E8690AC51C93BEC300BFC155 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		E8690AC61C93BEC300BFC155 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		E86A22441C91A9B300E34A62 /* ComNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetworking.h; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 		E800B5B91C8EF4A200F8BDEE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E8667C5F1CB4A54F00212310 /* DataHandler */,
 				E86A22441C91A9B300E34A62 /* ComNetworking.h */,
 				E86A22451C91A9B300E34A62 /* ComNetworking.m */,
 				E800B5BA1C8EF4CB00F8BDEE /* ComRequest.h */,
@@ -121,13 +128,36 @@
 				E8D908A61C9E63620022DA2D /* JsonRequest.m */,
 				E83D0AA41CB21DF800E40B88 /* BookRequest.h */,
 				E83D0AA51CB21DF800E40B88 /* BookRequest.m */,
-				E83D0AAA1CB2259D00E40B88 /* ComDataHandler.h */,
-				E83D0AAB1CB22EE500E40B88 /* JsonDataHandler.h */,
-				E83D0AAC1CB22EE500E40B88 /* JsonDataHandler.m */,
 			);
 			name = Network;
 			path = Workspace/Network;
 			sourceTree = SOURCE_ROOT;
+		};
+		E807D21B1CB7A6BB00ADCF87 /* ErrorViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				E807D21C1CB7A6F000ADCF87 /* ComErrorViewManager.h */,
+				E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */,
+			);
+			path = ErrorViewManager;
+			sourceTree = "<group>";
+		};
+		E807D21F1CB7A8CB00ADCF87 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E807D2201CB7A8CB00ADCF87 /* Additions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E807D2201CB7A8CB00ADCF87 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				E807D2211CB7A91200ADCF87 /* ComUIViewAdditions.h */,
+				E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
 		};
 		E84BD21F1C8FB181003EF94A /* Models */ = {
 			isa = PBXGroup;
@@ -146,6 +176,16 @@
 				E8690AC61C93BEC300BFC155 /* TagModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E8667C5F1CB4A54F00212310 /* DataHandler */ = {
+			isa = PBXGroup;
+			children = (
+				E8667C601CB4A54F00212310 /* ComDataHandler.h */,
+				E8667C611CB4A54F00212310 /* JsonDataHandler.h */,
+				E8667C621CB4A54F00212310 /* JsonDataHandler.m */,
+			);
+			path = DataHandler;
 			sourceTree = "<group>";
 		};
 		E897D3B01C8E64D80067B3E6 /* Resources */ = {
@@ -184,7 +224,7 @@
 				E8F7C0441C8D6E8300625004 /* ComRootViewController.h */,
 				E8F7C0451C8D6E8300625004 /* ComRootViewController.m */,
 				E8F9EA0A1C8E6F840072F58D /* Define */,
-				E8F9EA0B1C8E6F840072F58D /* Utils */,
+				E807D21F1CB7A8CB00ADCF87 /* Utils */,
 				E800B5B91C8EF4A200F8BDEE /* Network */,
 				E84BD21F1C8FB181003EF94A /* Models */,
 				E8F54DEA1CAB721B00F492B2 /* CommonUI */,
@@ -207,14 +247,15 @@
 		E8F54DEA1CAB721B00F492B2 /* CommonUI */ = {
 			isa = PBXGroup;
 			children = (
+				E807D21B1CB7A6BB00ADCF87 /* ErrorViewManager */,
 				E8F54DEB1CAB728F00F492B2 /* ComTableView.h */,
 				E8F54DEC1CAB728F00F492B2 /* ComTableView.m */,
 				E8019A011CAE21D200336897 /* ComTableViewCell.h */,
 				E8019A021CAE21D200336897 /* ComTableViewCell.m */,
-				E8019A041CAE223900336897 /* BookTableViewCell.h */,
-				E8019A051CAE223900336897 /* BookTableViewCell.m */,
 				E82565E41CB16AC20045BBD3 /* ComTableViewDataSource.h */,
 				E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */,
+				E8019A041CAE223900336897 /* BookTableViewCell.h */,
+				E8019A051CAE223900336897 /* BookTableViewCell.m */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -227,13 +268,6 @@
 				E800B5B81C8EF25B00F8BDEE /* ComUIDefine.h */,
 			);
 			path = Define;
-			sourceTree = "<group>";
-		};
-		E8F9EA0B1C8E6F840072F58D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,13 +391,15 @@
 			files = (
 				E82565E61CB16AC20045BBD3 /* ComTableViewDataSource.m in Sources */,
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
-				E83D0AAD1CB22EE500E40B88 /* JsonDataHandler.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
+				E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */,
 				E8F54DED1CAB728F00F492B2 /* ComTableView.m in Sources */,
 				E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */,
 				E8019A031CAE21D200336897 /* ComTableViewCell.m in Sources */,
+				E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */,
 				E8F54DF31CAB7A1600F492B2 /* ComListModel.m in Sources */,
 				E8F7C0461C8D6E8300625004 /* ComRootViewController.m in Sources */,
+				E807D2231CB7A91200ADCF87 /* ComUIViewAdditions.m in Sources */,
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
 				E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
