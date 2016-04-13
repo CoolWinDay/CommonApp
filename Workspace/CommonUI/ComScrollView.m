@@ -13,7 +13,7 @@
 
 @interface ComScrollView ()
 
-@property(nonatomic, strong) MJRefreshHeader *comHeader;
+@property(nonatomic, strong) MJRefreshStateHeader *comHeader;
 
 @end
 
@@ -35,14 +35,16 @@
 
 - (void)initView {
     self.scrollEnabled = YES;
+    self.isShowEmptyTip = YES;
+    self.isRefresh = YES;
     
     __weak typeof(self) weakSelf = self;
-    self.comHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.comHeader = [MJRefreshStateHeader headerWithRefreshingBlock:^{
         [ComErrorViewManager removeErrorViewFromView:self.superview];
         [weakSelf.model load];
     }];
+    self.comHeader.lastUpdatedTimeLabel.hidden = YES;
     
-    self.mj_header = self.comHeader;
     self.model = [[ComModel alloc] init];
 }
 
@@ -56,11 +58,13 @@
     
     _model.failedBlock = ^(NSError *error) {
         [weakSelf loadFail];
-        [ComErrorViewManager showErrorViewInView:weakSelf.superview withError:error];
+        if (weakSelf.isShowEmptyTip) {
+            [ComErrorViewManager showErrorViewInView:weakSelf.superview withError:error];
+        }
     };
 }
 
-- (void)loadData {
+- (void)reLoadDataFromServer {
     [self.model load];
 }
 
@@ -74,6 +78,11 @@
     if (self.loadSuccessBlock) {
         self.loadSuccessBlock(self.model);
     }
+}
+
+- (void)setIsRefresh:(BOOL)isRefresh {
+    _isRefresh = isRefresh;
+    self.mj_header = _isRefresh ? self.comHeader : nil;
 }
 
 @end

@@ -32,12 +32,15 @@
     
     __weak typeof(self)weakSelf = self;
     
-//    ComScrollView *scrollView = [[ComScrollView alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:scrollView];
-//    scrollView.model = [[BookModel alloc] init];
-//    scrollView.loadSuccessBlock = ^(BookModel *model){
-//        
-//    };
+    ComScrollView *scrollView = [[ComScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:scrollView];
+    scrollView.isShowEmptyTip = NO;
+    scrollView.isRefresh = NO;
+    scrollView.model = [[BookModel alloc] init];
+    scrollView.loadSuccessBlock = ^(BookModel *model){
+        
+    };
+    [scrollView reLoadDataFromServer];
     
     ComTableView *table = [[ComTableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:table];

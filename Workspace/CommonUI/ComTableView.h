@@ -21,7 +21,7 @@ typedef void (^ConfigureCell)(UITableViewCell *cell, id data, NSIndexPath *index
 @property(nonatomic, assign) BOOL           isRefresh;
 @property(nonatomic, assign) BOOL           isShowEmptyTip;
 
-- (void)loadData;
-- (void)reLoadData;
+- (void)loadDataFromServer;
+- (void)reLoadDataFromServer;
 
 @end

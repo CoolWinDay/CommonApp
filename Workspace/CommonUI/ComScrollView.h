@@ -14,6 +14,9 @@
 @property(nonatomic, strong) ComModel*      model;
 @property(nonatomic,   copy) SuccessBlock   loadSuccessBlock;
 
-- (void)loadData;
+@property(nonatomic, assign) BOOL           isRefresh;
+@property(nonatomic, assign) BOOL           isShowEmptyTip;
+
+- (void)reLoadDataFromServer;
 
 @end

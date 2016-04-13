@@ -72,8 +72,8 @@
         [weakSelf.listModel load];
     }];
     self.comHeader.lastUpdatedTimeLabel.hidden = YES;
-    //    self.mj_header = self.header;
-    //    self.mj_footer = self.footer;
+    
+    self.listModel = [[ComListModel alloc] init];
 }
 
 - (void)setTableViewCellClass:(Class)tableViewCellClass {
@@ -97,11 +97,11 @@
     };
 }
 
-- (void)reLoadData {
+- (void)reLoadDataFromServer {
     [self.listModel reload];
 }
 
-- (void)loadData {
+- (void)loadDataFromServer {
     [self.listModel load];
 }
 
