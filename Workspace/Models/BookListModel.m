@@ -23,7 +23,7 @@
 
 - (NSDictionary*)dataParams {
     return @{
-             @"q" : @"我的老家就住在这个屯"
+             @"q" : @"我的老家"
              };
 }
 

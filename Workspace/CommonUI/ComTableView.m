@@ -8,6 +8,7 @@
 
 #import "ComTableView.h"
 #import "MJRefresh.h"
+#import "UIScrollView+MJRefresh.h"
 #import "ComTableViewCell.h"
 #import "ComTableViewDataSource.h"
 #import "ComErrorViewManager.h"
@@ -17,6 +18,9 @@
 @interface ComTableView()
 
 @property(nonatomic, strong) ComTableViewDataSource *tableDataSource;
+
+@property(nonatomic, strong) MJRefreshNormalHeader *comHeader;
+@property(nonatomic, strong) MJRefreshAutoNormalFooter *comFooter;
 
 @end
 
@@ -39,6 +43,8 @@
 - (void)initView {
     __weak typeof(self) weakSelf = self;
     
+    self.isPaging = YES;
+    
     _tableDataSource = [[ComTableViewDataSource alloc] initWithItems:self.listModel.listArray cellIdentifier:CellReuseIdentifier configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
         if ([cell isKindOfClass:[ComTableViewCell class]]) {
             ComTableViewCell *comCell = (ComTableViewCell *)cell;
@@ -56,19 +62,18 @@
     
     // 添加下拉/上滑刷新更多
     // 顶部下拉刷出更多
-    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    self.comHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [ComErrorViewManager removeErrorViewFromView:self.superview];
         self.listModel.moreData = NO;
         [weakSelf.listModel reload];
     }];
     // 底部上拉刷出更多
-    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+    self.comFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [weakSelf.listModel load];
     }];
-    
-    header.lastUpdatedTimeLabel.hidden = YES;
-    self.header = header;
-    self.footer = footer;
+    self.comHeader.lastUpdatedTimeLabel.hidden = YES;
+    //    self.mj_header = self.header;
+    //    self.mj_footer = self.footer;
 }
 
 - (void)setTableViewCellClass:(Class)tableViewCellClass {
@@ -86,7 +91,9 @@
     
     _listModel.failedBlock = ^(NSError *error) {
         [weakSelf loadFail];
-        [ComErrorViewManager showErrorViewInView:weakSelf.superview withError:error];
+        if (weakSelf.isShowEmptyTip) {
+            [ComErrorViewManager showErrorViewInView:weakSelf.superview withError:error];
+        }
     };
 }
 
@@ -99,25 +106,39 @@
 }
 
 - (void)loadFail {
-    [self.header endRefreshing];
-    [self.footer endRefreshing];
+    [self.mj_header endRefreshing];
+    [self.mj_footer endRefreshing];
     [self reloadData];
 }
 
 - (void)loadSuccess {
     [ComErrorViewManager removeErrorViewFromView:self.superview];
     self.tableDataSource.items = self.listModel.listArray;
-    [self.header endRefreshing];
-    [self.footer endRefreshing];
+    [self.mj_header endRefreshing];
+    [self.mj_footer endRefreshing];
     if (!self.listModel.moreData) {
-        [self.footer noticeNoMoreData];
+        [self.mj_footer endRefreshingWithNoMoreData];
     }
     [self reloadData];
     if ([self.listModel.listArray count] == 0) {
-        [ComErrorViewManager showEmptyViewInView:self.superview];
+        if (self.isShowEmptyTip) {
+            [ComErrorViewManager showEmptyViewInView:self.superview];
+        }
     }
 }
 
+- (void)setIsPaging:(BOOL)isPaging {
+    _isPaging = isPaging;
+    self.isRefresh = isPaging;
+    self.isShowEmptyTip = !isPaging;
+    
+    self.mj_footer = _isPaging ? self.comFooter : nil;
+}
+
+- (void)setIsRefresh:(BOOL)isRefresh {
+    _isRefresh = isRefresh;
+    self.mj_header = _isRefresh ? self.comHeader : nil;
+}
 
 
 @end

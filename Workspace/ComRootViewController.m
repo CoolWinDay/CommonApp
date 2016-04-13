@@ -13,6 +13,7 @@
 #import "BookModel.h"
 #import "BookTableViewCell.h"
 #import "ComTableView.h"
+#import "ComScrollView.h"
 
 @interface ComRootViewController ()
 
@@ -27,12 +28,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     __weak typeof(self)weakSelf = self;
     
+//    ComScrollView *scrollView = [[ComScrollView alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:scrollView];
+//    scrollView.model = [[BookModel alloc] init];
+//    scrollView.loadSuccessBlock = ^(BookModel *model){
+//        
+//    };
+    
     ComTableView *table = [[ComTableView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:table];
+//    table.isPaging = NO;
+//    table.isShowEmptyTip = NO;
+//    table.isRefresh = YES;
     table.listModel = [[BookListModel alloc] init];
     table.tableViewCellClass = [BookTableViewCell class];
 //    table.configureCellBlock = ^(UITableViewCell *cell, BookModel *item, NSIndexPath *indexPath) {
@@ -40,6 +51,9 @@
 //        cell.textLabel.textColor = [UIColor redColor];
 //    };
     [table loadData];
+    
+    
+    
     
 //    self.bookModel = [[BookModel alloc] init];
 //    [self.bookModel loadOnSuccess:^(BookModel *model) {

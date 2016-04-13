@@ -13,6 +13,7 @@
 		E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8019A051CAE223900336897 /* BookTableViewCell.m */; };
 		E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */; };
 		E807D2231CB7A91200ADCF87 /* ComUIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */; };
+		E80D46921CBDD35700C2643D /* ComScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E80D46911CBDD35700C2643D /* ComScrollView.m */; };
 		E82565E61CB16AC20045BBD3 /* ComTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */; };
 		E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AA51CB21DF800E40B88 /* BookRequest.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
@@ -45,6 +46,8 @@
 		E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComErrorViewManager.m; sourceTree = "<group>"; };
 		E807D2211CB7A91200ADCF87 /* ComUIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComUIViewAdditions.h; sourceTree = "<group>"; };
 		E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComUIViewAdditions.m; sourceTree = "<group>"; };
+		E80D46901CBDD35700C2643D /* ComScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComScrollView.h; sourceTree = "<group>"; };
+		E80D46911CBDD35700C2643D /* ComScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComScrollView.m; sourceTree = "<group>"; };
 		E82565E41CB16AC20045BBD3 /* ComTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTableViewDataSource.h; sourceTree = "<group>"; };
 		E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTableViewDataSource.m; sourceTree = "<group>"; };
 		E83D0AA41CB21DF800E40B88 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */,
 				E8019A041CAE223900336897 /* BookTableViewCell.h */,
 				E8019A051CAE223900336897 /* BookTableViewCell.m */,
+				E80D46901CBDD35700C2643D /* ComScrollView.h */,
+				E80D46911CBDD35700C2643D /* ComScrollView.m */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				E82565E61CB16AC20045BBD3 /* ComTableViewDataSource.m in Sources */,
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
+				E80D46921CBDD35700C2643D /* ComScrollView.m in Sources */,
 				E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */,
 				E8F54DED1CAB728F00F492B2 /* ComTableView.m in Sources */,
 				E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */,
@@ -506,7 +512,7 @@
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq2;
 				PRODUCT_NAME = CommonApp;
 			};
 			name = Debug;
@@ -521,7 +527,7 @@
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq2;
 				PRODUCT_NAME = CommonApp;
 			};
 			name = Release;
