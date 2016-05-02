@@ -35,21 +35,29 @@
 
 - (void)initView {
     self.scrollEnabled = YES;
-    self.isShowEmptyTip = YES;
-    self.isRefresh = YES;
-    
-    __weak typeof(self) weakSelf = self;
-    self.comHeader = [MJRefreshStateHeader headerWithRefreshingBlock:^{
-        [ComErrorViewManager removeErrorViewFromView:self.superview];
-        [weakSelf.model load];
-    }];
-    self.comHeader.lastUpdatedTimeLabel.hidden = YES;
-    
     self.model = [[ComModel alloc] init];
 }
 
+- (MJRefreshStateHeader *)comHeader {
+    if (!_comHeader) {
+        __weak typeof(self) weakSelf = self;
+        _comHeader = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+            [ComErrorViewManager removeErrorViewFromView:self.superview];
+            [weakSelf.model load];
+        }];
+        _comHeader.lastUpdatedTimeLabel.hidden = YES;
+    }
+    return _comHeader;
+}
+
 - (void)setModel:(ComModel *)model {
+    if (_model == model) {
+        return;
+    }
     _model = model;
+    
+    self.isShowEmptyTip = YES;
+    self.isRefresh = YES;
     
     __weak typeof(self) weakSelf = self;
     _model.successBlock = ^(id data) {
@@ -57,19 +65,24 @@
     };
     
     _model.failedBlock = ^(NSError *error) {
-        [weakSelf loadFail];
-        if (weakSelf.isShowEmptyTip) {
-            [ComErrorViewManager showErrorViewInView:weakSelf.superview withError:error];
-        }
+        [weakSelf loadFail:error];
     };
+    
+    [self reLoadDataFromServer];
 }
 
 - (void)reLoadDataFromServer {
     [self.model load];
 }
 
-- (void)loadFail {
+- (void)loadFail:(NSError *)error {
     [self.mj_header endRefreshing];
+    if (self.isShowEmptyTip) {
+        __weak typeof(self) weakSelf = self;
+        [ComErrorViewManager showErrorViewInView:self.superview withError:error clickBlock:^{
+            [weakSelf reLoadDataFromServer];
+        }];
+    }
 }
 
 - (void)loadSuccess {

@@ -10,15 +10,15 @@
 #import "MJRefresh.h"
 #import "UIScrollView+MJRefresh.h"
 #import "ComTableViewCell.h"
-#import "ComTableViewDataSource.h"
 #import "ComErrorViewManager.h"
+#import "MBProgressHUD.h"
 
 #define CellReuseIdentifier @"Cell"
 
 @interface ComTableView()
 
 @property(nonatomic, strong) ComTableViewDataSource *tableDataSource;
-
+@property(nonatomic, strong) ComTableViewDelegate *tableDelegate;
 @property(nonatomic, strong) MJRefreshNormalHeader *comHeader;
 @property(nonatomic, strong) MJRefreshAutoNormalFooter *comFooter;
 
@@ -41,39 +41,79 @@
 }
 
 - (void)initView {
-    __weak typeof(self) weakSelf = self;
-    
-    self.isPaging = YES;
-    
-    _tableDataSource = [[ComTableViewDataSource alloc] initWithItems:self.listModel.listArray cellIdentifier:CellReuseIdentifier configureCellBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
-        if ([cell isKindOfClass:[ComTableViewCell class]]) {
-            ComTableViewCell *comCell = (ComTableViewCell *)cell;
-            comCell.indexPath = indexPath;
-            comCell.item = item;
-        }
-        
-        if (self.configureCellBlock) {
-            self.configureCellBlock(cell, item, indexPath);
-        }
-    }];
-    
-    self.dataSource = _tableDataSource;
+    self.dataSource = self.tableDataSource;
+    self.delegate = self.tableDelegate;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    // 添加下拉/上滑刷新更多
-    // 顶部下拉刷出更多
-    self.comHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [ComErrorViewManager removeErrorViewFromView:self.superview];
-        self.listModel.moreData = NO;
-        [weakSelf.listModel reload];
-    }];
-    // 底部上拉刷出更多
-    self.comFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf.listModel load];
-    }];
-    self.comHeader.lastUpdatedTimeLabel.hidden = YES;
-    
-    self.listModel = [[ComListModel alloc] init];
+    // ios8
+//    self.rowHeight = UITableViewAutomaticDimension;
+//    self.estimatedRowHeight = 44.0; // 设置为一个接近“平均”行高的值
+}
+
+- (ComTableViewDataSource *)tableDataSource {
+    if (!_tableDataSource) {
+        __weak typeof(self) weakSelf = self;
+        _tableDataSource = [[ComTableViewDataSource alloc] initWithCellIdentifier:CellReuseIdentifier cellConfigureBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
+            if ([cell isKindOfClass:[ComTableViewCell class]]) {
+                ComTableViewCell *comCell = (ComTableViewCell *)cell;
+                comCell.indexPath = indexPath;
+                comCell.item = item;
+            }
+            if (weakSelf.cellConfigureBlock) {
+                weakSelf.cellConfigureBlock(cell, item, indexPath);
+            }
+        }];
+    }
+    return _tableDataSource;
+}
+
+- (ComTableViewDelegate *)tableDelegate {
+    if (!_tableDelegate) {
+        __weak typeof(self) weakSelf = self;
+        _tableDelegate = [[ComTableViewDelegate alloc] init];
+        _tableDelegate.cellHeightBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
+            if (weakSelf.cellHeightBlock) {
+                return weakSelf.cellHeightBlock(tableView, indexPath);
+            }
+            else {
+                id cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier];
+                if ([cell isKindOfClass:[ComTableViewCell class]]) {
+                    return [cell cellHeight:weakSelf.listModel.listArray[indexPath.row]];
+                }
+                return TableViewCellDefaultHeight;
+            }
+        };
+        _tableDelegate.cellSelectBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
+            if (weakSelf.cellSelectBlock) {
+                weakSelf.cellSelectBlock(tableView, indexPath);
+            }
+        };
+    }
+    return _tableDelegate;
+}
+
+- (MJRefreshNormalHeader *)comHeader {
+    if (!_comHeader) {
+        __weak typeof(self) weakSelf = self;
+        _comHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [ComErrorViewManager removeErrorViewFromView:self.superview];
+            self.listModel.moreData = NO;
+            [weakSelf.listModel reload];
+        }];
+        
+        _comHeader.lastUpdatedTimeLabel.hidden = YES;
+    }
+    return _comHeader;
+}
+
+- (MJRefreshAutoNormalFooter *)comFooter {
+    if (!_comFooter) {
+        __weak typeof(self) weakSelf = self;
+        _comFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [weakSelf.listModel load];
+        }];
+    }
+    return _comFooter;
 }
 
 - (void)setTableViewCellClass:(Class)tableViewCellClass {
@@ -82,22 +122,41 @@
 }
 
 - (void)setListModel:(ComListModel *)listModel {
+    if (_listModel == listModel) {
+        return;
+    }
     _listModel = listModel;
+    self.tableDataSource.items = _listModel.listArray;
+    self.isPaging = YES;
+    self.isRefresh = YES;
+    self.isShowEmptyTip = YES;
     
     __weak typeof(self) weakSelf = self;
     _listModel.successBlock = ^(id data) {
         [weakSelf loadSuccess];
     };
-    
     _listModel.failedBlock = ^(NSError *error) {
-        [weakSelf loadFail];
-        if (weakSelf.isShowEmptyTip) {
-            [ComErrorViewManager showErrorViewInView:weakSelf.superview withError:error];
-        }
+        [weakSelf loadFail:error];
     };
+    
+    [self reLoadDataFromServer];
+}
+
+- (void)setDataArray:(NSArray *)dataArray {
+    if (_dataArray == dataArray) {
+        return;
+    }
+    _dataArray = dataArray;
+    self.tableDataSource.items = _dataArray;
+    self.isPaging = NO;
+    self.isRefresh = NO;
+    self.isShowEmptyTip = NO;
 }
 
 - (void)reLoadDataFromServer {
+    
+    
+    
     [self.listModel reload];
 }
 
@@ -105,15 +164,22 @@
     [self.listModel load];
 }
 
-- (void)loadFail {
+- (void)loadFail:(NSError *)error {
     [self.mj_header endRefreshing];
     [self.mj_footer endRefreshing];
     [self reloadData];
+    
+    if (self.isShowEmptyTip) {
+        __weak typeof(self) weakSelf = self;
+        [ComErrorViewManager showErrorViewInView:self.superview withError:error clickBlock:^{
+            [weakSelf reLoadDataFromServer];
+        }];
+    }
 }
 
 - (void)loadSuccess {
     [ComErrorViewManager removeErrorViewFromView:self.superview];
-    self.tableDataSource.items = self.listModel.listArray;
+    
     [self.mj_header endRefreshing];
     [self.mj_footer endRefreshing];
     if (!self.listModel.moreData) {
@@ -122,16 +188,16 @@
     [self reloadData];
     if ([self.listModel.listArray count] == 0) {
         if (self.isShowEmptyTip) {
-            [ComErrorViewManager showEmptyViewInView:self.superview];
+            __weak typeof(self) weakSelf = self;
+            [ComErrorViewManager showEmptyViewInView:self.superview clickBlock:^{
+                [weakSelf reLoadDataFromServer];
+            }];
         }
     }
 }
 
 - (void)setIsPaging:(BOOL)isPaging {
     _isPaging = isPaging;
-    self.isRefresh = isPaging;
-    self.isShowEmptyTip = !isPaging;
-    
     self.mj_footer = _isPaging ? self.comFooter : nil;
 }
 

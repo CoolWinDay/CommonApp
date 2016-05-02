@@ -34,4 +34,8 @@
     _item = item;
 }
 
+- (CGFloat)cellHeight:(id)item {
+    return TableViewCellDefaultHeight;
+}
+
 @end

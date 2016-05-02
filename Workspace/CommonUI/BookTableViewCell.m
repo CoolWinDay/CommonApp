@@ -13,8 +13,11 @@
 
 - (void)setItem:(BookModel *)item {
     [super setItem:item];
-    
     self.textLabel.text = item.title;
+}
+
+- (CGFloat)cellHeight:(BookModel *)item {
+    return 60.0;
 }
 
 @end

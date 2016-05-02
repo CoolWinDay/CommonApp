@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "ComListModel.h"
-
-typedef void (^ConfigureCell)(UITableViewCell *cell, id data, NSIndexPath *indexPath);
+#import "ComTableViewDataSource.h"
+#import "ComTableViewDelegate.h"
 
 @interface ComTableView : UITableView
 
-@property(nonatomic, strong) ComListModel*  listModel;
-@property(nonatomic, strong) Class          tableViewCellClass;
-@property(nonatomic, copy)   ConfigureCell  configureCellBlock;
+@property(nonatomic, strong) ComListModel*      listModel;
+@property(nonatomic, strong) NSArray*           dataArray;
+@property(nonatomic, strong) Class              listModelClass;
+@property(nonatomic, strong) Class              tableViewCellClass;
+@property(nonatomic, copy  ) CellConfigureBlock cellConfigureBlock;
+@property(nonatomic, copy  ) CellHeightBlock    cellHeightBlock;
+@property(nonatomic, copy  ) CellSelectBlock    cellSelectBlock;
 
 @property(nonatomic, assign) BOOL           isPaging;
 @property(nonatomic, assign) BOOL           isRefresh;

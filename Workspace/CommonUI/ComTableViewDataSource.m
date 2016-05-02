@@ -12,19 +12,29 @@
 @interface ComTableViewDataSource()
 
 @property(nonatomic, copy) NSString *cellIdentifier;
-@property(nonatomic, strong) ConfigureCell configureCellBlock;
+@property(nonatomic, strong) CellConfigureBlock cellConfigureBlock;
 
 @end
 
 @implementation ComTableViewDataSource
 
-- (instancetype)initWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier configureCellBlock:(ConfigureCell)configureCellBlock
+- (instancetype)initWithItems:(NSArray *)items cellIdentifier:(NSString *)cellIdentifier cellConfigureBlock:(CellConfigureBlock)cellConfigureBlock
 {
     self = [super init];
     if (self) {
         _items = items;
         _cellIdentifier = cellIdentifier;
-        _configureCellBlock = configureCellBlock;
+        _cellConfigureBlock = cellConfigureBlock;
+    }
+    return self;
+}
+
+- (instancetype)initWithCellIdentifier:(NSString *)cellIdentifier cellConfigureBlock:(CellConfigureBlock)cellConfigureBlock
+{
+    self = [super init];
+    if (self) {
+        _cellIdentifier = cellIdentifier;
+        _cellConfigureBlock = cellConfigureBlock;
     }
     return self;
 }
@@ -43,12 +53,16 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_cellIdentifier];
     }
-    if (_configureCellBlock) {
+    if (_cellConfigureBlock) {
         id item = [self itemAtIndexPath:indexPath];
-        _configureCellBlock(cell, item, indexPath);
+        _cellConfigureBlock(cell, item, indexPath);
     }
     
     return cell;
+}
+
+- (void)setItems:(NSArray *)items {
+    _items = items;
 }
 
 @end

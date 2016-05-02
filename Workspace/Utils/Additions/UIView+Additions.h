@@ -12,7 +12,7 @@
 
 typedef void(^UIViewClickHandle)(UIView *view);
 
-@interface UIView (ComUIViewAdditions)
+@interface UIView(Additions)
 
 /**
  *  orgin.x

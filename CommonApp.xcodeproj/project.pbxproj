@@ -12,16 +12,20 @@
 		E8019A031CAE21D200336897 /* ComTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8019A021CAE21D200336897 /* ComTableViewCell.m */; };
 		E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8019A051CAE223900336897 /* BookTableViewCell.m */; };
 		E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */; };
-		E807D2231CB7A91200ADCF87 /* ComUIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */; };
+		E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D2221CB7A91200ADCF87 /* UIView+Additions.m */; };
 		E80D46921CBDD35700C2643D /* ComScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E80D46911CBDD35700C2643D /* ComScrollView.m */; };
+		E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E80F665D1CCE4F5300D8494D /* UIButton+Block.m */; };
 		E82565E61CB16AC20045BBD3 /* ComTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */; };
 		E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AA51CB21DF800E40B88 /* BookRequest.m */; };
+		E8494F361CD2F43200446AAC /* ComTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8494F351CD2F43200446AAC /* ComTableViewDelegate.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
 		E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* ComModel.m */; };
 		E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8667C621CB4A54F00212310 /* JsonDataHandler.m */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
+		E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
+		E8C1B7981CC1FFAD00A108A0 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C1B7971CC1FFAD00A108A0 /* TestTableViewController.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
 		E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D908A61C9E63620022DA2D /* JsonRequest.m */; };
 		E8F54DED1CAB728F00F492B2 /* ComTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DEC1CAB728F00F492B2 /* ComTableView.m */; };
@@ -44,14 +48,18 @@
 		E8019A051CAE223900336897 /* BookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableViewCell.m; sourceTree = "<group>"; };
 		E807D21C1CB7A6F000ADCF87 /* ComErrorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComErrorViewManager.h; sourceTree = "<group>"; };
 		E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComErrorViewManager.m; sourceTree = "<group>"; };
-		E807D2211CB7A91200ADCF87 /* ComUIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComUIViewAdditions.h; sourceTree = "<group>"; };
-		E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComUIViewAdditions.m; sourceTree = "<group>"; };
+		E807D2211CB7A91200ADCF87 /* UIView+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Additions.h"; sourceTree = "<group>"; };
+		E807D2221CB7A91200ADCF87 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		E80D46901CBDD35700C2643D /* ComScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComScrollView.h; sourceTree = "<group>"; };
 		E80D46911CBDD35700C2643D /* ComScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComScrollView.m; sourceTree = "<group>"; };
+		E80F665C1CCE4F5300D8494D /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
+		E80F665D1CCE4F5300D8494D /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
 		E82565E41CB16AC20045BBD3 /* ComTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTableViewDataSource.h; sourceTree = "<group>"; };
 		E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTableViewDataSource.m; sourceTree = "<group>"; };
 		E83D0AA41CB21DF800E40B88 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
 		E83D0AA51CB21DF800E40B88 /* BookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
+		E8494F341CD2F43200446AAC /* ComTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTableViewDelegate.h; sourceTree = "<group>"; };
+		E8494F351CD2F43200446AAC /* ComTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTableViewDelegate.m; sourceTree = "<group>"; };
 		E84BD2201C8FB19F003EF94A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E84BD2231C8FBF16003EF94A /* ComModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComModel.h; sourceTree = "<group>"; };
@@ -63,7 +71,11 @@
 		E8690AC61C93BEC300BFC155 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		E86A22441C91A9B300E34A62 /* ComNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetworking.h; sourceTree = "<group>"; };
 		E86A22451C91A9B300E34A62 /* ComNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetworking.m; sourceTree = "<group>"; };
+		E88833C91CD7187F007AA83D /* UIView+TapBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TapBlock.h"; sourceTree = "<group>"; };
+		E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TapBlock.m"; sourceTree = "<group>"; };
 		E897D3B11C8E64D80067B3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8C1B7961CC1FFAD00A108A0 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		E8C1B7971CC1FFAD00A108A0 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,8 +168,12 @@
 		E807D2201CB7A8CB00ADCF87 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
-				E807D2211CB7A91200ADCF87 /* ComUIViewAdditions.h */,
-				E807D2221CB7A91200ADCF87 /* ComUIViewAdditions.m */,
+				E807D2211CB7A91200ADCF87 /* UIView+Additions.h */,
+				E807D2221CB7A91200ADCF87 /* UIView+Additions.m */,
+				E80F665C1CCE4F5300D8494D /* UIButton+Block.h */,
+				E80F665D1CCE4F5300D8494D /* UIButton+Block.m */,
+				E88833C91CD7187F007AA83D /* UIView+TapBlock.h */,
+				E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -226,6 +242,8 @@
 				E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */,
 				E8F7C0441C8D6E8300625004 /* ComRootViewController.h */,
 				E8F7C0451C8D6E8300625004 /* ComRootViewController.m */,
+				E8C1B7961CC1FFAD00A108A0 /* TestTableViewController.h */,
+				E8C1B7971CC1FFAD00A108A0 /* TestTableViewController.m */,
 				E8F9EA0A1C8E6F840072F58D /* Define */,
 				E807D21F1CB7A8CB00ADCF87 /* Utils */,
 				E800B5B91C8EF4A200F8BDEE /* Network */,
@@ -257,6 +275,8 @@
 				E8019A021CAE21D200336897 /* ComTableViewCell.m */,
 				E82565E41CB16AC20045BBD3 /* ComTableViewDataSource.h */,
 				E82565E51CB16AC20045BBD3 /* ComTableViewDataSource.m */,
+				E8494F341CD2F43200446AAC /* ComTableViewDelegate.h */,
+				E8494F351CD2F43200446AAC /* ComTableViewDelegate.m */,
 				E8019A041CAE223900336897 /* BookTableViewCell.h */,
 				E8019A051CAE223900336897 /* BookTableViewCell.m */,
 				E80D46901CBDD35700C2643D /* ComScrollView.h */,
@@ -397,6 +417,7 @@
 				E82565E61CB16AC20045BBD3 /* ComTableViewDataSource.m in Sources */,
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
+				E8C1B7981CC1FFAD00A108A0 /* TestTableViewController.m in Sources */,
 				E80D46921CBDD35700C2643D /* ComScrollView.m in Sources */,
 				E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */,
 				E8F54DED1CAB728F00F492B2 /* ComTableView.m in Sources */,
@@ -405,13 +426,16 @@
 				E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */,
 				E8F54DF31CAB7A1600F492B2 /* ComListModel.m in Sources */,
 				E8F7C0461C8D6E8300625004 /* ComRootViewController.m in Sources */,
-				E807D2231CB7A91200ADCF87 /* ComUIViewAdditions.m in Sources */,
+				E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */,
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
 				E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
+				E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */,
 				E8C326461C891B7E00628824 /* main.m in Sources */,
+				E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */,
 				E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */,
 				E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */,
+				E8494F361CD2F43200446AAC /* ComTableViewDelegate.m in Sources */,
 				E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
@@ -512,7 +536,7 @@
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
 			};
 			name = Debug;
@@ -527,7 +551,7 @@
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
 			};
 			name = Release;

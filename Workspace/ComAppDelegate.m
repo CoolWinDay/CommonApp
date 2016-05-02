@@ -21,7 +21,7 @@
     ComRootViewController *rootController = [[ComRootViewController alloc] init];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = rootController;
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:rootController];
     [self.window makeKeyAndVisible];
     
     return YES;

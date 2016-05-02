@@ -35,7 +35,7 @@
 
 - (void)loadSucceed:(ComListModel *)response {
     if (_currentPage == 1) {
-        self.listArray = [NSMutableArray array];
+        [self.listArray removeAllObjects];
     }
     NSArray *array = [self constructDataArray];
     self.moreData = NO;
@@ -50,6 +50,13 @@
 - (NSArray*)constructDataArray
 {
     return nil;
+}
+
+- (NSMutableArray *)listArray {
+    if (!_listArray) {
+        _listArray = [NSMutableArray array];
+    }
+    return _listArray;
 }
 
 @end

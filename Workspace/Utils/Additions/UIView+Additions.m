@@ -6,14 +6,14 @@
 //  Copyright (c) 2014年 SunX. All rights reserved.
 //
 
-#import "ComUIViewAdditions.h"
+#import "UIView+Additions.h"
 #import <objc/runtime.h>
 //#import "TDDNSObjectAdditions.h"
 //#import "TDDCornerRadiusView.h"
 
 static char *viewClickKey;
 
-@implementation UIView (ComUIViewAdditions)
+@implementation UIView(Additions)
 
 - (void)setOrigin:(CGPoint)origin {
     CGRect frame = self.frame;
