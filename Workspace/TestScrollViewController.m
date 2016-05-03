@@ -9,10 +9,14 @@
 #import "TestScrollViewController.h"
 #import "ComScrollView.h"
 #import "BookListModel.h"
+#import "BookModel.h"
 
 @interface TestScrollViewController ()
 
 @property(nonatomic, strong) ComScrollView* scrollView;
+@property(nonatomic, strong) UILabel *labelView;
+@property(nonatomic, strong) BookModel* bookModel;
+
 
 @end
 
@@ -22,23 +26,41 @@
     [super loadView];
     
     [self.view addSubview:self.scrollView];
-    [self.scrollView autoPinEdgesToSuperviewEdges];
+//    [self.scrollView autoPinEdgesToSuperviewEdges];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (ComScrollView *)scrollView {
     if (!_scrollView) {
-        _scrollView = [ComScrollView newAutoLayoutView];
-        _scrollView.model = [[BookListModel alloc] init];
-        _scrollView.loadSuccessBlock = ^(BookListModel *model) {
-            
+//        _scrollView = [ComScrollView newAutoLayoutView];
+        _scrollView = [[ComScrollView alloc] initWithFrame:self.view.bounds];
+        _scrollView.model = [[BookModel alloc] init];
+        __weak typeof(self)weakSelf = self;
+        _scrollView.loadSuccessBlock = ^(BookModel *model) {
+            [weakSelf makeScrollView:model];
         };
     }
     return _scrollView;
+}
+
+- (void)makeScrollView:(BookModel *)model {
+    [self.labelView removeFromSuperview];
+    [self.scrollView addSubview:self.labelView];
+//    [label autoPinEdgesToSuperviewEdges];
+    self.labelView.text = [model yy_modelToJSONString];
+    
+//    [self.view setNeedsUpdateConstraints];
+}
+
+- (UILabel *)labelView {
+    if (!_labelView) {
+        _labelView = [[UILabel alloc] initWithFrame:self.scrollView.bounds];
+        _labelView.numberOfLines = 0;
+    }
+    return _labelView;
 }
 
 - (void)didReceiveMemoryWarning {

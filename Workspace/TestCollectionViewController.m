@@ -51,6 +51,8 @@
 //            }
 //            [cell.contentView addSubview:label];
 //        };
+//        _collectionView.isPaging = NO;
+        _collectionView.isRefresh = NO;
         _collectionView.cellSelectBlock = ^(UICollectionView *tableView, NSIndexPath *indexPath) {
             
         };
