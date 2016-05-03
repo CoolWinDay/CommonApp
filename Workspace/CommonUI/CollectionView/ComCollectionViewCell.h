@@ -8,13 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#define TableViewCellDefaultHeight 44.0
+@interface ComCollectionViewCell : UICollectionViewCell
 
-@interface ComTableViewCell : UITableViewCell
-
-@property (nonatomic, strong) id             item;
+@property (nonatomic, strong) id            item;
 @property (nonatomic, strong) NSIndexPath   *indexPath;
-
-- (CGFloat)cellHeight:(id)item;
 
 @end

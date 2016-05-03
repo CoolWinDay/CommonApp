@@ -48,11 +48,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    id cell = [tableView dequeueReusableCellWithIdentifier:_cellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_cellIdentifier];
-    }
+    id cell = [tableView dequeueReusableCellWithIdentifier:_cellIdentifier forIndexPath:indexPath];
     if (_cellConfigureBlock) {
         id item = [self itemAtIndexPath:indexPath];
         _cellConfigureBlock(cell, item, indexPath);

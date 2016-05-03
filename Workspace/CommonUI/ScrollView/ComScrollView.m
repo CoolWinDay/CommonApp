@@ -35,7 +35,6 @@
 
 - (void)initView {
     self.scrollEnabled = YES;
-    self.model = [[ComModel alloc] init];
 }
 
 - (MJRefreshStateHeader *)comHeader {

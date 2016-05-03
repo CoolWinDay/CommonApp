@@ -38,7 +38,8 @@
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[@{@"title":@"TableView", @"vcName":@"TestTableViewController"},
-                       @{@"title":@"ScrollView", @"vcName":@"TestTableViewController"}];
+                       @{@"title":@"CollectionView", @"vcName":@"TestCollectionViewController"},
+                       @{@"title":@"ScrollView", @"vcName":@"TestScrollViewController"}];
     }
     return _dataArray;
 }

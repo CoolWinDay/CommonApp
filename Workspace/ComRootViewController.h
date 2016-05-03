@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComBaseViewController.h"
 
-@interface ComRootViewController : UIViewController
+@interface ComRootViewController : ComBaseViewController
 
 @end

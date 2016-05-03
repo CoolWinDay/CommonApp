@@ -33,6 +33,13 @@
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self initView];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self initView];
@@ -44,6 +51,7 @@
     self.dataSource = self.tableDataSource;
     self.delegate = self.tableDelegate;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
     
     // ios8
 //    self.rowHeight = UITableViewAutomaticDimension;
@@ -154,9 +162,6 @@
 }
 
 - (void)reLoadDataFromServer {
-    
-    
-    
     [self.listModel reload];
 }
 
