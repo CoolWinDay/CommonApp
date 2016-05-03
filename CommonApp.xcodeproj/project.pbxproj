@@ -24,17 +24,19 @@
 		E84262C51CD8308A00100C3B /* ComTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262BD1CD8308A00100C3B /* ComTableViewDelegate.m */; };
 		E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262C71CD830EE00100C3B /* ComCollectionViewCell.m */; };
 		E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */; };
+		E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CE1CD886E600100C3B /* ComBaseViewController.m */; };
+		E84262D81CD886E600100C3B /* ComRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D01CD886E600100C3B /* ComRootViewController.m */; };
+		E84262D91CD886E600100C3B /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D21CD886E600100C3B /* TestCollectionViewController.m */; };
+		E84262DA1CD886E600100C3B /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D41CD886E600100C3B /* TestScrollViewController.m */; };
+		E84262DB1CD886E600100C3B /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D61CD886E600100C3B /* TestTableViewController.m */; };
+		E84262DE1CD892C100100C3B /* ComColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262DD1CD892C100100C3B /* ComColorManager.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
 		E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* ComModel.m */; };
 		E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8667C621CB4A54F00212310 /* JsonDataHandler.m */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
 		E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */; };
-		E88833CE1CD73610007AA83D /* ComBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833CD1CD73610007AA83D /* ComBaseViewController.m */; };
-		E88833D11CD7364C007AA83D /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833D01CD7364C007AA83D /* TestScrollViewController.m */; };
-		E88833D41CD73D95007AA83D /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833D31CD73D95007AA83D /* TestCollectionViewController.m */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
-		E8C1B7981CC1FFAD00A108A0 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C1B7971CC1FFAD00A108A0 /* TestTableViewController.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
 		E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D908A61C9E63620022DA2D /* JsonRequest.m */; };
 		E8F54DF31CAB7A1600F492B2 /* ComListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF21CAB7A1600F492B2 /* ComListModel.m */; };
@@ -42,7 +44,6 @@
 		E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF81CABAF7900F492B2 /* BookModel.m */; };
 		E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C03F1C8D6D6900625004 /* ComApplication.m */; };
 		E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */; };
-		E8F7C0461C8D6E8300625004 /* ComRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C0451C8D6E8300625004 /* ComRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,18 @@
 		E84262C71CD830EE00100C3B /* ComCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComCollectionViewCell.m; sourceTree = "<group>"; };
 		E84262C91CD835C900100C3B /* BookCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCollectionViewCell.h; sourceTree = "<group>"; };
 		E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollectionViewCell.m; sourceTree = "<group>"; };
+		E84262CD1CD886E600100C3B /* ComBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComBaseViewController.h; sourceTree = "<group>"; };
+		E84262CE1CD886E600100C3B /* ComBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComBaseViewController.m; sourceTree = "<group>"; };
+		E84262CF1CD886E600100C3B /* ComRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRootViewController.h; sourceTree = "<group>"; };
+		E84262D01CD886E600100C3B /* ComRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRootViewController.m; sourceTree = "<group>"; };
+		E84262D11CD886E600100C3B /* TestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
+		E84262D21CD886E600100C3B /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
+		E84262D31CD886E600100C3B /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
+		E84262D41CD886E600100C3B /* TestScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestScrollViewController.m; sourceTree = "<group>"; };
+		E84262D51CD886E600100C3B /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		E84262D61CD886E600100C3B /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		E84262DC1CD892C100100C3B /* ComColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComColorManager.h; sourceTree = "<group>"; };
+		E84262DD1CD892C100100C3B /* ComColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComColorManager.m; sourceTree = "<group>"; };
 		E84BD2201C8FB19F003EF94A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E84BD2231C8FBF16003EF94A /* ComModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComModel.h; sourceTree = "<group>"; };
@@ -93,15 +106,7 @@
 		E86A22451C91A9B300E34A62 /* ComNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetworking.m; sourceTree = "<group>"; };
 		E88833C91CD7187F007AA83D /* UIView+TapBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TapBlock.h"; sourceTree = "<group>"; };
 		E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TapBlock.m"; sourceTree = "<group>"; };
-		E88833CC1CD73610007AA83D /* ComBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComBaseViewController.h; sourceTree = "<group>"; };
-		E88833CD1CD73610007AA83D /* ComBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComBaseViewController.m; sourceTree = "<group>"; };
-		E88833CF1CD7364C007AA83D /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
-		E88833D01CD7364C007AA83D /* TestScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestScrollViewController.m; sourceTree = "<group>"; };
-		E88833D21CD73D95007AA83D /* TestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
-		E88833D31CD73D95007AA83D /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
 		E897D3B11C8E64D80067B3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E8C1B7961CC1FFAD00A108A0 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
-		E8C1B7971CC1FFAD00A108A0 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,8 +122,6 @@
 		E8F7C03F1C8D6D6900625004 /* ComApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComApplication.m; sourceTree = "<group>"; };
 		E8F7C0411C8D6DDA00625004 /* ComAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComAppDelegate.h; sourceTree = "<group>"; };
 		E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComAppDelegate.m; sourceTree = "<group>"; };
-		E8F7C0441C8D6E8300625004 /* ComRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRootViewController.h; sourceTree = "<group>"; };
-		E8F7C0451C8D6E8300625004 /* ComRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRootViewController.m; sourceTree = "<group>"; };
 		E8F9EA0C1C8E70390072F58D /* ComDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComDefine.h; sourceTree = "<group>"; };
 		E8F9EA0F1C8E72CF0072F58D /* ComApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComApp-Prefix.pch"; sourceTree = "<group>"; };
 		E8F9EA101C8E775F0072F58D /* ComServerDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComServerDefine.h; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 			isa = PBXGroup;
 			children = (
 				E807D2201CB7A8CB00ADCF87 /* Additions */,
+				E84262DC1CD892C100100C3B /* ComColorManager.h */,
+				E84262DD1CD892C100100C3B /* ComColorManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,6 +244,23 @@
 				E84262BD1CD8308A00100C3B /* ComTableViewDelegate.m */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		E84262CC1CD886E600100C3B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E84262CD1CD886E600100C3B /* ComBaseViewController.h */,
+				E84262CE1CD886E600100C3B /* ComBaseViewController.m */,
+				E84262CF1CD886E600100C3B /* ComRootViewController.h */,
+				E84262D01CD886E600100C3B /* ComRootViewController.m */,
+				E84262D51CD886E600100C3B /* TestTableViewController.h */,
+				E84262D61CD886E600100C3B /* TestTableViewController.m */,
+				E84262D11CD886E600100C3B /* TestCollectionViewController.h */,
+				E84262D21CD886E600100C3B /* TestCollectionViewController.m */,
+				E84262D31CD886E600100C3B /* TestScrollViewController.h */,
+				E84262D41CD886E600100C3B /* TestScrollViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E84BD21F1C8FB181003EF94A /* Models */ = {
@@ -303,16 +325,7 @@
 				E8F7C03F1C8D6D6900625004 /* ComApplication.m */,
 				E8F7C0411C8D6DDA00625004 /* ComAppDelegate.h */,
 				E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */,
-				E88833CC1CD73610007AA83D /* ComBaseViewController.h */,
-				E88833CD1CD73610007AA83D /* ComBaseViewController.m */,
-				E8F7C0441C8D6E8300625004 /* ComRootViewController.h */,
-				E8F7C0451C8D6E8300625004 /* ComRootViewController.m */,
-				E8C1B7961CC1FFAD00A108A0 /* TestTableViewController.h */,
-				E8C1B7971CC1FFAD00A108A0 /* TestTableViewController.m */,
-				E88833D21CD73D95007AA83D /* TestCollectionViewController.h */,
-				E88833D31CD73D95007AA83D /* TestCollectionViewController.m */,
-				E88833CF1CD7364C007AA83D /* TestScrollViewController.h */,
-				E88833D01CD7364C007AA83D /* TestScrollViewController.m */,
+				E84262CC1CD886E600100C3B /* ViewControllers */,
 				E8F9EA0A1C8E6F840072F58D /* Define */,
 				E807D21F1CB7A8CB00ADCF87 /* Utils */,
 				E800B5B91C8EF4A200F8BDEE /* Network */,
@@ -481,26 +494,26 @@
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
+				E84262DA1CD886E600100C3B /* TestScrollViewController.m in Sources */,
 				E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */,
-				E8C1B7981CC1FFAD00A108A0 /* TestTableViewController.m in Sources */,
+				E84262D91CD886E600100C3B /* TestCollectionViewController.m in Sources */,
 				E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */,
-				E88833D41CD73D95007AA83D /* TestCollectionViewController.m in Sources */,
 				E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */,
 				E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */,
+				E84262D81CD886E600100C3B /* ComRootViewController.m in Sources */,
 				E84262C01CD8308A00100C3B /* ComCollectionViewDelegate.m in Sources */,
 				E84262C31CD8308A00100C3B /* ComTableViewCell.m in Sources */,
 				E8F54DF31CAB7A1600F492B2 /* ComListModel.m in Sources */,
-				E88833D11CD7364C007AA83D /* TestScrollViewController.m in Sources */,
 				E84262C21CD8308A00100C3B /* ComTableView.m in Sources */,
 				E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */,
-				E8F7C0461C8D6E8300625004 /* ComRootViewController.m in Sources */,
 				E84262C51CD8308A00100C3B /* ComTableViewDelegate.m in Sources */,
+				E84262DE1CD892C100100C3B /* ComColorManager.m in Sources */,
 				E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */,
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
-				E88833CE1CD73610007AA83D /* ComBaseViewController.m in Sources */,
 				E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
 				E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */,
+				E84262DB1CD886E600100C3B /* TestTableViewController.m in Sources */,
 				E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */,
 				E84262C41CD8308A00100C3B /* ComTableViewDataSource.m in Sources */,
 				E84262C11CD8308A00100C3B /* ComScrollView.m in Sources */,
@@ -512,6 +525,7 @@
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
 				E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */,
+				E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,6 @@
 #ifndef ComApp_Prefix_pch
 #define ComApp_Prefix_pch
 
-
 #import "ComDefine.h"
 #import "ComServerDefine.h"
 #import "ComUIDefine.h"
@@ -18,5 +17,6 @@
 #import "UIView+Additions.h"
 #import "UIButton+Block.h"
 #import "UIView+TapBlock.h"
+#import "ComColorManager.h"
 
 #endif
