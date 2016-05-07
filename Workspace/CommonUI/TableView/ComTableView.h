@@ -24,6 +24,7 @@
 @property(nonatomic, assign) BOOL           isPaging;
 @property(nonatomic, assign) BOOL           isRefresh;
 @property(nonatomic, assign) BOOL           isShowEmptyTip;
+@property(nonatomic, assign) BOOL           isHeightCache;
 
 - (void)loadDataFromServer;
 - (void)reLoadDataFromServer;

@@ -17,17 +17,21 @@
 
 @interface ComTableView()
 
-@property(nonatomic, strong) ComTableViewDataSource *tableDataSource;
-@property(nonatomic, strong) ComTableViewDelegate *tableDelegate;
-@property(nonatomic, strong) MJRefreshNormalHeader *comHeader;
-@property(nonatomic, strong) MJRefreshAutoNormalFooter *comFooter;
+@property(nonatomic, strong) ComTableViewDataSource     *tableDataSource;
+@property(nonatomic, strong) ComTableViewDelegate       *tableDelegate;
+@property(nonatomic, strong) MJRefreshNormalHeader      *comHeader;
+@property(nonatomic, strong) MJRefreshAutoNormalFooter  *comFooter;
 
-@property(nonatomic, strong) ComTableViewCell *cell4Height;      //只创建一个cell用作测量高度
-@property(nonatomic, strong) NSMutableDictionary *cellHeightCache;
+@property(nonatomic, strong) ComTableViewCell       *cell4Height;      // 只创建一个cell用作测量高度
+@property(nonatomic, strong) NSMutableDictionary    *cellHeightCache;  // 行高缓存
 
 @end
 
 @implementation ComTableView
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -55,10 +59,6 @@
     self.delegate = self.tableDelegate;
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self registerClass:[UITableViewCell class] forCellReuseIdentifier:CellReuseIdentifier];
-    
-    // ios8
-//    self.rowHeight = UITableViewAutomaticDimension;
-//    self.estimatedRowHeight = 44.0; // 设置为一个接近“平均”行高的值
 }
 
 - (ComTableViewDataSource *)tableDataSource {
@@ -84,6 +84,12 @@
         __weak typeof(self) weakSelf = self;
         _tableDelegate = [[ComTableViewDelegate alloc] init];
         _tableDelegate.cellHeightBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
+            // 先取缓存
+            if (weakSelf.isHeightCache && [weakSelf.cellHeightCache.allKeys containsObject:@(indexPath.row)]) {
+                CGFloat height = [weakSelf.cellHeightCache[@(indexPath.row)] floatValue];
+                return height;
+            }
+            
             CGFloat cellHeight = TableViewCellDefaultHeight;
             if (weakSelf.cellHeightBlock) {
                 cellHeight = weakSelf.cellHeightBlock(tableView, indexPath);
@@ -94,8 +100,11 @@
                 }
             }
             
-//            // 缓存cell
-//            [weakSelf.cellHeightCache setObject:@(cellHeight) forKey:@(indexPath.row)];
+            // 缓存height
+            if (weakSelf.isHeightCache) {
+                [weakSelf.cellHeightCache setObject:@(cellHeight) forKey:@(indexPath.row)];
+            }
+            
             return cellHeight;
         };
         _tableDelegate.cellSelectBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
@@ -184,6 +193,17 @@
         _cellHeightCache = [NSMutableDictionary dictionary];
     }
     return _cellHeightCache;
+}
+
+- (void)setIsHeightCache:(BOOL)isHeightCache {
+    _isHeightCache = isHeightCache;
+    if (_isHeightCache) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self];
+        [[NSNotificationCenter defaultCenter] addObserver:self.cellHeightCache
+                                                 selector:@selector(removeAllObjects)
+                                                     name:UIApplicationDidReceiveMemoryWarningNotification
+                                                   object:nil];
+    }
 }
 
 - (void)reLoadDataFromServer {

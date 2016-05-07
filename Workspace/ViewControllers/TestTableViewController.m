@@ -45,21 +45,22 @@
         
         _tableView.listModel = [[BookListModel alloc] init];
         _tableView.tableViewCellClass = [BookTableViewCell class];
-        _tableView.cellConfigureBlock = ^(UITableViewCell *cell, BookModel *item, NSIndexPath *indexPath) {
-            BookTableViewCell *bookCell = (BookTableViewCell *)cell;
-            
-            
-            [bookCell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-            
-            UILabel *titleLabel = [UILabel newAutoLayoutView];
-            titleLabel.numberOfLines = 0;
-            titleLabel.text = [NSString stringWithFormat:@"%@,%@", item.title, item.title];
-            
-            [bookCell.contentView addSubview:titleLabel];
-            [titleLabel autoPinEdgesToSuperviewEdges];
-            titleLabel.preferredMaxLayoutWidth = bookCell.contentView.width;
-            
-        };
+        _tableView.isHeightCache = YES;
+//        _tableView.cellConfigureBlock = ^(UITableViewCell *cell, BookModel *item, NSIndexPath *indexPath) {
+//            BookTableViewCell *bookCell = (BookTableViewCell *)cell;
+//            
+//            
+//            [bookCell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//            
+//            UILabel *titleLabel = [UILabel newAutoLayoutView];
+//            titleLabel.numberOfLines = 0;
+//            titleLabel.text = [NSString stringWithFormat:@"%@,%@", item.title, item.title];
+//            
+//            [bookCell.contentView addSubview:titleLabel];
+//            [titleLabel autoPinEdgesToSuperviewEdges];
+//            titleLabel.preferredMaxLayoutWidth = bookCell.contentView.width;
+//            
+//        };
 //        _tableView.cellSelectBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
 //            
 //        };

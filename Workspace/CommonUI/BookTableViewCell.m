@@ -16,37 +16,35 @@
 
 @implementation BookTableViewCell
 
-//- (void)buildCellView {
-//    [self.contentView addSubview:self.titleLabel];
-//    [self.titleLabel autoPinEdgesToSuperviewEdges];
-//    self.titleLabel.preferredMaxLayoutWidth = self.contentView.width;
-//}
-
-//- (void)setCellData:(BookModel *)item atIndexPath:(NSIndexPath *)indexPath
-//{
-//    self.titleLabel.text = item.title;
-//}
-
-- (CGFloat)cellHeight:(id)item atIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0  || indexPath.row == 1) {
-        return [super cellAutoHeight:item atIndexPath:indexPath];
-    }
-    return 180;
+- (void)buildCellView {
+    [self.contentView addSubview:self.titleLabel];
+    [self.titleLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+    self.titleLabel.preferredMaxLayoutWidth = self.contentView.width;
 }
+
+- (void)setCellData:(BookModel *)item atIndexPath:(NSIndexPath *)indexPath
+{
+    self.titleLabel.text = [NSString stringWithFormat:@"%@,%@", item.title, item.title];
+}
+
+//- (CGFloat)cellHeight:(id)item atIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == 0  || indexPath.row == 1) {
+//        return [super cellAutoHeight:item atIndexPath:indexPath];
+//    }
+//    return 60;
+//}
 
 - (BOOL)isAutoHeight {
     return YES;
 }
 
-//- (UILabel *)titleLabel {
-//    if (!_titleLabel) {
-//        _titleLabel = [UILabel newAutoLayoutView];
-//        _titleLabel.numberOfLines = 0;
-//        
-//    }
-//    return _titleLabel;
-//}
-
-
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [UILabel newAutoLayoutView];
+        _titleLabel.numberOfLines = 0;
+        
+    }
+    return _titleLabel;
+}
 
 @end
