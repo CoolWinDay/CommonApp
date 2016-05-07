@@ -22,6 +22,9 @@
 @property(nonatomic, strong) MJRefreshNormalHeader *comHeader;
 @property(nonatomic, strong) MJRefreshAutoNormalFooter *comFooter;
 
+@property(nonatomic, strong) ComTableViewCell *cell4Height;      //只创建一个cell用作测量高度
+@property(nonatomic, strong) NSMutableDictionary *cellHeightCache;
+
 @end
 
 @implementation ComTableView
@@ -64,8 +67,9 @@
         _tableDataSource = [[ComTableViewDataSource alloc] initWithCellIdentifier:CellReuseIdentifier cellConfigureBlock:^(UITableViewCell *cell, id item, NSIndexPath *indexPath) {
             if ([cell isKindOfClass:[ComTableViewCell class]]) {
                 ComTableViewCell *comCell = (ComTableViewCell *)cell;
-                comCell.indexPath = indexPath;
                 comCell.item = item;
+                comCell.indexPath = indexPath;
+                [comCell setCellData:item atIndexPath:indexPath];
             }
             if (weakSelf.cellConfigureBlock) {
                 weakSelf.cellConfigureBlock(cell, item, indexPath);
@@ -80,16 +84,19 @@
         __weak typeof(self) weakSelf = self;
         _tableDelegate = [[ComTableViewDelegate alloc] init];
         _tableDelegate.cellHeightBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
+            CGFloat cellHeight = TableViewCellDefaultHeight;
             if (weakSelf.cellHeightBlock) {
-                return weakSelf.cellHeightBlock(tableView, indexPath);
+                cellHeight = weakSelf.cellHeightBlock(tableView, indexPath);
             }
             else {
-                id cell = [tableView dequeueReusableCellWithIdentifier:CellReuseIdentifier];
-                if ([cell isKindOfClass:[ComTableViewCell class]]) {
-                    return [cell cellHeight:weakSelf.listModel.listArray[indexPath.row]];
+                if ([weakSelf.cell4Height isKindOfClass:[ComTableViewCell class]]) {
+                    cellHeight = [weakSelf.cell4Height cellHeight:weakSelf.listModel.listArray[indexPath.row] atIndexPath:indexPath];
                 }
-                return TableViewCellDefaultHeight;
             }
+            
+//            // 缓存cell
+//            [weakSelf.cellHeightCache setObject:@(cellHeight) forKey:@(indexPath.row)];
+            return cellHeight;
         };
         _tableDelegate.cellSelectBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
             if (weakSelf.cellSelectBlock) {
@@ -127,6 +134,8 @@
 - (void)setTableViewCellClass:(Class)tableViewCellClass {
     _tableViewCellClass = tableViewCellClass;
     [self registerClass:_tableViewCellClass forCellReuseIdentifier:CellReuseIdentifier];
+    
+    self.cell4Height = [self dequeueReusableCellWithIdentifier:CellReuseIdentifier];
 }
 
 - (void)setListModel:(ComListModel *)listModel {
@@ -159,6 +168,22 @@
     self.isPaging = NO;
     self.isRefresh = NO;
     self.isShowEmptyTip = NO;
+}
+
+- (void)setCellConfigureBlock:(CellConfigureBlock)cellConfigureBlock
+{
+    if (_cellConfigureBlock == cellConfigureBlock) {
+        return;
+    }
+    _cellConfigureBlock = cellConfigureBlock;
+    self.cell4Height.cellConfigureBlock = _cellConfigureBlock;
+}
+
+- (NSMutableDictionary *)cellHeightCache {
+    if (!_cellHeightCache) {
+        _cellHeightCache = [NSMutableDictionary dictionary];
+    }
+    return _cellHeightCache;
 }
 
 - (void)reLoadDataFromServer {

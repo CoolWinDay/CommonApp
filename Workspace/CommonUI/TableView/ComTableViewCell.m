@@ -8,32 +8,57 @@
 
 #import "ComTableViewCell.h"
 
+@interface ComTableViewCell ()
+
+@end
+
 @implementation ComTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self buildCellView];
     }
     return self;
 }
 
-- (void)setItem:(id)item {
-    _item = item;
+- (void)buildCellView {
+    
 }
 
-- (CGFloat)cellHeight:(id)item {
-    return TableViewCellDefaultHeight;
+- (void)setCellData:(id)item atIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (CGFloat)cellHeight:(id)item atIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.isAutoHeight) {
+        return [self cellAutoHeight:item atIndexPath:indexPath];
+    }
+    else {
+        return TableViewCellDefaultHeight;
+    }
+}
+
+- (CGFloat)cellAutoHeight:(id)item atIndexPath:(NSIndexPath *)indexPath
+{
+    if (_cellConfigureBlock) {
+        _cellConfigureBlock(self, item, indexPath);
+    }
+    else {
+        [self setCellData:item atIndexPath:indexPath];
+    }
+    
+    [self layoutIfNeeded];
+    [self updateConstraintsIfNeeded];
+    
+    CGFloat height = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+    return height;
 }
 
 @end

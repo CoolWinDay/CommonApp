@@ -10,4 +10,6 @@
 
 @interface BookTableViewCell : ComTableViewCell
 
+@property(nonatomic, strong) UILabel *titleLabel;
+
 @end

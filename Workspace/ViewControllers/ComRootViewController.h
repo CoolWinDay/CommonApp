@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "ComBaseViewController.h"
 
-@interface ComRootViewController : ComBaseViewController
+@interface ComRootViewController : UINavigationController
 
 @end

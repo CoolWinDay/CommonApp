@@ -11,7 +11,7 @@
 
 @interface ComTableViewDelegate()
 
-@property(nonatomic, copy) NSString *cellIdentifier;
+@property(nonatomic, copy  ) NSString *cellIdentifier;
 
 @end
 

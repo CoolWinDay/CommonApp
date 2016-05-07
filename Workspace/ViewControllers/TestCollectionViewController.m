@@ -39,21 +39,21 @@
         _collectionView.cellInset = UIEdgeInsetsMake(10, 10, 10, 10);
         _collectionView.backgroundColor = [UIColor whiteColor];
         
-//        _collectionView.listModel = [[BookListModel alloc] init];
-//        _collectionView.cellClass = [BookCollectionViewCell class];
-        _collectionView.dataArray = self.dataArray;
-        _collectionView.cellConfigureBlock = ^(UICollectionViewCell *cell, NSDictionary *data, NSIndexPath *indexPath) {
-            cell.backgroundColor = HEXCOLOR(0xe52e26);
-//            cell.backgroundColor = [ComColorManager colorWithHexString:@"#e52e26"];
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 50)];
-            label.textColor = [UIColor whiteColor];
-            label.font = [UIFont systemFontOfSize:14];
-            label.numberOfLines = 0;
-            label.text = [NSString stringWithFormat:@"%@", data[@"vcName"]];
-            
-            [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-            [cell.contentView addSubview:label];
-        };
+        _collectionView.listModel = [[BookListModel alloc] init];
+        _collectionView.cellClass = [BookCollectionViewCell class];
+//        _collectionView.dataArray = self.dataArray;
+//        _collectionView.cellConfigureBlock = ^(UICollectionViewCell *cell, NSDictionary *data, NSIndexPath *indexPath) {
+//            cell.backgroundColor = HEXCOLOR(0xe52e26);
+////            cell.backgroundColor = [ComColorManager colorWithHexString:@"#e52e26"];
+//            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 50)];
+//            label.textColor = [UIColor whiteColor];
+//            label.font = [UIFont systemFontOfSize:14];
+//            label.numberOfLines = 0;
+//            label.text = [NSString stringWithFormat:@"%@", data[@"vcName"]];
+//            
+//            [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+//            [cell.contentView addSubview:label];
+//        };
 //        _collectionView.isPaging = NO;
 //        _collectionView.isRefresh = NO;
         _collectionView.cellSelectBlock = ^(UICollectionView *tableView, NSIndexPath *indexPath) {

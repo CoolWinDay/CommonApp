@@ -13,6 +13,7 @@
 		E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */; };
 		E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D2221CB7A91200ADCF87 /* UIView+Additions.m */; };
 		E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E80F665D1CCE4F5300D8494D /* UIButton+Block.m */; };
+		E81D3CA91CD9874A00FF6D24 /* ComDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E81D3CA81CD9874A00FF6D24 /* ComDemoViewController.m */; };
 		E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AA51CB21DF800E40B88 /* BookRequest.m */; };
 		E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262AD1CD8308A00100C3B /* ComCollectionView.m */; };
 		E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262AF1CD8308A00100C3B /* ComCollectionViewDataSource.m */; };
@@ -59,6 +60,8 @@
 		E807D2221CB7A91200ADCF87 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		E80F665C1CCE4F5300D8494D /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
 		E80F665D1CCE4F5300D8494D /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
+		E81D3CA71CD9874A00FF6D24 /* ComDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComDemoViewController.h; sourceTree = "<group>"; };
+		E81D3CA81CD9874A00FF6D24 /* ComDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComDemoViewController.m; sourceTree = "<group>"; };
 		E83D0AA41CB21DF800E40B88 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
 		E83D0AA51CB21DF800E40B88 /* BookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
 		E84262AC1CD8308A00100C3B /* ComCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCollectionView.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				E84262CE1CD886E600100C3B /* ComBaseViewController.m */,
 				E84262CF1CD886E600100C3B /* ComRootViewController.h */,
 				E84262D01CD886E600100C3B /* ComRootViewController.m */,
+				E81D3CA71CD9874A00FF6D24 /* ComDemoViewController.h */,
+				E81D3CA81CD9874A00FF6D24 /* ComDemoViewController.m */,
 				E84262D51CD886E600100C3B /* TestTableViewController.h */,
 				E84262D61CD886E600100C3B /* TestTableViewController.m */,
 				E84262D11CD886E600100C3B /* TestCollectionViewController.h */,
@@ -524,6 +529,7 @@
 				E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
+				E81D3CA91CD9874A00FF6D24 /* ComDemoViewController.m in Sources */,
 				E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */,
 				E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */,
 			);
