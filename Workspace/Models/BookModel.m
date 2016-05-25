@@ -7,11 +7,12 @@
 //
 
 #import "BookModel.h"
+#import "BookRequest.h"
 
 @implementation BookModel
 
-- (NSString *)requestPath {
-    return [NSString stringWithFormat:@"%@%@", Book_Url, Book_Path];
+- (Class)requestClass {
+    return [BookRequest class];
 }
 
 @end

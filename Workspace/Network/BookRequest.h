@@ -6,8 +6,17 @@
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "JsonRequest.h"
+#import "ComRequest.h"
+#import "ComPageRequest.h"
 
-@interface BookRequest : JsonRequest
+@interface BookRequest : ComRequest
+
+@end
+
+@interface BookListRequest : ComPageRequest
+
+@property(nonatomic, assign) NSInteger start;
+@property(nonatomic, assign) NSInteger count;
+@property(nonatomic, copy)   NSString *q;
 
 @end

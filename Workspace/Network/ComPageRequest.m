@@ -1,14 +1,15 @@
 //
-//  ComListModel.m
+//  ComPageRequest.m
 //  CommonApp
 //
-//  Created by lipeng on 16/3/30.
+//  Created by lipeng on 16/5/25.
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "ComListModel.h"
+#import "ComPageRequest.h"
+#import "BaseModel.h"
 
-@implementation ComListModel
+@implementation ComPageRequest
 
 - (id)init {
     self = [super init];
@@ -22,34 +23,34 @@
     return 20;
 }
 
+- (void)load {
+    [self addDataParam:[NSNumber numberWithInteger:(self.currentPage-1)*[self pageSize]] forKey:@"start"];
+    [self addDataParam:[NSNumber numberWithInteger:[self pageSize]] forKey:@"count"];
+    
+    [super load];
+}
+
 - (void)reload {
     self.currentPage = 1;
     [self load];
 }
 
-- (void)beforeLoad {
-    [self addDataParam:[NSNumber numberWithInteger:(self.currentPage-1)*[self pageSize]] forKey:@"start"];
-    [self addDataParam:[NSNumber numberWithInteger:[self pageSize]] forKey:@"count"];
-    [super beforeLoad];
-}
-
-- (void)loadSucceed:(ComListModel *)response {
+- (void)succeed:(id)model {
     if (_currentPage == 1) {
         [self.listArray removeAllObjects];
     }
-    NSArray *array = [self constructDataArray];
+    
+    NSArray *array = nil;
+    if ([model respondsToSelector:@selector(buildPageArray)]) {
+        array = [model buildPageArray];
+    }
     self.moreData = NO;
     if ([array count] > 0) {
         self.moreData = [array count] >= [self pageSize] ? YES : NO;
         self.currentPage ++;
         [self.listArray addObjectsFromArray:array];
     }
-    [super loadSucceed:response];
-}
-
-- (NSArray*)constructDataArray
-{
-    return nil;
+    [super succeed:model];
 }
 
 - (NSMutableArray *)listArray {

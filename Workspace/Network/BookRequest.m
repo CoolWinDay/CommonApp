@@ -8,6 +8,7 @@
 
 #import "BookRequest.h"
 #import "BookModel.h"
+#import "BookListModel.h"
 
 @implementation BookRequest
 
@@ -17,6 +18,27 @@
 
 - (Class)modelClass {
     return [BookModel class];
+}
+
+@end
+
+
+@implementation BookListRequest
+
+- (NSString *)requestPath {
+    return [NSString stringWithFormat:@"%@%@", Book_Url, BookSearch_Path];
+}
+
+- (NSDictionary*)dataParams {
+    return @{
+             @"q"     : @"我的家乡"
+//             @"q2" : @"我的家乡"
+//             @"q" : @"+++++++++++"
+             };
+}
+
+- (Class)modelClass {
+    return [BookListModel class];
 }
 
 @end

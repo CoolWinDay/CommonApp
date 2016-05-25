@@ -10,6 +10,7 @@
 #import "ComScrollView.h"
 #import "BookListModel.h"
 #import "BookModel.h"
+#import "BookRequest.h"
 
 @interface TestScrollViewController ()
 
@@ -37,7 +38,7 @@
     if (!_scrollView) {
 //        _scrollView = [ComScrollView newAutoLayoutView];
         _scrollView = [[ComScrollView alloc] initWithFrame:self.view.bounds];
-        _scrollView.model = [[BookModel alloc] init];
+        _scrollView.request = [[BookRequest alloc] init];
         __weak typeof(self)weakSelf = self;
         _scrollView.loadSuccessBlock = ^(BookModel *model) {
             [weakSelf makeScrollView:model];

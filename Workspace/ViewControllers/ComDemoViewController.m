@@ -8,11 +8,19 @@
 
 #import "ComDemoViewController.h"
 #import "ComTableView.h"
+#import "UIAlertView+Blocks.h"
+#import "RIButtonItem.h"
+#import "BookRequest.h"
+#import "BookModel.h"
+#import "BookListModel.h"
 
 @interface ComDemoViewController ()
 
 @property(nonatomic, strong) ComTableView *tableView;
 @property(nonatomic, strong) NSArray *dataArray;
+
+@property(nonatomic, strong) BookRequest *request;
+@property(nonatomic, strong) BookListRequest *listRequest;
 
 @end
 
@@ -27,10 +35,30 @@
     
     [self.view addSubview:self.tableView];
     [self.tableView autoPinEdgesToSuperviewEdges];
+    
+//    [[[UIAlertView alloc] initWithTitle:@"aaaa" message:@"bbb" cancelButtonItem:[RIButtonItem itemWithLabel:@"ccc"] otherButtonItems:[RIButtonItem itemWithLabel:@"aaa" action:^{
+//        
+//    }], nil] show];
+    
+//    [NSArray arrayWithObjects:[@"sss"] count:0];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.request = [[BookRequest alloc] init];
+    [_request requestSuccess:^(id data) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
+    
+//    self.listRequest = [[BookListRequest alloc] init];
+//    [self.listRequest requestSuccess:^(id data) {
+//        
+//    } failed:^(NSError *error) {
+//        
+//    }];
 }
 
 - (NSArray *)dataArray {
@@ -61,8 +89,9 @@
         _tableView.cellSelectBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
             if (weakSelf.dataArray.count > indexPath.row) {
                 NSString *vcName = weakSelf.dataArray[indexPath.row][@"vcName"];
-                id ctro = [NSClassFromString(vcName) new];
-                [weakSelf.navigationController pushViewController:ctro animated:YES];
+                [AppCommon pushWithVCClassName:vcName];
+//                id vc = [NSClassFromString(vcName) new];
+//                [weakSelf presentViewController:vc animated:YES];
             }
         };
     }

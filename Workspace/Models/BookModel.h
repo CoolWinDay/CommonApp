@@ -6,9 +6,9 @@
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "ComModel.h"
+#import "BaseModel.h"
 
-@interface BookModel : ComModel
+@interface BookModel : BaseModel
 
 @property NSString *bId;
 @property NSString *alt;

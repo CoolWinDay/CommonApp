@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComListModel.h"
+#import "ComPageRequest.h"
 #import "ComTableViewDataSource.h"
 #import "ComTableViewDelegate.h"
 
 @interface ComTableView : UITableView
 
-@property(nonatomic, strong) ComListModel*      listModel;
+@property(nonatomic, strong) ComPageRequest*    pageRequest;
 @property(nonatomic, strong) NSArray*           dataArray;
 @property(nonatomic, strong) Class              listModelClass;
 @property(nonatomic, strong) Class              tableViewCellClass;

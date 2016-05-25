@@ -40,30 +40,51 @@
 - (MJRefreshStateHeader *)comHeader {
     if (!_comHeader) {
         __weak typeof(self) weakSelf = self;
-        _comHeader = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        _comHeader = [MJRefreshStateHeader headerWithRefreshingBlock:^ {
             [ComErrorViewManager removeErrorViewFromView:self.superview];
-            [weakSelf.model load];
+            [weakSelf.request load];
         }];
         _comHeader.lastUpdatedTimeLabel.hidden = YES;
     }
     return _comHeader;
 }
 
-- (void)setModel:(ComModel *)model {
-    if (_model == model) {
+//- (void)setModel:(ComModel *)model {
+//    if (_model == model) {
+//        return;
+//    }
+//    _model = model;
+//    
+//    self.isShowEmptyTip = YES;
+//    self.isRefresh = YES;
+//    
+//    __weak typeof(self) weakSelf = self;
+//    _model.successBlock = ^(id data) {
+//        [weakSelf loadSuccess:data];
+//    };
+//    
+//    _model.failedBlock = ^(NSError *error) {
+//        [weakSelf loadFail:error];
+//    };
+//    
+//    [self reLoadDataFromServer];
+//}
+
+- (void)setRequest:(BookRequest *)request {
+    if (_request == request) {
         return;
     }
-    _model = model;
+    _request = request;
     
     self.isShowEmptyTip = YES;
     self.isRefresh = YES;
     
     __weak typeof(self) weakSelf = self;
-    _model.successBlock = ^(id data) {
-        [weakSelf loadSuccess];
+    _request.successBlock = ^(id data) {
+        [weakSelf loadSuccess:data];
     };
     
-    _model.failedBlock = ^(NSError *error) {
+    _request.failedBlock = ^(NSError *error) {
         [weakSelf loadFail:error];
     };
     
@@ -71,7 +92,7 @@
 }
 
 - (void)reLoadDataFromServer {
-    [self.model load];
+    [self.request load];
 }
 
 - (void)loadFail:(NSError *)error {
@@ -84,11 +105,11 @@
     }
 }
 
-- (void)loadSuccess {
+- (void)loadSuccess:(id)data {
     [ComErrorViewManager removeErrorViewFromView:self.superview];
     [self.mj_header endRefreshing];
     if (self.loadSuccessBlock) {
-        self.loadSuccessBlock(self.model);
+        self.loadSuccessBlock(data);
     }
 }
 

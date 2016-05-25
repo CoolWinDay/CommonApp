@@ -12,6 +12,7 @@
 #import "BookTableViewCell.h"
 #import "ComTableView.h"
 #import "MBProgressHUD.h"
+#import "BookRequest.h"
 
 @interface TestTableViewController () <UITableViewDelegate> {
     BOOL _isUpdateConstraints;
@@ -43,9 +44,9 @@
     if (!_tableView) {
         _tableView = [ComTableView newAutoLayoutView];
         
-        _tableView.listModel = [[BookListModel alloc] init];
+        _tableView.pageRequest = [[BookListRequest alloc] init];
         _tableView.tableViewCellClass = [BookTableViewCell class];
-        _tableView.isHeightCache = YES;
+        
 //        _tableView.cellConfigureBlock = ^(UITableViewCell *cell, BookModel *item, NSIndexPath *indexPath) {
 //            BookTableViewCell *bookCell = (BookTableViewCell *)cell;
 //            
@@ -67,6 +68,7 @@
 //        _tableView.cellHeightBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
 //            return 80.0;
 //        };
+//        _tableView.isHeightCache = YES;
 //        _tableView.isPaging = NO;
 //        _tableView.isShowEmptyTip = NO;
 //        _tableView.isRefresh = NO;

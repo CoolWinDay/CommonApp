@@ -1,5 +1,5 @@
 //
-//  UserModel.h
+//  ComModel.h
 //  CommonApp
 //
 //  Created by lipeng on 16/3/9.
@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseModel.h"
 
-@interface UserModel : BaseModel
+@interface BaseModel : NSObject
 
 @end

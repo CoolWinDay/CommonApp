@@ -8,6 +8,7 @@
 
 #import "BookListModel.h"
 #import "BookModel.h"
+#import "BookRequest.h"
 
 @implementation BookListModel
 
@@ -16,21 +17,8 @@
     return @{@"books" : [BookModel class]};
 }
 
-#pragma mark - request
-- (NSString *)requestPath {
-    return [NSString stringWithFormat:@"%@%@", Book_Url, BookSearch_Path];
-}
-
-- (NSDictionary*)dataParams {
-    return @{
-             @"q" : @"我的家乡"
-//             @"q2" : @"我的家乡"
-//             @"q" : @"+++++++++++"
-             };
-}
-
-- (NSArray *)constructDataArray
-{
+#pragma mark - PageDelegate
+- (NSArray *)buildPageArray {
     return self.books;
 }
 

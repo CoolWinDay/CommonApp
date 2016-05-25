@@ -6,9 +6,10 @@
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "ComListModel.h"
+#import "BaseModel.h"
+#import "ComPageRequest.h"
 
-@interface BookListModel : ComListModel
+@interface BookListModel : BaseModel <PageDelegate>
 
 @property NSString*     alt;
 @property NSInteger     count;

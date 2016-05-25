@@ -11,6 +11,7 @@
 #import "BookModel.h"
 #import "ComCollectionView.h"
 #import "BookCollectionViewCell.h"
+#import "BookRequest.h"
 
 @interface TestCollectionViewController ()
 
@@ -39,7 +40,7 @@
         _collectionView.cellInset = UIEdgeInsetsMake(10, 10, 10, 10);
         _collectionView.backgroundColor = [UIColor whiteColor];
         
-        _collectionView.listModel = [[BookListModel alloc] init];
+        _collectionView.pageRequest = [[BookListRequest alloc] init];
         _collectionView.cellClass = [BookCollectionViewCell class];
 //        _collectionView.dataArray = self.dataArray;
 //        _collectionView.cellConfigureBlock = ^(UICollectionViewCell *cell, NSDictionary *data, NSIndexPath *indexPath) {

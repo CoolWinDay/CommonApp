@@ -1,14 +1,20 @@
 //
-//  ComListModel.h
+//  ComPageRequest.h
 //  CommonApp
 //
-//  Created by lipeng on 16/3/30.
+//  Created by lipeng on 16/5/25.
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "ComModel.h"
+#import "ComRequest.h"
 
-@interface ComListModel : ComModel
+@protocol PageDelegate <NSObject>
+@required
+- (NSArray *)buildPageArray;
+
+@end
+
+@interface ComPageRequest : ComRequest
 
 /**
  *  当前页数
@@ -31,7 +37,5 @@
  *  每页多少条数据，默认20
  */
 - (NSUInteger)pageSize;
-
-- (NSArray*)constructDataArray;
 
 @end

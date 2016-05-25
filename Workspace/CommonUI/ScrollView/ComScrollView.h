@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ComModel.h"
+#import "BookRequest.h"
 
 @interface ComScrollView : UIScrollView
 
-@property(nonatomic, strong) ComModel*      model;
+@property(nonatomic, strong) BookRequest*   request;
 @property(nonatomic,   copy) SuccessBlock   loadSuccessBlock;
 
 @property(nonatomic, assign) BOOL           isRefresh;

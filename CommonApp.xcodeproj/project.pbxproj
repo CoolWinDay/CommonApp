@@ -26,25 +26,27 @@
 		E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262C71CD830EE00100C3B /* ComCollectionViewCell.m */; };
 		E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */; };
 		E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CE1CD886E600100C3B /* ComBaseViewController.m */; };
-		E84262D81CD886E600100C3B /* ComRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D01CD886E600100C3B /* ComRootViewController.m */; };
 		E84262D91CD886E600100C3B /* TestCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D21CD886E600100C3B /* TestCollectionViewController.m */; };
 		E84262DA1CD886E600100C3B /* TestScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D41CD886E600100C3B /* TestScrollViewController.m */; };
 		E84262DB1CD886E600100C3B /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262D61CD886E600100C3B /* TestTableViewController.m */; };
 		E84262DE1CD892C100100C3B /* ComColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262DD1CD892C100100C3B /* ComColorManager.m */; };
+		E84372141CF53B1300EF51FC /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E843720E1CF53B1300EF51FC /* XMLReader.m */; };
+		E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E84372121CF53B1300EF51FC /* XMLWriter.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
-		E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* ComModel.m */; };
-		E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E8667C621CB4A54F00212310 /* JsonDataHandler.m */; };
+		E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* BaseModel.m */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
+		E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E881E5651CF57C6E0021DA23 /* ComPageRequest.m */; };
 		E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
+		E8BFB08F1CE32B93002E99EC /* UIAlertView+Block2.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
-		E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D908A61C9E63620022DA2D /* JsonRequest.m */; };
-		E8F54DF31CAB7A1600F492B2 /* ComListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF21CAB7A1600F492B2 /* ComListModel.m */; };
 		E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF51CAB7A3100F492B2 /* BookListModel.m */; };
 		E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF81CABAF7900F492B2 /* BookModel.m */; };
 		E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C03F1C8D6D6900625004 /* ComApplication.m */; };
 		E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */; };
+		E8FC45AE1CE082D200B97AA2 /* ComRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FC45AD1CE082D200B97AA2 /* ComRootNavigationController.m */; };
+		E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FC45B01CE0899000B97AA2 /* AppCommon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,8 +88,6 @@
 		E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollectionViewCell.m; sourceTree = "<group>"; };
 		E84262CD1CD886E600100C3B /* ComBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComBaseViewController.h; sourceTree = "<group>"; };
 		E84262CE1CD886E600100C3B /* ComBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComBaseViewController.m; sourceTree = "<group>"; };
-		E84262CF1CD886E600100C3B /* ComRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRootViewController.h; sourceTree = "<group>"; };
-		E84262D01CD886E600100C3B /* ComRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRootViewController.m; sourceTree = "<group>"; };
 		E84262D11CD886E600100C3B /* TestCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCollectionViewController.h; sourceTree = "<group>"; };
 		E84262D21CD886E600100C3B /* TestCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewController.m; sourceTree = "<group>"; };
 		E84262D31CD886E600100C3B /* TestScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScrollViewController.h; sourceTree = "<group>"; };
@@ -96,27 +96,28 @@
 		E84262D61CD886E600100C3B /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		E84262DC1CD892C100100C3B /* ComColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComColorManager.h; sourceTree = "<group>"; };
 		E84262DD1CD892C100100C3B /* ComColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComColorManager.m; sourceTree = "<group>"; };
+		E843720D1CF53B1300EF51FC /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		E843720E1CF53B1300EF51FC /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		E84372111CF53B1300EF51FC /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
+		E84372121CF53B1300EF51FC /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
 		E84BD2201C8FB19F003EF94A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		E84BD2231C8FBF16003EF94A /* ComModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComModel.h; sourceTree = "<group>"; };
-		E84BD2241C8FBF16003EF94A /* ComModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComModel.m; sourceTree = "<group>"; };
-		E8667C601CB4A54F00212310 /* ComDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComDataHandler.h; sourceTree = "<group>"; };
-		E8667C611CB4A54F00212310 /* JsonDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonDataHandler.h; sourceTree = "<group>"; };
-		E8667C621CB4A54F00212310 /* JsonDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonDataHandler.m; sourceTree = "<group>"; };
+		E84BD2231C8FBF16003EF94A /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		E84BD2241C8FBF16003EF94A /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		E8690AC51C93BEC300BFC155 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		E8690AC61C93BEC300BFC155 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		E86A22441C91A9B300E34A62 /* ComNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetworking.h; sourceTree = "<group>"; };
 		E86A22451C91A9B300E34A62 /* ComNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetworking.m; sourceTree = "<group>"; };
+		E881E5641CF57C6E0021DA23 /* ComPageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComPageRequest.h; sourceTree = "<group>"; };
+		E881E5651CF57C6E0021DA23 /* ComPageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComPageRequest.m; sourceTree = "<group>"; };
 		E88833C91CD7187F007AA83D /* UIView+TapBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TapBlock.h"; sourceTree = "<group>"; };
 		E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TapBlock.m"; sourceTree = "<group>"; };
 		E897D3B11C8E64D80067B3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8BFB08D1CE32B93002E99EC /* UIAlertView+Block2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block2.h"; sourceTree = "<group>"; };
+		E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block2.m"; sourceTree = "<group>"; };
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8D908A51C9E63620022DA2D /* JsonRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonRequest.h; sourceTree = "<group>"; };
-		E8D908A61C9E63620022DA2D /* JsonRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonRequest.m; sourceTree = "<group>"; };
-		E8F54DF11CAB7A1600F492B2 /* ComListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComListModel.h; sourceTree = "<group>"; };
-		E8F54DF21CAB7A1600F492B2 /* ComListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComListModel.m; sourceTree = "<group>"; };
 		E8F54DF41CAB7A3100F492B2 /* BookListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
 		E8F54DF51CAB7A3100F492B2 /* BookListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListModel.m; sourceTree = "<group>"; };
 		E8F54DF71CABAF7900F492B2 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
@@ -128,6 +129,10 @@
 		E8F9EA0C1C8E70390072F58D /* ComDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComDefine.h; sourceTree = "<group>"; };
 		E8F9EA0F1C8E72CF0072F58D /* ComApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ComApp-Prefix.pch"; sourceTree = "<group>"; };
 		E8F9EA101C8E775F0072F58D /* ComServerDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComServerDefine.h; sourceTree = "<group>"; };
+		E8FC45AC1CE082D200B97AA2 /* ComRootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRootNavigationController.h; sourceTree = "<group>"; };
+		E8FC45AD1CE082D200B97AA2 /* ComRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRootNavigationController.m; sourceTree = "<group>"; };
+		E8FC45AF1CE0899000B97AA2 /* AppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommon.h; sourceTree = "<group>"; };
+		E8FC45B01CE0899000B97AA2 /* AppCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommon.m; sourceTree = "<group>"; };
 		ED258A55F999CBDD9F12849B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EE8E82B16F0AC14988BB9451 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -164,13 +169,12 @@
 		E800B5B91C8EF4A200F8BDEE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				E8667C5F1CB4A54F00212310 /* DataHandler */,
 				E86A22441C91A9B300E34A62 /* ComNetworking.h */,
 				E86A22451C91A9B300E34A62 /* ComNetworking.m */,
 				E800B5BA1C8EF4CB00F8BDEE /* ComRequest.h */,
 				E800B5BB1C8EF4CB00F8BDEE /* ComRequest.m */,
-				E8D908A51C9E63620022DA2D /* JsonRequest.h */,
-				E8D908A61C9E63620022DA2D /* JsonRequest.m */,
+				E881E5641CF57C6E0021DA23 /* ComPageRequest.h */,
+				E881E5651CF57C6E0021DA23 /* ComPageRequest.m */,
 				E83D0AA41CB21DF800E40B88 /* BookRequest.h */,
 				E83D0AA51CB21DF800E40B88 /* BookRequest.m */,
 			);
@@ -190,9 +194,13 @@
 		E807D21F1CB7A8CB00ADCF87 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E807D2201CB7A8CB00ADCF87 /* Additions */,
+				E8FC45AF1CE0899000B97AA2 /* AppCommon.h */,
+				E8FC45B01CE0899000B97AA2 /* AppCommon.m */,
 				E84262DC1CD892C100100C3B /* ComColorManager.h */,
 				E84262DD1CD892C100100C3B /* ComColorManager.m */,
+				E843720B1CF53B1300EF51FC /* XMLReader */,
+				E843720F1CF53B1300EF51FC /* XMLWriter */,
+				E807D2201CB7A8CB00ADCF87 /* Additions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -204,6 +212,8 @@
 				E807D2221CB7A91200ADCF87 /* UIView+Additions.m */,
 				E80F665C1CCE4F5300D8494D /* UIButton+Block.h */,
 				E80F665D1CCE4F5300D8494D /* UIButton+Block.m */,
+				E8BFB08D1CE32B93002E99EC /* UIAlertView+Block2.h */,
+				E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */,
 				E88833C91CD7187F007AA83D /* UIView+TapBlock.h */,
 				E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */,
 			);
@@ -254,8 +264,8 @@
 			children = (
 				E84262CD1CD886E600100C3B /* ComBaseViewController.h */,
 				E84262CE1CD886E600100C3B /* ComBaseViewController.m */,
-				E84262CF1CD886E600100C3B /* ComRootViewController.h */,
-				E84262D01CD886E600100C3B /* ComRootViewController.m */,
+				E8FC45AC1CE082D200B97AA2 /* ComRootNavigationController.h */,
+				E8FC45AD1CE082D200B97AA2 /* ComRootNavigationController.m */,
 				E81D3CA71CD9874A00FF6D24 /* ComDemoViewController.h */,
 				E81D3CA81CD9874A00FF6D24 /* ComDemoViewController.m */,
 				E84262D51CD886E600100C3B /* TestTableViewController.h */,
@@ -268,13 +278,29 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		E843720B1CF53B1300EF51FC /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				E843720D1CF53B1300EF51FC /* XMLReader.h */,
+				E843720E1CF53B1300EF51FC /* XMLReader.m */,
+			);
+			path = XMLReader;
+			sourceTree = "<group>";
+		};
+		E843720F1CF53B1300EF51FC /* XMLWriter */ = {
+			isa = PBXGroup;
+			children = (
+				E84372111CF53B1300EF51FC /* XMLWriter.h */,
+				E84372121CF53B1300EF51FC /* XMLWriter.m */,
+			);
+			path = XMLWriter;
+			sourceTree = "<group>";
+		};
 		E84BD21F1C8FB181003EF94A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E84BD2231C8FBF16003EF94A /* ComModel.h */,
-				E84BD2241C8FBF16003EF94A /* ComModel.m */,
-				E8F54DF11CAB7A1600F492B2 /* ComListModel.h */,
-				E8F54DF21CAB7A1600F492B2 /* ComListModel.m */,
+				E84BD2231C8FBF16003EF94A /* BaseModel.h */,
+				E84BD2241C8FBF16003EF94A /* BaseModel.m */,
 				E84BD2201C8FB19F003EF94A /* UserModel.h */,
 				E84BD2211C8FB19F003EF94A /* UserModel.m */,
 				E8F54DF71CABAF7900F492B2 /* BookModel.h */,
@@ -285,16 +311,6 @@
 				E8690AC61C93BEC300BFC155 /* TagModel.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		E8667C5F1CB4A54F00212310 /* DataHandler */ = {
-			isa = PBXGroup;
-			children = (
-				E8667C601CB4A54F00212310 /* ComDataHandler.h */,
-				E8667C611CB4A54F00212310 /* JsonDataHandler.h */,
-				E8667C621CB4A54F00212310 /* JsonDataHandler.m */,
-			);
-			path = DataHandler;
 			sourceTree = "<group>";
 		};
 		E897D3B01C8E64D80067B3E6 /* Resources */ = {
@@ -498,17 +514,16 @@
 			files = (
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */,
+				E8BFB08F1CE32B93002E99EC /* UIAlertView+Block2.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
 				E84262DA1CD886E600100C3B /* TestScrollViewController.m in Sources */,
 				E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */,
 				E84262D91CD886E600100C3B /* TestCollectionViewController.m in Sources */,
-				E8667C631CB4A54F00212310 /* JsonDataHandler.m in Sources */,
 				E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */,
 				E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */,
-				E84262D81CD886E600100C3B /* ComRootViewController.m in Sources */,
 				E84262C01CD8308A00100C3B /* ComCollectionViewDelegate.m in Sources */,
 				E84262C31CD8308A00100C3B /* ComTableViewCell.m in Sources */,
-				E8F54DF31CAB7A1600F492B2 /* ComListModel.m in Sources */,
+				E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */,
 				E84262C21CD8308A00100C3B /* ComTableView.m in Sources */,
 				E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */,
 				E84262C51CD8308A00100C3B /* ComTableViewDelegate.m in Sources */,
@@ -516,18 +531,21 @@
 				E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */,
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
 				E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */,
+				E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
 				E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */,
+				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
 				E84262DB1CD886E600100C3B /* TestTableViewController.m in Sources */,
 				E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */,
+				E8FC45AE1CE082D200B97AA2 /* ComRootNavigationController.m in Sources */,
 				E84262C41CD8308A00100C3B /* ComTableViewDataSource.m in Sources */,
 				E84262C11CD8308A00100C3B /* ComScrollView.m in Sources */,
 				E8C326461C891B7E00628824 /* main.m in Sources */,
 				E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */,
 				E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */,
-				E84BD2251C8FBF16003EF94A /* ComModel.m in Sources */,
-				E8D908A71C9E63620022DA2D /* JsonRequest.m in Sources */,
+				E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
+				E84372141CF53B1300EF51FC /* XMLReader.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
 				E81D3CA91CD9874A00FF6D24 /* ComDemoViewController.m in Sources */,
 				E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */,

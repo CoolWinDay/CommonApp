@@ -8,38 +8,37 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol RequestDelegate <NSObject>
+typedef enum {
+    RequestGet,
+    RequestPost
+} RequestType;
 
-@required
-- (NSString *)requestPath;
-
-@end
-
-@protocol ResponseDelegate <NSObject>
-
-- (id)buildResponse:(id)responseData;
-
-@end
+typedef enum {
+    ResponseJson,
+    ResponseXml,
+    ResponseNone
+} ResponseType;
 
 @class ComRequest;
 
 typedef void (^SuccessBlock)(id data);
 typedef void (^FailedBlock)(NSError *error);
 
-@interface ComRequest : NSObject <RequestDelegate>
+@interface ComRequest : NSObject
 
 @property(nonatomic, copy) NSString *urlPathString;
-@property(nonatomic, assign) id<RequestDelegate> requestDelegate;
-@property(nonatomic, assign) id<ResponseDelegate> responseDelegate;
 
 @property(nonatomic, copy) SuccessBlock successBlock;
 @property(nonatomic, copy) FailedBlock failedBlock;
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
-- (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
-- (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
+- (void)addDataParamFromDictionary:(NSDictionary *)paramDic;
+- (NSDictionary *)getParameters;
+- (void)requestSuccess:(SuccessBlock)successBlock failed:(FailedBlock)failedBlock;
 - (void)load;
 - (void)cancel;
+- (RequestType)requestType;
+- (ResponseType)responseType;
 
 - (void)succeed:(id)response;
 - (void)failed:(NSError *)error;

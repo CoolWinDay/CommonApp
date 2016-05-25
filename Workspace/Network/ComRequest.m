@@ -8,6 +8,7 @@
 
 #import "ComRequest.h"
 #import "ComNetworking.h"
+#import "BaseModel.h"
 
 @interface ComRequest()
 
@@ -17,21 +18,14 @@
 
 @implementation ComRequest
 
-- (instancetype)init {
-    if (self = [super init]) {
-        _requestDelegate = self;
-    }
-    return self;
-}
-
 - (NSString *)requestPath {
     return @"";
 }
 
 - (NSString *)urlPathString {
     if (!_urlPathString) {
-        if ([self.requestDelegate respondsToSelector:@selector(requestPath)]) {
-            _urlPathString = [self.requestDelegate requestPath];
+        if ([self respondsToSelector:@selector(requestPath)]) {
+            _urlPathString = [self requestPath];
         }
         else {
             _urlPathString = @"";
@@ -48,7 +42,15 @@
 }
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString {
-    [self.netWorking setValue:param forKey:keyString];
+    [self.netWorking addDataParam:param forKey:keyString];
+}
+
+- (void)addDataParamFromDictionary:(NSDictionary *)paramDic {
+    [self.netWorking addDataParamFromDictionary:paramDic];
+}
+
+- (NSDictionary *)getParameters {
+    return self.netWorking.parameters;
 }
 
 - (NSDictionary*)dataParams {
@@ -64,13 +66,21 @@
     NSDictionary *dataParams = [self dataParams];
     if (dataParams) {
         NSLog(@"\n%@",dataParams);
-        [self.netWorking setValuesForKeysWithDictionary:dataParams];
+        [self.netWorking addDataParamFromDictionary:dataParams];
     }
 //    // 添加额外的扩展参数, 和mtop系统参数平级
 //    NSDictionary *mtopParams = [self mtopParams];
 //    if (mtopParams) {
 //        [self.mtopRequest addExtParameters:mtopParams];
 //    }
+}
+
+- (RequestType)requestType {
+    return RequestPost;
+}
+
+- (ResponseType)responseType {
+    return ResponseJson;
 }
 
 - (void)load {
@@ -82,8 +92,8 @@
         __strong __typeof(self)strongSelf = weakSelf;
         
         id buildData = nil;
-        if ([strongSelf.responseDelegate respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [strongSelf.responseDelegate buildResponse:data];
+        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
+            buildData = [strongSelf buildResponse:data];
         }
         
         if ([weakSelf respondsToSelector:@selector(succeed:)]) {
@@ -104,18 +114,29 @@
     }];
 }
 
-- (void)sendRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
+- (void)requestSuccess:(SuccessBlock)successBlock failed:(FailedBlock)failedBlock {
+    [self cancel];
+    [self setParams];
+    if ([self requestType] == RequestGet) {
+        [self getRequestOnSuccess:successBlock onFailed:failedBlock];
+    }
+    else {
+        [self postRequestOnSuccess:successBlock onFailed:failedBlock];
+    }
+}
+
+- (void)postRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
     __weak __typeof(self)weakSelf = self;
     [self.netWorking postRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
         
         id buildData = nil;
-        if ([strongSelf.responseDelegate respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [strongSelf.responseDelegate buildResponse:data];
+        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
+            buildData = [strongSelf buildResponse:data];
         }
         
         if (successBlock) {
-            successBlock(buildData);
+            successBlock(buildData ? : data);
         }
     } onFailed:^(NSError *error) {
         if (failedBlock) {
@@ -130,12 +151,12 @@
         __strong __typeof(self)strongSelf = weakSelf;
         
         id buildData = nil;
-        if ([strongSelf.responseDelegate respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [strongSelf.responseDelegate buildResponse:data];
+        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
+            buildData = [strongSelf buildResponse:data];
         }
         
         if (successBlock) {
-            successBlock(buildData);
+            successBlock(buildData ? : data);
         }
     } onFailed:^(NSError *error) {
         if (failedBlock) {
@@ -179,5 +200,35 @@
     [self.netWorking cancel];
 }
 
+- (id)buildResponse:(id)responseData {
+    if (responseData){
+        if ([self responseType] == ResponseXml) {
+            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:responseData];
+            return parser;
+        }
+        else if ([self responseType] == ResponseJson) {
+            NSError *error = nil;
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+            if (error)
+                return nil;
+            DLog(@"%@", dic);
+            
+            if ([self respondsToSelector:@selector(modelClass)]) {
+                return [[self modelClass] yy_modelWithDictionary:dic];
+            }
+            else {
+                return dic;
+            }
+        }
+        else {
+            return responseData;
+        }
+    }
+    return nil;
+}
+
+- (Class)modelClass {
+    return [BaseModel class];
+}
 
 @end

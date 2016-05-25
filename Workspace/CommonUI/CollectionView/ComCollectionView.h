@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ComListModel.h"
 #import "ComCollectionViewDataSource.h"
 #import "ComCollectionViewDelegate.h"
+#import "ComPageRequest.h"
 
 @interface ComCollectionView : UICollectionView
 
-@property(nonatomic, strong) ComListModel*      listModel;
+@property(nonatomic, strong) ComPageRequest*    pageRequest;
 @property(nonatomic, strong) NSArray*           dataArray;
 @property(nonatomic, strong) Class              listModelClass;
 @property(nonatomic, strong) Class              cellClass;

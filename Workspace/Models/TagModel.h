@@ -6,9 +6,9 @@
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "ComModel.h"
+#import "BaseModel.h"
 
-@interface TagModel : ComModel
+@interface TagModel : BaseModel
 
 @property(nonatomic, assign) NSInteger count;
 @property(nonatomic, copy) NSString *name;

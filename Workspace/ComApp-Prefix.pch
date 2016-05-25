@@ -12,6 +12,7 @@
 #import "ComDefine.h"
 #import "ComServerDefine.h"
 #import "ComUIDefine.h"
+#import "AppCommon.h"
 #import <YYModel/YYModel.h>
 #import "PureLayout.h"
 #import "UIView+Additions.h"

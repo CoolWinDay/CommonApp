@@ -7,7 +7,7 @@
 //
 
 #import "ComAppDelegate.h"
-#import "ComRootViewController.h"
+#import "ComRootNavigationController.h"
 #import "ComDemoViewController.h"
 
 @interface ComAppDelegate ()
@@ -21,7 +21,7 @@
     
     ComDemoViewController *demoController = [[ComDemoViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[ComRootViewController alloc] initWithRootViewController:demoController];
+    self.window.rootViewController = [[ComRootNavigationController alloc] initWithRootViewController:demoController];
     [self.window makeKeyAndVisible];
     
     return YES;

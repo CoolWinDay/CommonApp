@@ -115,8 +115,8 @@
         __weak typeof(self) weakSelf = self;
         _comHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             [ComErrorViewManager removeErrorViewFromView:self.superview];
-            self.listModel.moreData = NO;
-            [weakSelf.listModel reload];
+            weakSelf.pageRequest.moreData = NO;
+            [weakSelf.pageRequest reload];
         }];
         
         _comHeader.lastUpdatedTimeLabel.hidden = YES;
@@ -128,7 +128,7 @@
     if (!_comFooter) {
         __weak typeof(self) weakSelf = self;
         _comFooter = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-            [weakSelf.listModel load];
+            [weakSelf.pageRequest load];
         }];
     }
     return _comFooter;
@@ -139,21 +139,22 @@
     [self registerClass:_cellClass forCellWithReuseIdentifier:CellReuseIdentifier];
 }
 
-- (void)setListModel:(ComListModel *)listModel {
-    if (_listModel == listModel) {
+- (void)setPageRequest:(ComPageRequest *)pageRequest {
+    if (_pageRequest == pageRequest) {
         return;
     }
-    _listModel = listModel;
-    self.comDataSource.items = _listModel.listArray;
+    
+    _pageRequest = pageRequest;
+    self.comDataSource.items = _pageRequest.listArray;
     self.isPaging = YES;
     self.isRefresh = YES;
     self.isShowEmptyTip = YES;
     
     __weak typeof(self) weakSelf = self;
-    _listModel.successBlock = ^(id data) {
+    _pageRequest.successBlock = ^(id data) {
         [weakSelf loadSuccess];
     };
-    _listModel.failedBlock = ^(NSError *error) {
+    _pageRequest.failedBlock = ^(NSError *error) {
         [weakSelf loadFail:error];
     };
     
@@ -172,11 +173,11 @@
 }
 
 - (void)reLoadDataFromServer {
-    [self.listModel reload];
+    [self.pageRequest reload];
 }
 
 - (void)loadDataFromServer {
-    [self.listModel load];
+    [self.pageRequest load];
 }
 
 - (void)loadFail:(NSError *)error {
@@ -197,11 +198,11 @@
     
     [self.mj_header endRefreshing];
     [self.mj_footer endRefreshing];
-    if (!self.listModel.moreData) {
+    if (!self.pageRequest.moreData) {
         [self.mj_footer endRefreshingWithNoMoreData];
     }
     [self reloadData];
-    if ([self.listModel.listArray count] == 0) {
+    if ([self.pageRequest.listArray count] == 0) {
         if (self.isShowEmptyTip) {
             __weak typeof(self) weakSelf = self;
             [ComErrorViewManager showEmptyViewInView:self.superview clickBlock:^{

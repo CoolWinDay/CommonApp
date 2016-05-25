@@ -1,18 +1,18 @@
 //
-//  ComRootViewController.m
+//  ComRootNavigationController.h.m
 //  CommonApp
 //
 //  Created by lipeng on 16/3/7.
 //  Copyright © 2016年 common. All rights reserved.
 //
 
-#import "ComRootViewController.h"
+#import "ComRootNavigationController.h"
 
-@interface ComRootViewController ()
+@interface ComRootNavigationController ()
 
 @end
 
-@implementation ComRootViewController
+@implementation ComRootNavigationController
 
 - (void)dealloc {
     
