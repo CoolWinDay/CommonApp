@@ -15,8 +15,6 @@
 
 @interface BookListRequest : ComPageRequest
 
-@property(nonatomic, assign) NSInteger start;
-@property(nonatomic, assign) NSInteger count;
 @property(nonatomic, copy)   NSString *q;
 
 @end

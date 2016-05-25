@@ -96,21 +96,9 @@
             buildData = [strongSelf buildResponse:data];
         }
         
-        if ([weakSelf respondsToSelector:@selector(succeed:)]) {
-            [weakSelf succeed:buildData];
-        }
-        
-//        if (weakSelf.successBlock) {
-//            weakSelf.successBlock(buildData);
-//        }
+        [weakSelf succeed:buildData];
     } onFailed:^(NSError *error) {
-        if ([weakSelf respondsToSelector:@selector(failed:)]) {
-            [weakSelf failed:error];
-        }
-        
-//        if (weakSelf.failedBlock) {
-//            weakSelf.failedBlock(error);
-//        }
+        [weakSelf failed:error];
     }];
 }
 
@@ -165,35 +153,30 @@
     }];
 }
 
-#pragma mark - TBSDKServerDelegate
 - (void)succeed:(id)response {
-//    NSLog(@"\n%@",response.json);
-//    [self constructSuccessData:[self responseJSONData:response]];
     if (self.successBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.successBlock(response);
         });
     }
-//    if (self.loadCompletionBlock) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            self.loadCompletionBlock(self,nil);
-//        });
-//    }
+    if (self.completionBlock) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.completionBlock();
+        });
+    }
 }
 
 - (void)failed:(NSError *)error {
-//    response.error.msg = [self userFriendlyErrorMsg:response.error];
-//    NSLog(@"\n%@\n%@",response.error,response.json);
     if (self.failedBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.failedBlock(error);
         });
     }
-//    if (self.loadCompletionBlock) {
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            self.loadCompletionBlock(self,response.error);
-//        });
-//    }
+    if (self.completionBlock) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.completionBlock();
+        });
+    }
 }
 
 - (void)cancel {

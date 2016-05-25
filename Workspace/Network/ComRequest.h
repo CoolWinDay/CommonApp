@@ -23,6 +23,7 @@ typedef enum {
 
 typedef void (^SuccessBlock)(id data);
 typedef void (^FailedBlock)(NSError *error);
+typedef void (^CompletionBlock)();
 
 @interface ComRequest : NSObject
 
@@ -30,6 +31,7 @@ typedef void (^FailedBlock)(NSError *error);
 
 @property(nonatomic, copy) SuccessBlock successBlock;
 @property(nonatomic, copy) FailedBlock failedBlock;
+@property(nonatomic, copy) CompletionBlock completionBlock;
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)addDataParamFromDictionary:(NSDictionary *)paramDic;
