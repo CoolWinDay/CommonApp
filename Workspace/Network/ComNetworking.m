@@ -33,7 +33,7 @@
     [_parameters addEntriesFromDictionary:paramDic];
 }
 
-- (void)postRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock
+- (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock
 {
     // 初始化Manager
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_urlBaseString]];
@@ -57,7 +57,7 @@
     }];
 }
 
-- (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock
+- (void)getRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock
 {
     // 初始化Manager
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_urlBaseString]];

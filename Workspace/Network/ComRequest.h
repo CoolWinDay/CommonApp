@@ -21,22 +21,22 @@ typedef enum {
 
 @class ComRequest;
 
-typedef void (^SuccessBlock)(id data);
-typedef void (^FailedBlock)(NSError *error);
-typedef void (^CompletionBlock)();
+typedef void (^RequestSuccessBlock)(id data);
+typedef void (^RequestFailedBlock)(NSError *error);
+typedef void (^RequestCompletionBlock)();
 
 @interface ComRequest : NSObject
 
 @property(nonatomic, copy) NSString *urlPathString;
 
-@property(nonatomic, copy) SuccessBlock successBlock;
-@property(nonatomic, copy) FailedBlock failedBlock;
-@property(nonatomic, copy) CompletionBlock completionBlock;
+@property(nonatomic, copy) RequestSuccessBlock successBlock;
+@property(nonatomic, copy) RequestFailedBlock failedBlock;
+@property(nonatomic, copy) RequestCompletionBlock completionBlock;
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)addDataParamFromDictionary:(NSDictionary *)paramDic;
 - (NSDictionary *)getParameters;
-- (void)requestSuccess:(SuccessBlock)successBlock failed:(FailedBlock)failedBlock;
+- (void)requestSuccess:(RequestSuccessBlock)successBlock failed:(RequestFailedBlock)failedBlock;
 - (void)load;
 - (void)cancel;
 - (RequestType)requestType;

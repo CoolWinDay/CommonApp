@@ -12,7 +12,7 @@
 @interface ComScrollView : UIScrollView
 
 @property(nonatomic, strong) BookRequest*   request;
-@property(nonatomic,   copy) SuccessBlock   loadSuccessBlock;
+@property(nonatomic,   copy) RequestSuccessBlock   loadSuccessBlock;
 
 @property(nonatomic, assign) BOOL           isRefresh;
 @property(nonatomic, assign) BOOL           isShowEmptyTip;

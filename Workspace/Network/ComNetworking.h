@@ -17,8 +17,8 @@
 - (instancetype)initWithBaseUrl:(NSString *)baseString path:(NSString *)pathString;
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)addDataParamFromDictionary:(NSDictionary *)paramDic;
-- (void)postRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
-- (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock;
+- (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock;
+- (void)getRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock;
 - (void)cancel;
 
 @end

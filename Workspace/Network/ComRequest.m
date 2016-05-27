@@ -102,7 +102,7 @@
     }];
 }
 
-- (void)requestSuccess:(SuccessBlock)successBlock failed:(FailedBlock)failedBlock {
+- (void)requestSuccess:(RequestSuccessBlock)successBlock failed:(RequestFailedBlock)failedBlock {
     [self cancel];
     [self setParams];
     if ([self requestType] == RequestGet) {
@@ -113,7 +113,7 @@
     }
 }
 
-- (void)postRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
+- (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock {
     __weak __typeof(self)weakSelf = self;
     [self.netWorking postRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
@@ -133,7 +133,7 @@
     }];
 }
 
-- (void)getRequestOnSuccess:(SuccessBlock)successBlock onFailed:(FailedBlock)failedBlock {
+- (void)getRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock {
     __weak __typeof(self)weakSelf = self;
     [self.netWorking getRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
