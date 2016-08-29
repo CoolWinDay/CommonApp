@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 SunX. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 /**
  *  一些公共属性define
  */
@@ -45,5 +47,7 @@
 
 //----------------------------------- block ------------------------------------
 typedef void (^voidBlock)();
-typedef void (^idBlock)(id object);
+typedef void (^idBlock)(id value);
+typedef void (^intBlock)(int value);
+typedef void (^boolBlock)(id value);
 

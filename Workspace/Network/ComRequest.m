@@ -90,67 +90,51 @@
     __weak __typeof(self)weakSelf = self;
     [self.netWorking postRequestOnSuccess:^(id data) {
         __strong __typeof(self)strongSelf = weakSelf;
-        
-        id buildData = nil;
-        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [strongSelf buildResponse:data];
-        }
-        
-        [weakSelf succeed:buildData];
+        [strongSelf responseOnSuccess:data];
     } onFailed:^(NSError *error) {
-        [weakSelf failed:error];
+        __strong __typeof(self)strongSelf = weakSelf;
+        [strongSelf responseOnFailed:error];
     }];
 }
 
 - (void)requestSuccess:(RequestSuccessBlock)successBlock failed:(RequestFailedBlock)failedBlock {
     [self cancel];
     [self setParams];
+    
+    __weak __typeof(self)weakSelf = self;
     if ([self requestType] == RequestGet) {
-        [self getRequestOnSuccess:successBlock onFailed:failedBlock];
+        [self.netWorking postRequestOnSuccess:^(id data) {
+            __strong __typeof(self)strongSelf = weakSelf;
+            strongSelf.successBlock = successBlock;
+            [strongSelf responseOnSuccess:data];
+        } onFailed:^(NSError *error) {
+            __strong __typeof(self)strongSelf = weakSelf;
+            strongSelf.failedBlock = failedBlock;
+            [strongSelf responseOnFailed:error];
+        }];
     }
     else {
-        [self postRequestOnSuccess:successBlock onFailed:failedBlock];
+        [self.netWorking getRequestOnSuccess:^(id data) {
+            __strong __typeof(self)strongSelf = weakSelf;
+            strongSelf.successBlock = successBlock;
+            [strongSelf responseOnSuccess:data];
+        } onFailed:^(NSError *error) {
+            __strong __typeof(self)strongSelf = weakSelf;
+            [strongSelf responseOnFailed:error];
+        }];
     }
 }
 
-- (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock {
-    __weak __typeof(self)weakSelf = self;
-    [self.netWorking postRequestOnSuccess:^(id data) {
-        __strong __typeof(self)strongSelf = weakSelf;
-        
-        id buildData = nil;
-        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [strongSelf buildResponse:data];
-        }
-        
-        if (successBlock) {
-            successBlock(buildData ? : data);
-        }
-    } onFailed:^(NSError *error) {
-        if (failedBlock) {
-            failedBlock(error);
-        }
-    }];
+- (void)responseOnSuccess:(id)data {
+    id buildData = nil;
+    if ([self respondsToSelector:@selector(buildResponse:)]) {
+        buildData = [self buildResponse:data];
+    }
+    [self succeed:buildData];
 }
 
-- (void)getRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock {
-    __weak __typeof(self)weakSelf = self;
-    [self.netWorking getRequestOnSuccess:^(id data) {
-        __strong __typeof(self)strongSelf = weakSelf;
-        
-        id buildData = nil;
-        if ([strongSelf respondsToSelector:@selector(buildResponse:)]) {
-            buildData = [strongSelf buildResponse:data];
-        }
-        
-        if (successBlock) {
-            successBlock(buildData ? : data);
-        }
-    } onFailed:^(NSError *error) {
-        if (failedBlock) {
-            failedBlock(error);
-        }
-    }];
+- (void)responseOnFailed:(NSError *)error {
+    [self failed:error];
 }
 
 - (void)succeed:(id)response {
@@ -192,16 +176,17 @@
         else if ([self responseType] == ResponseJson) {
             NSError *error = nil;
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+            DLog(@"%@", [dic yy_modelToJSONString]);
             if (error)
                 return nil;
-            DLog(@"%@", dic);
             
-            if ([self respondsToSelector:@selector(modelClass)]) {
-                return [[self modelClass] yy_modelWithDictionary:dic];
+            if (dic && [self respondsToSelector:@selector(modelClass)]) {
+                id model = [[self modelClass] yy_modelWithDictionary:dic];
+                if (model) {
+                    return model;
+                }
             }
-            else {
-                return dic;
-            }
+            return dic;
         }
         else {
             return responseData;

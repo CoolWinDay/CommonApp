@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = COLOR_COMMON_BG;
+    self.view.backgroundColor = COLOR_BG_COMMON;
 }
 
 - (void)didReceiveMemoryWarning {

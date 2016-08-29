@@ -181,9 +181,9 @@
 }
 
 - (void)loadFail:(NSError *)error {
+    [self reloadData];
     [self.mj_header endRefreshing];
     [self.mj_footer endRefreshing];
-    [self reloadData];
     
     if (self.isShowEmptyTip) {
         __weak typeof(self) weakSelf = self;
@@ -196,12 +196,13 @@
 - (void)loadSuccess {
     [ComErrorViewManager removeErrorViewFromView:self.superview];
     
+    [self reloadData];
     [self.mj_header endRefreshing];
     [self.mj_footer endRefreshing];
     if (!self.pageRequest.moreData) {
         [self.mj_footer endRefreshingWithNoMoreData];
     }
-    [self reloadData];
+    
     if ([self.pageRequest.listArray count] == 0) {
         if (self.isShowEmptyTip) {
             __weak typeof(self) weakSelf = self;

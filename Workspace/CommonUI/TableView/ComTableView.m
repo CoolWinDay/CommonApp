@@ -121,7 +121,7 @@
         __weak typeof(self) weakSelf = self;
         _comHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             [ComErrorViewManager removeErrorViewFromView:self.superview];
-            self.pageRequest.moreData = NO;
+            weakSelf.pageRequest.moreData = NO;
             [weakSelf.pageRequest reload];
         }];
         

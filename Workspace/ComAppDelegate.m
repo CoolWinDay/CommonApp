@@ -8,6 +8,7 @@
 
 #import "ComAppDelegate.h"
 #import "ComRootNavigationController.h"
+#import "ComTabViewController.h"
 #import "ComDemoViewController.h"
 
 @interface ComAppDelegate ()
@@ -19,9 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    ComDemoViewController *demoController = [[ComDemoViewController alloc] init];
+//    ComDemoViewController *demoController = [[ComDemoViewController alloc] init];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = [[ComRootNavigationController alloc] initWithRootViewController:demoController];
+//    [self.window makeKeyAndVisible];
+//    
+//    return YES;
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[ComRootNavigationController alloc] initWithRootViewController:demoController];
+    ComTabViewController *tabController = [[ComTabViewController alloc] init];
+    self.window.rootViewController = [[ComRootNavigationController alloc] initWithRootViewController:tabController];
+    self.window.backgroundColor = COLOR_BG_COMMON;
     [self.window makeKeyAndVisible];
     
     return YES;
