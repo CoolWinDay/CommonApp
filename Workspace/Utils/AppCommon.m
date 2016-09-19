@@ -17,13 +17,6 @@
     [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] pushViewController:vc animated:animated];
 }
 
-+ (void)presentViewController:(UIViewController*)vc animated:(BOOL)animated {
-    [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController]
-     presentViewController:vc
-     animated:animated
-     completion:nil];
-}
-
 + (void)pushWithVCClass:(Class)vcClass properties:(NSDictionary*)properties {
     id obj = [vcClass new];
     if(properties)
@@ -41,6 +34,15 @@
 
 + (void)pushWithVCClassName:(NSString*)className {
     [self pushWithVCClass:NSClassFromString(className) properties:nil];
+}
+
++ (void)presentViewController:(UIViewController*)vc animated:(BOOL)animated {
+    [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] presentViewController:vc animated:animated completion:nil];
+}
+
++ (void)presentWithVCClassName:(NSString*)className {
+    id obj = [NSClassFromString(className) new];
+    [self presentViewController:obj animated:YES];
 }
 
 //+ (BOOL)hasNetwork

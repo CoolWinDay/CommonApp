@@ -90,8 +90,6 @@
             if (weakSelf.dataArray.count > indexPath.row) {
                 NSString *vcName = weakSelf.dataArray[indexPath.row][@"vcName"];
                 [AppCommon pushWithVCClassName:vcName];
-//                id vc = [NSClassFromString(vcName) new];
-//                [weakSelf presentViewController:vc animated:YES];
             }
         };
     }

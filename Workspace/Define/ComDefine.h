@@ -51,3 +51,16 @@ typedef void (^idBlock)(id value);
 typedef void (^intBlock)(int value);
 typedef void (^boolBlock)(id value);
 
+//----------------------------------- block ------------------------------------
+// 弱引用
+#define WeakSelf __weak typeof(self) weakSelf = self;
+
+//----------------------------------- notifation ------------------------------------
+#define NotiApplicationStateBackground @"NotiApplicationStateBackground"
+#define NotiApplicationStateForeground @"NotiApplicationStateForeground"
+
+
+//SMSSDK官网公共key
+#define appkey @"f3fc6baa9ac4"
+#define app_secrect @"7f3dedcb36d92deebcb373af921d635a"
+

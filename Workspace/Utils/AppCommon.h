@@ -21,6 +21,7 @@ typedef enum {
 + (void)pushWithVCClassName:(NSString*)className properties:(NSDictionary*)properties;
 + (void)pushWithVCClass:(Class)vcClass;
 + (void)pushWithVCClassName:(NSString*)className;
++ (void)presentWithVCClassName:(NSString*)classNam;
 
 ////是否有网络
 //+ (BOOL)hasNetwork;

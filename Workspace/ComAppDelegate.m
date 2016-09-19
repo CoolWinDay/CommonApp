@@ -11,6 +11,9 @@
 #import "ComTabViewController.h"
 #import "ComDemoViewController.h"
 
+#import <SMS_SDK/SMSSDK.h>
+#import <SMS_SDK/Extend/SMSSDK+AddressBookMethods.h>
+
 @interface ComAppDelegate ()
 
 @end
@@ -33,6 +36,11 @@
     self.window.rootViewController = [[ComRootNavigationController alloc] initWithRootViewController:tabController];
     self.window.backgroundColor = COLOR_BG_COMMON;
     [self.window makeKeyAndVisible];
+    
+    [SMSSDK registerApp:appkey
+             withSecret:app_secrect];
+    [SMSSDK enableAppContactFriends:NO];
+    
     
     return YES;
 }

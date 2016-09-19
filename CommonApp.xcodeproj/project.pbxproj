@@ -30,6 +30,8 @@
 		E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E84372121CF53B1300EF51FC /* XMLWriter.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
 		E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* BaseModel.m */; };
+		E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */; };
+		E8561D5E1D7EFEC900C507CF /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
 		E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E881E5651CF57C6E0021DA23 /* ComPageRequest.m */; };
@@ -58,6 +60,13 @@
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
 		E8BFB08F1CE32B93002E99EC /* UIAlertView+Block2.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
+		E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FED1D90227100021379 /* MOBFoundation.framework */; };
+		E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FEE1D90227100021379 /* SMS_SDK.framework */; };
+		E8DD5FF41D902D8D00021379 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF31D902D8D00021379 /* MessageUI.framework */; };
+		E8DD5FF61D902D9300021379 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF51D902D9300021379 /* JavaScriptCore.framework */; };
+		E8DD5FF81D902DB900021379 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF71D902DB900021379 /* libz.tbd */; };
+		E8DD5FFA1D902DD000021379 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF91D902DD000021379 /* libicucore.tbd */; };
+		E8DD5FFC1D902DE000021379 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FFB1D902DE000021379 /* libstdc++.tbd */; };
 		E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF51CAB7A3100F492B2 /* BookListModel.m */; };
 		E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF81CABAF7900F492B2 /* BookModel.m */; };
 		E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C03F1C8D6D6900625004 /* ComApplication.m */; };
@@ -113,6 +122,9 @@
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E84BD2231C8FBF16003EF94A /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		E84BD2241C8FBF16003EF94A /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		E8561D5A1D7EFEC900C507CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		E8690AC51C93BEC300BFC155 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		E8690AC61C93BEC300BFC155 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		E86A22441C91A9B300E34A62 /* ComNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetworking.h; sourceTree = "<group>"; };
@@ -155,6 +167,13 @@
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8DD5FED1D90227100021379 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		E8DD5FEE1D90227100021379 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		E8DD5FF31D902D8D00021379 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E8DD5FF51D902D9300021379 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		E8DD5FF71D902DB900021379 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E8DD5FF91D902DD000021379 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		E8DD5FFB1D902DE000021379 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		E8F54DF41CAB7A3100F492B2 /* BookListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
 		E8F54DF51CAB7A3100F492B2 /* BookListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListModel.m; sourceTree = "<group>"; };
 		E8F54DF71CABAF7900F492B2 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
@@ -179,6 +198,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8DD5FFC1D902DE000021379 /* libstdc++.tbd in Frameworks */,
+				E8DD5FFA1D902DD000021379 /* libicucore.tbd in Frameworks */,
+				E8DD5FF81D902DB900021379 /* libz.tbd in Frameworks */,
+				E8DD5FF61D902D9300021379 /* JavaScriptCore.framework in Frameworks */,
+				E8DD5FF41D902D8D00021379 /* MessageUI.framework in Frameworks */,
+				E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */,
+				E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */,
 				736B6BD82EF87EDE7FCF6DFE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +224,11 @@
 		B1355F1D786EB808FD23079C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E8DD5FFB1D902DE000021379 /* libstdc++.tbd */,
+				E8DD5FF91D902DD000021379 /* libicucore.tbd */,
+				E8DD5FF71D902DB900021379 /* libz.tbd */,
+				E8DD5FF51D902D9300021379 /* JavaScriptCore.framework */,
+				E8DD5FF31D902D8D00021379 /* MessageUI.framework */,
 				EE8E82B16F0AC14988BB9451 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -255,6 +286,29 @@
 				E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */,
 			);
 			path = Additions;
+			sourceTree = "<group>";
+		};
+		E81B197B1D7DB75600F1DCE4 /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				E8DD5FEC1D90227100021379 /* SMS_SDK */,
+			);
+			path = ThirdPart;
+			sourceTree = "<group>";
+		};
+		E81B19891D7DB98B00F1DCE4 /* Compont */ = {
+			isa = PBXGroup;
+			children = (
+				E81B198A1D7DB98B00F1DCE4 /* SMSValidate */,
+			);
+			path = Compont;
+			sourceTree = "<group>";
+		};
+		E81B198A1D7DB98B00F1DCE4 /* SMSValidate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SMSValidate;
 			sourceTree = "<group>";
 		};
 		E84262AB1CD8308A00100C3B /* CollectionView */ = {
@@ -344,12 +398,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E8561D591D7EFEB600C507CF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E8561D5A1D7EFEC900C507CF /* RegisterViewController.h */,
+				E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */,
+				E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		E88DFE9A1D7473BB0058F015 /* Business */ = {
 			isa = PBXGroup;
 			children = (
 				E88DFEA71D74748D0058F015 /* Demo */,
 				E88DFEA01D7474380058F015 /* Home */,
 				E88DFEB41D7474F80058F015 /* Mine */,
+				E8561D591D7EFEB600C507CF /* Login */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -449,6 +514,8 @@
 				E800B5B91C8EF4A200F8BDEE /* Network */,
 				E84BD21F1C8FB181003EF94A /* Models */,
 				E8F54DEA1CAB721B00F492B2 /* CommonUI */,
+				E81B19891D7DB98B00F1DCE4 /* Compont */,
+				E81B197B1D7DB75600F1DCE4 /* ThirdPart */,
 				E897D3B01C8E64D80067B3E6 /* Resources */,
 				E8C326441C891B7E00628824 /* Supporting Files */,
 			);
@@ -463,6 +530,15 @@
 				E8F9EA0F1C8E72CF0072F58D /* ComApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8DD5FEC1D90227100021379 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				E8DD5FED1D90227100021379 /* MOBFoundation.framework */,
+				E8DD5FEE1D90227100021379 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
 			sourceTree = "<group>";
 		};
 		E8F54DEA1CAB721B00F492B2 /* CommonUI */ = {
@@ -565,6 +641,7 @@
 				E88DFECF1D7475470058F015 /* tool_button_user_bor@2x.png in Resources */,
 				E88DFECE1D7475470058F015 /* tool_button_home_sel@3x.png in Resources */,
 				E88DFEC81D7475470058F015 /* tool_button_buy_bor@3x.png in Resources */,
+				E8561D5E1D7EFEC900C507CF /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +725,7 @@
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
 				E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */,
 				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
+				E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */,
 				E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */,
 				E88DFEB81D7475070058F015 /* MineVC.m in Sources */,
 				E8FC45AE1CE082D200B97AA2 /* ComRootNavigationController.m in Sources */,
@@ -756,10 +834,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Workspace/ThirdPart/SMS_SDK",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Workspace/ComApp-Prefix.pch";
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
 			};
@@ -771,10 +854,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Workspace/ThirdPart/SMS_SDK",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Workspace/ComApp-Prefix.pch";
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
 			};

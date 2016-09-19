@@ -10,6 +10,10 @@
 
 @interface MineVC ()
 
+@property(nonatomic, weak) IBOutlet UIButton *loginBtn;
+
+- (IBAction)doLogin:(id)sender;
+
 @end
 
 @implementation MineVC
@@ -18,6 +22,10 @@
     [super viewDidLoad];
     
     self.title = @"我的";
+}
+
+- (IBAction)doLogin:(id)sender {
+    [AppCommon pushWithVCClassName:@"RegisterViewController"];
 }
 
 - (void)didReceiveMemoryWarning {
