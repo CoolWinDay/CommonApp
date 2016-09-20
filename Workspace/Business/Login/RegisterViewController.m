@@ -7,9 +7,10 @@
 //
 
 #import "RegisterViewController.h"
-#import <SMS_SDK/SMSSDK.h>
 #import "AFNetworkReachabilityManager.h"
 #import "ComAppDelegate.h"
+#import "SMSManager.h"
+#import "NSString+Validate.h"
 
 typedef void(^NetWorkReachableBlock)(void);
 
@@ -39,8 +40,8 @@ static int _flag;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapForKeyBoardHide)];
     [self.view addGestureRecognizer:tap];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appStateBackgroundForTimer) name:NotiApplicationStateBackground object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appStateForegroundForTimer) name:NotiApplicationStateForeground object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appStateBackgroundForTimer) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appStateForegroundForTimer) name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)appStateBackgroundForTimer {
@@ -91,7 +92,7 @@ static int _flag;
     
     [weakSelf isNetWorkReachable:^{
         
-        if (![self isValidatePhoneNum:self.numText.text]) {
+        if (![self.numText.text isPhoneNumber]) {
             [weakSelf alertViewShow:@"请输入有效手机号码"];
             return;
         }
@@ -104,7 +105,7 @@ static int _flag;
         weakSelf.tileNumLab.text = [NSString stringWithFormat:@"(%d)",_flag];
         weakSelf.tileNumLab.hidden = NO;
         
-        [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:weakSelf.numText.text zone:@"+86" customIdentifier:nil result:^(NSError *error) {
+        [SMSManager getVerificationCodeWithPhoneNumber:weakSelf.numText.text result:^(NSError *error) {
             if (!error)
             {
                 [weakSelf alertViewShow:@"验证码已发送"];
@@ -118,20 +119,6 @@ static int _flag;
                 _timer = nil;
             }
         }];
-        
-//        [JSMSSDK getVerificationCodeWithPhoneNumber:weakSelf.numText.text andTemplateID:[NSString stringWithFormat:@"%d",1] completionHandler:^(id resultObject, NSError *error) {
-//            if (!error) {
-//                [weakSelf alertViewShow:@"验证码已发送"];
-//            }
-//            else {
-//                [weakSelf alertViewShow:[error.userInfo objectForKey:NSLocalizedDescriptionKey]];
-//                NSLog(@"上传手机号失败 error %ld",(long)error.code);
-//                [self.getCodeBtn setEnabled:YES];
-//                self.tileNumLab.hidden = YES;
-//                [_timer invalidate];
-//                _timer = nil;
-//            }
-//        }];
     }];
 }
 
@@ -146,7 +133,7 @@ static int _flag;
             [weakSelf alertViewShow:@"请输入验证码"];
         }
         
-        [SMSSDK commitVerificationCode:weakSelf.codeText.text phoneNumber:weakSelf.numText.text zone:@"+86" result:^(NSError *error) {
+        [SMSManager commitWithPhoneNumber:weakSelf.numText.text verificationCode:weakSelf.codeText.text result:^(NSError *error) {
             if (!error) {
                 [weakSelf alertViewShow:@"注册---验证成功"];
                 NSLog(@"注册---验证成功");
@@ -156,28 +143,9 @@ static int _flag;
                 NSLog(@"注册---验证失败 error %ld",(long)error.code);
             }
         }];
-        
-//        [JSMSSDK commitWithPhoneNumber:weakSelf.numText.text verificationCode:weakSelf.codeText.text completionHandler:^(id resultObject, NSError *error) {
-//            if (!error) {
-//                [weakSelf alertViewShow:@"注册---验证成功"];
-//                NSLog(@"注册---验证成功");
-//            }
-//            else {
-//                [weakSelf alertViewShow:[error.userInfo objectForKey:NSLocalizedDescriptionKey]];
-//                NSLog(@"注册---验证失败 error %ld",(long)error.code);
-//            }
-//        }];
     }];
     
 }
-
-- (BOOL)isValidatePhoneNum:(NSString *)num {
-    NSString * MOBILE = @"\\d{11}$";
-    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",MOBILE];
-    
-    return [regextestmobile evaluateWithObject:num];
-}
-
 
 - (void)alertViewShow:(NSString *)alertText {
     UILabel* alertLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 250, 20)];
