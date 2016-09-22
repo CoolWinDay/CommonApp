@@ -39,7 +39,6 @@
     
     [SMSSDK registerApp:appkey
              withSecret:app_secrect];
-    [SMSSDK enableAppContactFriends:NO];
     
     
     return YES;

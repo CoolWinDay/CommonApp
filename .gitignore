@@ -21,3 +21,5 @@ xcuserdata/
 ## pod
 Pods/
 *.xcworkspacedata
+
+.DS_Store
