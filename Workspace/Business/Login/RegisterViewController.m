@@ -9,9 +9,8 @@
 #import "RegisterViewController.h"
 #import "AFNetworkReachabilityManager.h"
 #import "ComAppDelegate.h"
-#import "ComSMSManager.h"
+#import "SMSManager.h"
 #import "NSString+Validate.h"
-#import "ComNetManager.h"
 
 typedef void(^NetWorkReachableBlock)(void);
 
@@ -20,10 +19,10 @@ static int _flag;
 
 @interface RegisterViewController ()
 {
+    NSTimer * _timer;
     NSDate * _tempDate;
     int _tempFlag;
 }
-@property(nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -47,6 +46,7 @@ static int _flag;
 
 - (void)appStateBackgroundForTimer {
     if (_timer) {
+        
         _tempDate = [NSDate date];
         _tempFlag = _flag;
     }
@@ -87,24 +87,27 @@ static int _flag;
 
 - (IBAction)getCodeBtnClick:(UIButton *)sender {
     [self.view endEditing:YES];
-    AppWeakSelf
-    if ([ComNetManager isNetwork]) {
-        NSString *phoneNumber = [weakSelf.numText.text trimSpace];
-        if (![phoneNumber isPhoneNumber]) {
+    
+    __weak __typeof__(self) weakSelf = self;
+    
+    [weakSelf isNetWorkReachable:^{
+        
+        if (![self.numText.text isPhoneNumber]) {
             [weakSelf alertViewShow:@"请输入有效手机号码"];
             return;
         }
         
-        if (!weakSelf.timer) {
-            weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(resetGetCodeBtn) userInfo:nil repeats:YES];
+        if (!_timer) {
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(resetGetCodeBtn) userInfo:nil repeats:YES];
         }
         
         [sender setEnabled:NO];
-        weakSelf.tileNumLab.text = [NSString stringWithFormat:@"(%d)", _flag];
+        weakSelf.tileNumLab.text = [NSString stringWithFormat:@"(%d)",_flag];
         weakSelf.tileNumLab.hidden = NO;
         
-        [ComSMSManager getVerificationCodeWithPhoneNumber:weakSelf.numText.text result:^(NSError *error) {
-            if (!error) {
+        [SMSManager getVerificationCodeWithPhoneNumber:weakSelf.numText.text result:^(NSError *error) {
+            if (!error)
+            {
                 [weakSelf alertViewShow:@"验证码已发送"];
             }
             else {
@@ -112,23 +115,25 @@ static int _flag;
                 NSLog(@"上传手机号失败 error %ld",(long)error.code);
                 [self.getCodeBtn setEnabled:YES];
                 self.tileNumLab.hidden = YES;
-                [weakSelf.timer invalidate];
-                weakSelf.timer = nil;
+                [_timer invalidate];
+                _timer = nil;
             }
         }];
-    }
+    }];
 }
 
 
 - (IBAction)registerBtnClick:(UIButton *)sender {
     [self.view endEditing:YES];
-    AppWeakSelf
-    if ([ComNetManager isNetwork]) {
+    
+    __weak __typeof__(self) weakSelf = self;
+    
+    [weakSelf isNetWorkReachable:^{
         if (!weakSelf.codeText.text.length) {
             [weakSelf alertViewShow:@"请输入验证码"];
         }
         
-        [ComSMSManager commitWithPhoneNumber:weakSelf.numText.text verificationCode:weakSelf.codeText.text result:^(NSError *error) {
+        [SMSManager commitWithPhoneNumber:weakSelf.numText.text verificationCode:weakSelf.codeText.text result:^(NSError *error) {
             if (!error) {
                 [weakSelf alertViewShow:@"注册---验证成功"];
                 NSLog(@"注册---验证成功");
@@ -138,7 +143,7 @@ static int _flag;
                 NSLog(@"注册---验证失败 error %ld",(long)error.code);
             }
         }];
-    }
+    }];
     
 }
 
@@ -153,6 +158,42 @@ static int _flag;
     
     [alertLabel performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:3.0];
 }
+
+// 网络状态检测
+- (BOOL)isNetWorkReachable:(NetWorkReachableBlock)block
+{
+    __weak __typeof__(self) weakSelf = self;
+    
+    __weak AFNetworkReachabilityManager *afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    // 开启网络监视器
+    [afNetworkReachabilityManager startMonitoring];
+    
+    [afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        //          stopMonitoring
+        [afNetworkReachabilityManager stopMonitoring];
+        
+        switch (status) {
+                case AFNetworkReachabilityStatusNotReachable:
+            {
+                NSString * temp = @"当前无网络连接";
+                [weakSelf alertViewShow:temp];
+                break;
+            }
+                case AFNetworkReachabilityStatusReachableViaWiFi:
+                case AFNetworkReachabilityStatusReachableViaWWAN:
+            {
+                block();
+                break;
+            }
+            default:
+                break;
+        }
+        
+    }];
+    
+    return afNetworkReachabilityManager.isReachable;
+}
+
 
 /*
  #pragma mark - Navigation

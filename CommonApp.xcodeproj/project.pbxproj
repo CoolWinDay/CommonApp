@@ -25,17 +25,15 @@
 		E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262C71CD830EE00100C3B /* ComCollectionViewCell.m */; };
 		E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */; };
 		E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CE1CD886E600100C3B /* ComBaseViewController.m */; };
+		E84262DE1CD892C100100C3B /* ComColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262DD1CD892C100100C3B /* ComColorManager.m */; };
 		E84372141CF53B1300EF51FC /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E843720E1CF53B1300EF51FC /* XMLReader.m */; };
 		E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E84372121CF53B1300EF51FC /* XMLWriter.m */; };
+		E846C41C1D914F4100001ACD /* SMSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E846C41B1D914F4100001ACD /* SMSManager.m */; };
 		E846C4221D9157B000001ACD /* NSString+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = E846C4211D9157B000001ACD /* NSString+Validate.m */; };
-		E846C4291D917B8200001ACD /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E846C4281D917B8200001ACD /* NSString+Additions.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
 		E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* BaseModel.m */; };
 		E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */; };
 		E8561D5E1D7EFEC900C507CF /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */; };
-		E858E8191D92C05800767C83 /* ComSMSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E858E8181D92C05800767C83 /* ComSMSManager.m */; };
-		E858E81C1D92C0C400767C83 /* ComNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E858E81B1D92C0C400767C83 /* ComNetManager.m */; };
-		E858E8201D92C94000767C83 /* ComColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E858E81F1D92C94000767C83 /* ComColorManager.m */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
 		E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E881E5651CF57C6E0021DA23 /* ComPageRequest.m */; };
@@ -116,14 +114,16 @@
 		E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollectionViewCell.m; sourceTree = "<group>"; };
 		E84262CD1CD886E600100C3B /* ComBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComBaseViewController.h; sourceTree = "<group>"; };
 		E84262CE1CD886E600100C3B /* ComBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComBaseViewController.m; sourceTree = "<group>"; };
+		E84262DC1CD892C100100C3B /* ComColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComColorManager.h; sourceTree = "<group>"; };
+		E84262DD1CD892C100100C3B /* ComColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComColorManager.m; sourceTree = "<group>"; };
 		E843720D1CF53B1300EF51FC /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		E843720E1CF53B1300EF51FC /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		E84372111CF53B1300EF51FC /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
 		E84372121CF53B1300EF51FC /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
+		E846C41A1D914F4100001ACD /* SMSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSManager.h; sourceTree = "<group>"; };
+		E846C41B1D914F4100001ACD /* SMSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSManager.m; sourceTree = "<group>"; };
 		E846C4211D9157B000001ACD /* NSString+Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validate.m"; sourceTree = "<group>"; };
 		E846C4231D9157BC00001ACD /* NSString+Validate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validate.h"; sourceTree = "<group>"; };
-		E846C4271D917B8200001ACD /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
-		E846C4281D917B8200001ACD /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		E84BD2201C8FB19F003EF94A /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		E84BD2211C8FB19F003EF94A /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		E84BD2231C8FBF16003EF94A /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
@@ -131,12 +131,6 @@
 		E8561D5A1D7EFEC900C507CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
-		E858E8171D92C05800767C83 /* ComSMSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComSMSManager.h; sourceTree = "<group>"; };
-		E858E8181D92C05800767C83 /* ComSMSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComSMSManager.m; sourceTree = "<group>"; };
-		E858E81A1D92C0C400767C83 /* ComNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetManager.h; sourceTree = "<group>"; };
-		E858E81B1D92C0C400767C83 /* ComNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetManager.m; sourceTree = "<group>"; };
-		E858E81E1D92C94000767C83 /* ComColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComColorManager.h; sourceTree = "<group>"; };
-		E858E81F1D92C94000767C83 /* ComColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComColorManager.m; sourceTree = "<group>"; };
 		E8690AC51C93BEC300BFC155 /* TagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagModel.h; sourceTree = "<group>"; };
 		E8690AC61C93BEC300BFC155 /* TagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagModel.m; sourceTree = "<group>"; };
 		E86A22441C91A9B300E34A62 /* ComNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetworking.h; sourceTree = "<group>"; };
@@ -276,6 +270,8 @@
 			children = (
 				E8FC45AF1CE0899000B97AA2 /* AppCommon.h */,
 				E8FC45B01CE0899000B97AA2 /* AppCommon.m */,
+				E84262DC1CD892C100100C3B /* ComColorManager.h */,
+				E84262DD1CD892C100100C3B /* ComColorManager.m */,
 				E843720B1CF53B1300EF51FC /* XMLReader */,
 				E843720F1CF53B1300EF51FC /* XMLWriter */,
 				E807D2201CB7A8CB00ADCF87 /* Additions */,
@@ -296,8 +292,6 @@
 				E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */,
 				E846C4231D9157BC00001ACD /* NSString+Validate.h */,
 				E846C4211D9157B000001ACD /* NSString+Validate.m */,
-				E846C4271D917B8200001ACD /* NSString+Additions.h */,
-				E846C4281D917B8200001ACD /* NSString+Additions.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -313,14 +307,18 @@
 		E81B19891D7DB98B00F1DCE4 /* Compont */ = {
 			isa = PBXGroup;
 			children = (
-				E858E81E1D92C94000767C83 /* ComColorManager.h */,
-				E858E81F1D92C94000767C83 /* ComColorManager.m */,
-				E858E8171D92C05800767C83 /* ComSMSManager.h */,
-				E858E8181D92C05800767C83 /* ComSMSManager.m */,
-				E858E81A1D92C0C400767C83 /* ComNetManager.h */,
-				E858E81B1D92C0C400767C83 /* ComNetManager.m */,
+				E81B198A1D7DB98B00F1DCE4 /* SMSValidate */,
 			);
 			path = Compont;
+			sourceTree = "<group>";
+		};
+		E81B198A1D7DB98B00F1DCE4 /* SMSValidate */ = {
+			isa = PBXGroup;
+			children = (
+				E846C41A1D914F4100001ACD /* SMSManager.h */,
+				E846C41B1D914F4100001ACD /* SMSManager.m */,
+			);
+			path = SMSValidate;
 			sourceTree = "<group>";
 		};
 		E84262AB1CD8308A00100C3B /* CollectionView */ = {
@@ -717,6 +715,7 @@
 				E88DFE991D7466E50058F015 /* ComTabViewController.m in Sources */,
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */,
+				E846C41C1D914F4100001ACD /* SMSManager.m in Sources */,
 				E8BFB08F1CE32B93002E99EC /* UIAlertView+Block2.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
 				E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */,
@@ -730,6 +729,7 @@
 				E84262C21CD8308A00100C3B /* ComTableView.m in Sources */,
 				E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */,
 				E84262C51CD8308A00100C3B /* ComTableViewDelegate.m in Sources */,
+				E84262DE1CD892C100100C3B /* ComColorManager.m in Sources */,
 				E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */,
 				E88DFEB21D74748D0058F015 /* TestScrollViewController.m in Sources */,
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
@@ -740,23 +740,19 @@
 				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
 				E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */,
 				E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */,
-				E858E81C1D92C0C400767C83 /* ComNetManager.m in Sources */,
 				E88DFEB81D7475070058F015 /* MineVC.m in Sources */,
 				E8FC45AE1CE082D200B97AA2 /* ComRootNavigationController.m in Sources */,
 				E88DFEB31D74748D0058F015 /* TestTableViewController.m in Sources */,
 				E84262C41CD8308A00100C3B /* ComTableViewDataSource.m in Sources */,
-				E858E8201D92C94000767C83 /* ComColorManager.m in Sources */,
 				E84262C11CD8308A00100C3B /* ComScrollView.m in Sources */,
 				E8C326461C891B7E00628824 /* main.m in Sources */,
 				E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */,
 				E846C4221D9157B000001ACD /* NSString+Validate.m in Sources */,
 				E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */,
 				E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */,
-				E846C4291D917B8200001ACD /* NSString+Additions.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
 				E84372141CF53B1300EF51FC /* XMLReader.m in Sources */,
 				E88DFEB11D74748D0058F015 /* TestCollectionViewController.m in Sources */,
-				E858E8191D92C05800767C83 /* ComSMSManager.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
 				E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */,
 				E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */,

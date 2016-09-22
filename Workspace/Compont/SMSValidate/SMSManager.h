@@ -1,5 +1,5 @@
 //
-//  ComSMSManager.h
+//  SMSManager.h
 //  CommonApp
 //
 //  Created by lipeng on 16/9/20.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ComSMSManager : NSObject
+@interface SMSManager : NSObject
 
 + (void)getVerificationCodeWithPhoneNumber:(NSString *)phoneNumber result:(errorBlock)block;
 + (void)commitWithPhoneNumber:(NSString *)phoneNumber verificationCode:(NSString *)verificationCode result:(errorBlock)block;

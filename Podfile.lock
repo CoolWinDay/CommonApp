@@ -24,7 +24,6 @@ PODS:
   - MBProgressHUD (0.9.1)
   - MJRefresh (3.1.0)
   - PureLayout (3.0.1)
-  - Reachability (3.2)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
@@ -40,7 +39,6 @@ DEPENDENCIES:
   - MBProgressHUD (= 0.9.1)
   - MJRefresh (~> 3.1.0)
   - PureLayout (~> 3.0.1)
-  - Reachability (~> 3.2)
   - SDWebImage (= 3.7.2)
   - Toast (= 2.4)
   - UIAlertView-Blocks (~> 1.0)
@@ -54,7 +52,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
   UIAlertView-Blocks: 7904744fca618afbd2ec646608924f5e69d5acd1

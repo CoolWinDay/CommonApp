@@ -23,6 +23,12 @@ typedef enum {
 + (void)pushWithVCClassName:(NSString*)className;
 + (void)presentWithVCClassName:(NSString*)classNam;
 
+////是否有网络
+//+ (BOOL)hasNetwork;
+////返回wifi or 2g/3g
+//+ (NSString*)netWorkName;
+////是否是wifi
+//+ (BOOL)isWifi;
 //
 ////删除文件或文件夹
 //+ (BOOL)removeDir:(NSString*)path;

@@ -54,7 +54,7 @@ typedef void (^errorBlock) (NSError *error);
 
 //----------------------------------- block ------------------------------------
 // 弱引用
-#define AppWeakSelf __weak typeof(self) weakSelf = self;
+#define WeakSelf __weak typeof(self) weakSelf = self;
 
 //----------------------------------- notifation ------------------------------------
 
