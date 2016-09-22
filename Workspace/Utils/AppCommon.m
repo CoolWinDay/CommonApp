@@ -7,7 +7,7 @@
 //
 
 #import "AppCommon.h"
-//#import "Reachability.h"
+#import "Reachability.h"
 #import <sys/sysctl.h>
 #import <Security/Security.h>
 
@@ -45,26 +45,6 @@
     [self presentViewController:obj animated:YES];
 }
 
-//+ (BOOL)hasNetwork
-//{
-//    return [Reachability reachabilityForInternetConnection].currentReachabilityStatus != NotReachable;
-//}
-//
-//+ (NSString*)netWorkName {
-//    NetworkStatus status = [Reachability reachabilityForInternetConnection].currentReachabilityStatus;
-//    if (status == ReachableViaWiFi) {
-//        return @"wifi";
-//    }
-//    return @"2g/3g";
-//}
-//
-//+ (BOOL)isWifi {
-//    NetworkStatus status = [Reachability reachabilityForInternetConnection].currentReachabilityStatus;
-//    if (status == ReachableViaWiFi) {
-//        return YES;
-//    }
-//    return NO;
-//}
 //
 //+ (BOOL)removeDir:(NSString*)path
 //{
