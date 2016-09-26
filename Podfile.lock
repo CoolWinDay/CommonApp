@@ -30,7 +30,6 @@ PODS:
   - SDWebImage/Core (3.7.2)
   - Toast (2.4)
   - UIAlertView-Blocks (1.0)
-  - UMengMessage-NO-IDFA-SUN (1.3.0)
   - YYModel (1.0.2)
 
 DEPENDENCIES:
@@ -44,7 +43,6 @@ DEPENDENCIES:
   - SDWebImage (= 3.7.2)
   - Toast (= 2.4)
   - UIAlertView-Blocks (~> 1.0)
-  - UMengMessage-NO-IDFA-SUN (~> 1.3.0)
   - YYModel (~> 1.0.1)
 
 SPEC CHECKSUMS:
@@ -58,7 +56,6 @@ SPEC CHECKSUMS:
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   Toast: 0773b8fc0e97352ca6054517bec7ebdd4110029d
   UIAlertView-Blocks: 7904744fca618afbd2ec646608924f5e69d5acd1
-  UMengMessage-NO-IDFA-SUN: a78bd5d4bf39694267499ca738f5a541ac2f49e7
   YYModel: 7a467eff45ae3641c33efb136c262d33b6f48c1a
 
 COCOAPODS: 0.39.0

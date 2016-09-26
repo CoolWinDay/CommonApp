@@ -11,8 +11,8 @@
 #import "ComTabViewController.h"
 #import "ComDemoViewController.h"
 
-#import <SMS_SDK/SMSSDK.h>
-#import <SMS_SDK/Extend/SMSSDK+AddressBookMethods.h>
+#import "ComRegistManager.h"
+#import "ComPushMsgManager.h"
 
 @interface ComAppDelegate ()
 
@@ -23,13 +23,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-//    ComDemoViewController *demoController = [[ComDemoViewController alloc] init];
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    self.window.rootViewController = [[ComRootNavigationController alloc] initWithRootViewController:demoController];
-//    [self.window makeKeyAndVisible];
-//    
-//    return YES;
-    
+    // 各种第三方注册
+    [ComRegistManager registWithOptions:launchOptions];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ComTabViewController *tabController = [[ComTabViewController alloc] init];
@@ -37,11 +32,12 @@
     self.window.backgroundColor = COLOR_BG_COMMON;
     [self.window makeKeyAndVisible];
     
-    [SMSSDK registerApp:appkey
-             withSecret:app_secrect];
-    
-    
     return YES;
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    [ComPushMsgManager handelRemoteNotification:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

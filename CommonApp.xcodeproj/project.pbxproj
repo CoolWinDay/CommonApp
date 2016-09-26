@@ -71,8 +71,11 @@
 		E8DD5FF81D902DB900021379 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF71D902DB900021379 /* libz.tbd */; };
 		E8DD5FFA1D902DD000021379 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF91D902DD000021379 /* libicucore.tbd */; };
 		E8DD5FFC1D902DE000021379 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FFB1D902DE000021379 /* libstdc++.tbd */; };
+		E8F0C1F21D99685400AE6EBE /* ComRegistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C1F11D99685400AE6EBE /* ComRegistManager.m */; };
 		E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF51CAB7A3100F492B2 /* BookListModel.m */; };
 		E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF81CABAF7900F492B2 /* BookModel.m */; };
+		E8F6764B1D995110009754A4 /* ComPushMsgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6764A1D995110009754A4 /* ComPushMsgManager.m */; };
+		E8F6764F1D995A03009754A4 /* libUMessage_Sdk_1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8F6764D1D995A03009754A4 /* libUMessage_Sdk_1.4.0.a */; };
 		E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C03F1C8D6D6900625004 /* ComApplication.m */; };
 		E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F7C0421C8D6DDA00625004 /* ComAppDelegate.m */; };
 		E8FC45AE1CE082D200B97AA2 /* ComRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8FC45AD1CE082D200B97AA2 /* ComRootNavigationController.m */; };
@@ -186,10 +189,17 @@
 		E8DD5FF71D902DB900021379 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E8DD5FF91D902DD000021379 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		E8DD5FFB1D902DE000021379 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		E8F0C1F01D99685400AE6EBE /* ComRegistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRegistManager.h; sourceTree = "<group>"; };
+		E8F0C1F11D99685400AE6EBE /* ComRegistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRegistManager.m; sourceTree = "<group>"; };
 		E8F54DF41CAB7A3100F492B2 /* BookListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
 		E8F54DF51CAB7A3100F492B2 /* BookListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListModel.m; sourceTree = "<group>"; };
 		E8F54DF71CABAF7900F492B2 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
 		E8F54DF81CABAF7900F492B2 /* BookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookModel.m; sourceTree = "<group>"; };
+		E8F676491D995110009754A4 /* ComPushMsgManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComPushMsgManager.h; sourceTree = "<group>"; };
+		E8F6764A1D995110009754A4 /* ComPushMsgManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComPushMsgManager.m; sourceTree = "<group>"; };
+		E8F6764D1D995A03009754A4 /* libUMessage_Sdk_1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.4.0.a; sourceTree = "<group>"; };
+		E8F6764E1D995A03009754A4 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		E8F676501D995AC2009754A4 /* CommonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommonApp.entitlements; sourceTree = "<group>"; };
 		E8F7C03E1C8D6D6900625004 /* ComApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComApplication.h; sourceTree = "<group>"; };
 		E8F7C03F1C8D6D6900625004 /* ComApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComApplication.m; sourceTree = "<group>"; };
 		E8F7C0411C8D6DDA00625004 /* ComAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComAppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +226,7 @@
 				E8DD5FF61D902D9300021379 /* JavaScriptCore.framework in Frameworks */,
 				E8DD5FF41D902D8D00021379 /* MessageUI.framework in Frameworks */,
 				E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */,
+				E8F6764F1D995A03009754A4 /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */,
 				736B6BD82EF87EDE7FCF6DFE /* libPods.a in Frameworks */,
 			);
@@ -305,6 +316,7 @@
 		E81B197B1D7DB75600F1DCE4 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				E8F6764C1D995A03009754A4 /* UMessage_Sdk_1.4.0 */,
 				E8DD5FEC1D90227100021379 /* SMS_SDK */,
 			);
 			path = ThirdPart;
@@ -313,12 +325,16 @@
 		E81B19891D7DB98B00F1DCE4 /* Compont */ = {
 			isa = PBXGroup;
 			children = (
+				E8F0C1F01D99685400AE6EBE /* ComRegistManager.h */,
+				E8F0C1F11D99685400AE6EBE /* ComRegistManager.m */,
 				E858E81E1D92C94000767C83 /* ComColorManager.h */,
 				E858E81F1D92C94000767C83 /* ComColorManager.m */,
 				E858E8171D92C05800767C83 /* ComSMSManager.h */,
 				E858E8181D92C05800767C83 /* ComSMSManager.m */,
 				E858E81A1D92C0C400767C83 /* ComNetManager.h */,
 				E858E81B1D92C0C400767C83 /* ComNetManager.m */,
+				E8F676491D995110009754A4 /* ComPushMsgManager.h */,
+				E8F6764A1D995110009754A4 /* ComPushMsgManager.m */,
 			);
 			path = Compont;
 			sourceTree = "<group>";
@@ -497,6 +513,7 @@
 		E8C326381C891B7E00628824 = {
 			isa = PBXGroup;
 			children = (
+				E8F676501D995AC2009754A4 /* CommonApp.entitlements */,
 				E8C326431C891B7E00628824 /* Workspace */,
 				E8C326421C891B7E00628824 /* Products */,
 				45EC1009AF7D019D8848B188 /* Pods */,
@@ -568,6 +585,15 @@
 			path = CommonUI;
 			sourceTree = "<group>";
 		};
+		E8F6764C1D995A03009754A4 /* UMessage_Sdk_1.4.0 */ = {
+			isa = PBXGroup;
+			children = (
+				E8F6764D1D995A03009754A4 /* libUMessage_Sdk_1.4.0.a */,
+				E8F6764E1D995A03009754A4 /* UMessage.h */,
+			);
+			path = UMessage_Sdk_1.4.0;
+			sourceTree = "<group>";
+		};
 		E8F9EA0A1C8E6F840072F58D /* Define */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +640,11 @@
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = SQ935D3STH;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -735,6 +766,7 @@
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
 				E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */,
 				E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */,
+				E8F0C1F21D99685400AE6EBE /* ComRegistManager.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
 				E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */,
 				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
@@ -747,6 +779,7 @@
 				E84262C41CD8308A00100C3B /* ComTableViewDataSource.m in Sources */,
 				E858E8201D92C94000767C83 /* ComColorManager.m in Sources */,
 				E84262C11CD8308A00100C3B /* ComScrollView.m in Sources */,
+				E8F6764B1D995110009754A4 /* ComPushMsgManager.m in Sources */,
 				E8C326461C891B7E00628824 /* main.m in Sources */,
 				E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */,
 				E846C4221D9157B000001ACD /* NSString+Validate.m in Sources */,
@@ -852,6 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = CommonApp.entitlements;
 				DEVELOPMENT_TEAM = SQ935D3STH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -861,7 +895,10 @@
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Workspace/ThirdPart/UMessage_Sdk_1.4.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
 				PROVISIONING_PROFILE = "b49b63e6-643a-4993-99e6-a46c22caca5b";
@@ -875,6 +912,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = CommonApp.entitlements;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -884,7 +922,10 @@
 				INFOPLIST_FILE = Workspace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Workspace/ThirdPart/UMessage_Sdk_1.4.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
 			};

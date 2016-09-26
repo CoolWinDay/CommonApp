@@ -66,3 +66,5 @@ typedef void (^errorBlock) (NSError *error);
 #define appkey @"173f87709381d"
 #define app_secrect @"69988802391e4d4be0214cbfd1dc7299"
 
+#define kUmengAppKey @"561b44cf67e58e6189001c30"
+
