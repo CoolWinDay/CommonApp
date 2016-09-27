@@ -18,7 +18,6 @@
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)addDataParamFromDictionary:(NSDictionary *)paramDic;
 - (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock;
-- (void)getRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock;
 - (void)cancel;
 
 @end

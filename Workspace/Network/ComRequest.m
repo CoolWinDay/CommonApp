@@ -18,28 +18,24 @@
 
 @implementation ComRequest
 
-- (NSString *)requestPath {
+#pragma mark - 子类继承方法
+- (NSString *)baseUrl {
+    return BaseUrl;
+}
+
+- (NSString *)requestUrl {
     return @"";
 }
 
-- (NSString *)urlPathString {
-    if (!_urlPathString) {
-        if ([self respondsToSelector:@selector(requestPath)]) {
-            _urlPathString = [self requestPath];
-        }
-        else {
-            _urlPathString = @"";
-        }
-    }
-    return _urlPathString;
+- (NSDictionary*)dataParams {
+    return nil;
 }
 
-- (ComNetworking *)netWorking {
-    if (!_netWorking) {
-        _netWorking = [[ComNetworking alloc] initWithBaseUrl:BaseUrl path:self.urlPathString];
-    }
-    return _netWorking;
+- (Class)modelClass {
+    return [BaseModel class];
 }
+
+#pragma mark - 请求和参数
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString {
     [self.netWorking addDataParam:param forKey:keyString];
@@ -49,93 +45,56 @@
     [self.netWorking addDataParamFromDictionary:paramDic];
 }
 
-- (NSDictionary *)getParameters {
-    return self.netWorking.parameters;
-}
-
-- (NSDictionary*)dataParams {
-    return nil;
-}
-
 - (void)setParams {
-//    //1, check params
-//    NSDictionary *headers = [self httpHeader];
-//    if (headers) {
-//        [self.mtopRequest addHttpHeaders:headers];
-//    }
     NSDictionary *dataParams = [self dataParams];
     if (dataParams) {
         NSLog(@"\n%@",dataParams);
         [self.netWorking addDataParamFromDictionary:dataParams];
     }
-//    // 添加额外的扩展参数, 和mtop系统参数平级
-//    NSDictionary *mtopParams = [self mtopParams];
-//    if (mtopParams) {
-//        [self.mtopRequest addExtParameters:mtopParams];
-//    }
 }
 
-- (RequestType)requestType {
-    return RequestPost;
-}
-
-- (ResponseType)responseType {
-    return ResponseJson;
+- (void)setRequestUrl {
+    self.netWorking.urlBaseString = [self baseUrl];
+    self.netWorking.urlPathString = [self requestUrl];
 }
 
 - (void)load {
     [self cancel];
+    [self setRequestUrl];
     [self setParams];
     
     __weak __typeof(self)weakSelf = self;
-    [self.netWorking postRequestOnSuccess:^(id data) {
+    [self.netWorking postRequestOnSuccess:^(id responseData) {
         __strong __typeof(self)strongSelf = weakSelf;
-        [strongSelf responseOnSuccess:data];
+        
+        id buildData = nil;
+        NSError *error = nil;
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+        if (!error) {
+            buildData = dic;
+            if ([strongSelf respondsToSelector:@selector(buildResponse:)]){
+                buildData = [self buildResponse:dic];
+            }
+        }
+        
+        [self succeed:buildData];
     } onFailed:^(NSError *error) {
         __strong __typeof(self)strongSelf = weakSelf;
-        [strongSelf responseOnFailed:error];
+        [strongSelf failed:error];
     }];
 }
 
 - (void)requestSuccess:(RequestSuccessBlock)successBlock failed:(RequestFailedBlock)failedBlock {
-    [self cancel];
-    [self setParams];
-    
-    __weak __typeof(self)weakSelf = self;
-    if ([self requestType] == RequestGet) {
-        [self.netWorking postRequestOnSuccess:^(id data) {
-            __strong __typeof(self)strongSelf = weakSelf;
-            strongSelf.successBlock = successBlock;
-            [strongSelf responseOnSuccess:data];
-        } onFailed:^(NSError *error) {
-            __strong __typeof(self)strongSelf = weakSelf;
-            strongSelf.failedBlock = failedBlock;
-            [strongSelf responseOnFailed:error];
-        }];
-    }
-    else {
-        [self.netWorking getRequestOnSuccess:^(id data) {
-            __strong __typeof(self)strongSelf = weakSelf;
-            strongSelf.successBlock = successBlock;
-            [strongSelf responseOnSuccess:data];
-        } onFailed:^(NSError *error) {
-            __strong __typeof(self)strongSelf = weakSelf;
-            [strongSelf responseOnFailed:error];
-        }];
-    }
+    self.successBlock = successBlock;
+    self.failedBlock = failedBlock;
+    [self load];
 }
 
-- (void)responseOnSuccess:(id)data {
-    id buildData = nil;
-    if ([self respondsToSelector:@selector(buildResponse:)]) {
-        buildData = [self buildResponse:data];
-    }
-    [self succeed:buildData];
+- (void)cancel {
+    [self.netWorking cancel];
 }
 
-- (void)responseOnFailed:(NSError *)error {
-    [self failed:error];
-}
+#pragma mark - 请求结果
 
 - (void)succeed:(id)response {
     if (self.successBlock) {
@@ -151,6 +110,10 @@
 }
 
 - (void)failed:(NSError *)error {
+    if (error.code == -999) {
+        // -999是cancel的情况，不予处理
+        return;
+    }
     if (self.failedBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.failedBlock(error);
@@ -163,40 +126,28 @@
     }
 }
 
-- (void)cancel {
-    [self.netWorking cancel];
-}
-
-- (id)buildResponse:(id)responseData {
-    if (responseData){
-        if ([self responseType] == ResponseXml) {
-            NSXMLParser *parser = [[NSXMLParser alloc] initWithData:responseData];
-            return parser;
+- (id)buildResponse:(NSDictionary *)dic {
+    if (dic && [self respondsToSelector:@selector(modelClass)]) {
+        NSDictionary *modelDic = [dic copy];
+        if ([[dic allKeys] containsObject:@"data"]) {
+            modelDic = dic[@"data"];
         }
-        else if ([self responseType] == ResponseJson) {
-            NSError *error = nil;
-            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-            DLog(@"%@", [dic yy_modelToJSONString]);
-            if (error)
-                return nil;
-            
-            if (dic && [self respondsToSelector:@selector(modelClass)]) {
-                id model = [[self modelClass] yy_modelWithDictionary:dic];
-                if (model) {
-                    return model;
-                }
-            }
-            return dic;
-        }
-        else {
-            return responseData;
+        id model = [[self modelClass] yy_modelWithDictionary:modelDic];
+        if (model) {
+            return model;
         }
     }
-    return nil;
+    return dic;
 }
 
-- (Class)modelClass {
-    return [BaseModel class];
+#pragma mark -
+
+- (ComNetworking *)netWorking {
+    if (!_netWorking) {
+        _netWorking = [[ComNetworking alloc] init];
+    }
+    return _netWorking;
 }
+
 
 @end

@@ -10,7 +10,7 @@
 
 ////-----------------------------------  测试环境  ------------------------------------
 
-#define Service_Address     @"http://wx.bjyijiequ.com/yjqapp/"
+#define ServerAddress     @"https://api.douban.com"
 
 // **********************************************************************************
 
@@ -18,21 +18,20 @@
 
 ////-----------------------------------  生产环境  ------------------------------------
 
-#define Service_Address     @"http://d.bjyijiequ.com/qpi/"
+#define ServerAddress     @"https://api.douban.com"
 
 
 #endif
 
 
-#define RootUrl     @"https://api.douban.com/"
-#define BaseUrl     RootUrl@"v2/"
+#define BaseUrl     ServerAddress@"/v2"
 
 // 登陆接口
-#define Login_Url      @"book/"
+#define Login_Url      @"book"
 #define Login_Path     @"1220562"
 
 // 图书接口
-#define Book_Url            @"book/"
+#define Book_Url            @"book"
 #define Book_Path           @"1220562"
 #define BookSearch_Path     @"search"
 

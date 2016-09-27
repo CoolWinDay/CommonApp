@@ -513,11 +513,11 @@
 		E8C326381C891B7E00628824 = {
 			isa = PBXGroup;
 			children = (
-				E8F676501D995AC2009754A4 /* CommonApp.entitlements */,
 				E8C326431C891B7E00628824 /* Workspace */,
 				E8C326421C891B7E00628824 /* Products */,
 				45EC1009AF7D019D8848B188 /* Pods */,
 				B1355F1D786EB808FD23079C /* Frameworks */,
+				E8F676501D995AC2009754A4 /* CommonApp.entitlements */,
 			);
 			sourceTree = "<group>";
 		};

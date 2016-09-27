@@ -14,6 +14,13 @@
     NSURLSessionDataTask *_requestTask;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _parameters = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
 - (instancetype)initWithBaseUrl:(NSString *)baseString path:(NSString *)pathString
 {
     if (self = [super init]) {
@@ -43,28 +50,6 @@
     _requestTask = [manager POST:_urlPathString parameters:_parameters constructingBodyWithBlock:^(id  _Nonnull formData) {
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData) {
-        if (successBlock) {
-            successBlock(responseData);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        // 请求失败
-        NSLog(@"%@", [error localizedDescription]);
-        if (failedBlock) {
-            failedBlock(error);
-        }
-    }];
-}
-
-- (void)getRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock
-{
-    // 初始化Manager
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_urlBaseString]];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    // get请求
-    [manager GET:_urlPathString parameters:_parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData) {
         if (successBlock) {

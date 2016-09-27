@@ -12,8 +12,8 @@
 
 @implementation BookRequest
 
-- (NSString *)requestPath {
-    return [NSString stringWithFormat:@"%@%@", Book_Url, Book_Path];
+- (NSString *)requestUrl {
+    return [NSString stringWithFormat:@"%@/%@", Book_Url, Book_Path];
 }
 
 - (Class)modelClass {
@@ -25,8 +25,8 @@
 
 @implementation BookListRequest
 
-- (NSString *)requestPath {
-    return [NSString stringWithFormat:@"%@%@", Book_Url, BookSearch_Path];
+- (NSString *)requestUrl {
+    return [NSString stringWithFormat:@"%@/%@", Book_Url, BookSearch_Path];
 }
 
 - (NSDictionary*)dataParams {
