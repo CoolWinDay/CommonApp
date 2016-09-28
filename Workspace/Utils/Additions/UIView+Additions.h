@@ -53,8 +53,8 @@ typedef void(^UIViewClickHandle)(UIView *view);
 /**
  *  增加UIView的点击事件
  */
-//-(void)tddHandleClick:(UIViewClickHandle)handle;
-//
+-(void)handleClick:(UIViewClickHandle)handle;
+
 ///**
 // *  添加圆角
 // *

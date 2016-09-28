@@ -10,6 +10,51 @@
 #import "Reachability.h"
 #import <sys/sysctl.h>
 #import <Security/Security.h>
+#import "ComLoadingView.h"
+
+UIWindow *mainWindow() {
+    id appDelegate = [UIApplication sharedApplication].delegate;
+    if (appDelegate && [appDelegate respondsToSelector:@selector(window)]) {
+        return [appDelegate window];
+    }
+    
+    NSArray *windows = [UIApplication sharedApplication].windows;
+    if ([windows count] == 1) {
+        return [windows firstObject];
+    }
+    else {
+        for (UIWindow *window in windows) {
+            if (window.windowLevel == UIWindowLevelNormal) {
+                return window;
+            }
+        }
+    }
+    return nil;
+}
+
+UIViewController *topMostViewController() {
+    UIViewController *topViewController = mainWindow().rootViewController;
+    UIViewController *temp = nil;
+    while (YES) {
+        temp = nil;
+        if ([topViewController isKindOfClass:[UINavigationController class]]) {
+            temp = ((UINavigationController *)topViewController).visibleViewController;
+            
+        } else if ([topViewController isKindOfClass:[UITabBarController class]]) {
+            temp = ((UITabBarController *)topViewController).selectedViewController;
+        }
+        else if (topViewController.presentedViewController != nil) {
+            temp = topViewController.presentedViewController;
+        }
+        
+        if (temp != nil) {
+            topViewController = temp;
+        } else {
+            break;
+        }
+    }
+    return topViewController;
+}
 
 @implementation AppCommon
 
@@ -43,6 +88,14 @@
 + (void)presentWithVCClassName:(NSString*)className {
     id obj = [NSClassFromString(className) new];
     [self presentViewController:obj animated:YES];
+}
+
++ (void)showLoading {
+    [ComLoadingView showLoadingHUD:@""];
+}
+
++ (void)hideLoading {
+    [ComLoadingView hideLoadingHUD];
 }
 
 //

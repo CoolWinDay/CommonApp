@@ -101,7 +101,7 @@ static char *viewClickKey;
     }
 }
 
-- (void)tddHandleClick:(UIViewClickHandle)handle {
+- (void)handleClick:(UIViewClickHandle)handle {
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClick)];
     [self addGestureRecognizer:tap];

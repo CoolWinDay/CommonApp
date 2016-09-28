@@ -33,13 +33,14 @@
 		E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2241C8FBF16003EF94A /* BaseModel.m */; };
 		E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */; };
 		E8561D5E1D7EFEC900C507CF /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */; };
+		E856FA431D9BF1FC00E65609 /* ComLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E856FA421D9BF1FC00E65609 /* ComLoadingView.m */; };
+		E856FA461D9BF40D00E65609 /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E856FA451D9BF40D00E65609 /* NSObject+Additions.m */; };
 		E858E8191D92C05800767C83 /* ComSMSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E858E8181D92C05800767C83 /* ComSMSManager.m */; };
 		E858E81C1D92C0C400767C83 /* ComNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E858E81B1D92C0C400767C83 /* ComNetManager.m */; };
 		E858E8201D92C94000767C83 /* ComColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E858E81F1D92C94000767C83 /* ComColorManager.m */; };
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
 		E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E881E5651CF57C6E0021DA23 /* ComPageRequest.m */; };
-		E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */; };
 		E88DFE991D7466E50058F015 /* ComTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88DFE981D7466E50058F015 /* ComTabViewController.m */; };
 		E88DFEA51D7474380058F015 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E88DFEA21D7474380058F015 /* HomeVC.m */; };
 		E88DFEA61D7474380058F015 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88DFEA31D7474380058F015 /* HomeVC.xib */; };
@@ -134,6 +135,10 @@
 		E8561D5A1D7EFEC900C507CF /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		E856FA411D9BF1FC00E65609 /* ComLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComLoadingView.h; sourceTree = "<group>"; };
+		E856FA421D9BF1FC00E65609 /* ComLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComLoadingView.m; sourceTree = "<group>"; };
+		E856FA441D9BF40D00E65609 /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
+		E856FA451D9BF40D00E65609 /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		E858E8171D92C05800767C83 /* ComSMSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComSMSManager.h; sourceTree = "<group>"; };
 		E858E8181D92C05800767C83 /* ComSMSManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComSMSManager.m; sourceTree = "<group>"; };
 		E858E81A1D92C0C400767C83 /* ComNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComNetManager.h; sourceTree = "<group>"; };
@@ -146,8 +151,6 @@
 		E86A22451C91A9B300E34A62 /* ComNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetworking.m; sourceTree = "<group>"; };
 		E881E5641CF57C6E0021DA23 /* ComPageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComPageRequest.h; sourceTree = "<group>"; };
 		E881E5651CF57C6E0021DA23 /* ComPageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComPageRequest.m; sourceTree = "<group>"; };
-		E88833C91CD7187F007AA83D /* UIView+TapBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TapBlock.h"; sourceTree = "<group>"; };
-		E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TapBlock.m"; sourceTree = "<group>"; };
 		E88DFE971D7466E50058F015 /* ComTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTabViewController.h; sourceTree = "<group>"; };
 		E88DFE981D7466E50058F015 /* ComTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTabViewController.m; sourceTree = "<group>"; };
 		E88DFEA11D7474380058F015 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -303,12 +306,12 @@
 				E80F665D1CCE4F5300D8494D /* UIButton+Block.m */,
 				E8BFB08D1CE32B93002E99EC /* UIAlertView+Block2.h */,
 				E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */,
-				E88833C91CD7187F007AA83D /* UIView+TapBlock.h */,
-				E88833CA1CD7187F007AA83D /* UIView+TapBlock.m */,
 				E846C4231D9157BC00001ACD /* NSString+Validate.h */,
 				E846C4211D9157B000001ACD /* NSString+Validate.m */,
 				E846C4271D917B8200001ACD /* NSString+Additions.h */,
 				E846C4281D917B8200001ACD /* NSString+Additions.m */,
+				E856FA441D9BF40D00E65609 /* NSObject+Additions.h */,
+				E856FA451D9BF40D00E65609 /* NSObject+Additions.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -434,6 +437,15 @@
 				E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E856FA401D9BF1FC00E65609 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				E856FA411D9BF1FC00E65609 /* ComLoadingView.h */,
+				E856FA421D9BF1FC00E65609 /* ComLoadingView.m */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		E88DFE9A1D7473BB0058F015 /* Business */ = {
@@ -577,6 +589,7 @@
 				E84262AB1CD8308A00100C3B /* CollectionView */,
 				E84262B21CD8308A00100C3B /* ScrollView */,
 				E807D21B1CB7A6BB00ADCF87 /* ErrorViewManager */,
+				E856FA401D9BF1FC00E65609 /* LoadingView */,
 				E8019A041CAE223900336897 /* BookTableViewCell.h */,
 				E8019A051CAE223900336897 /* BookTableViewCell.m */,
 				E84262C91CD835C900100C3B /* BookCollectionViewCell.h */,
@@ -768,7 +781,6 @@
 				E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */,
 				E8F0C1F21D99685400AE6EBE /* ComRegistManager.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
-				E88833CB1CD7187F007AA83D /* UIView+TapBlock.m in Sources */,
 				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
 				E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */,
 				E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */,
@@ -787,8 +799,10 @@
 				E84BD2251C8FBF16003EF94A /* BaseModel.m in Sources */,
 				E846C4291D917B8200001ACD /* NSString+Additions.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
+				E856FA431D9BF1FC00E65609 /* ComLoadingView.m in Sources */,
 				E84372141CF53B1300EF51FC /* XMLReader.m in Sources */,
 				E88DFEB11D74748D0058F015 /* TestCollectionViewController.m in Sources */,
+				E856FA461D9BF40D00E65609 /* NSObject+Additions.m in Sources */,
 				E858E8191D92C05800767C83 /* ComSMSManager.m in Sources */,
 				E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */,
 				E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */,

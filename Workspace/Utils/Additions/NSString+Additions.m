@@ -13,4 +13,8 @@
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
+- (NSString *)safeString {
+    return self ?: @"";
+}
+
 @end

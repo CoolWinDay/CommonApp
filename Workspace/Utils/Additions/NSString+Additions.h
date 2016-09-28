@@ -10,4 +10,7 @@
 // 去掉收尾多余空格
 - (NSString *)trimSpace;
 
+// 如果是nil则返回@""
+- (NSString *)safeString;
+
 @end

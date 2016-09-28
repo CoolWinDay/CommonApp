@@ -17,8 +17,8 @@
 #import "PureLayout.h"
 #import "UIView+Additions.h"
 #import "UIButton+Block.h"
-#import "UIView+TapBlock.h"
 #import "ComColorManager.h"
 #import "NSString+Additions.h"
+#import "NSObject+Additions.h"
 
 #endif

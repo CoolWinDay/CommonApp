@@ -29,7 +29,7 @@
     NSString *errorMsg = error.domain;
     errorView.text = @"报错啦~~~\n点击重新加载";
     
-    [errorView handleTapEventWithBlock:^{
+    [errorView handleClick:^(UIView *view) {
         if (block) {
             block();
         }
@@ -54,7 +54,7 @@
     UILabel *errorView = [[self class] initErrorViewInView:view];
     errorView.text = @"空的啊~~~\n点击重新加载";
     
-    [errorView handleTapEventWithBlock:^{
+    [errorView handleClick:^(UIView *view) {
         if (block) {
             block();
         }

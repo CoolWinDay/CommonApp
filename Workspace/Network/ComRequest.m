@@ -63,8 +63,10 @@
     [self setRequestUrl];
     [self setParams];
     
+    [AppCommon showLoading];
     __weak __typeof(self)weakSelf = self;
     [self.netWorking postRequestOnSuccess:^(id responseData) {
+        [AppCommon hideLoading];
         __strong __typeof(self)strongSelf = weakSelf;
         
         id buildData = nil;
@@ -79,6 +81,7 @@
         
         [self succeed:buildData];
     } onFailed:^(NSError *error) {
+        [AppCommon hideLoading];
         __strong __typeof(self)strongSelf = weakSelf;
         [strongSelf failed:error];
     }];

@@ -7,6 +7,10 @@
 //
 #import <UIKit/UIKit.h>
 
+UIWindow *mainWindow();
+
+UIViewController *topMostViewController();
+
 typedef enum {
     TDDManagerEnvironmentDaily,
     TDDManagerEnvironmentPreRelease,
@@ -22,6 +26,9 @@ typedef enum {
 + (void)pushWithVCClass:(Class)vcClass;
 + (void)pushWithVCClassName:(NSString*)className;
 + (void)presentWithVCClassName:(NSString*)classNam;
+
++ (void)showLoading;
++ (void)hideLoading;
 
 //
 ////删除文件或文件夹
