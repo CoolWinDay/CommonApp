@@ -15,6 +15,7 @@
 #define HEXCOLORA(rgbValue,a) [ComColorManager colorWithHex:rgbValue alpha:a]
 
 #define COLOR_BG_COMMON     [UIColor whiteColor]
+#define COLOR_BG_THEME      HEXCOLOR(0x12B0F2)
 
 #define COLOR_TEXT_DEEP     [UIColor blackColor]
 #define COLOR_TEXT_NORMAL   HEXCOLOR(0x423631)

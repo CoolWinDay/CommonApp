@@ -27,6 +27,8 @@ typedef enum {
 + (void)pushWithVCClassName:(NSString*)className;
 + (void)presentWithVCClassName:(NSString*)classNam;
 
++ (void)goLogin;
+
 + (void)showLoading;
 + (void)hideLoading;
 

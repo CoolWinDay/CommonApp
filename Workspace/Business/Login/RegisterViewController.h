@@ -11,11 +11,9 @@
 @interface RegisterViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *numText;
-
 @property (strong, nonatomic) IBOutlet UITextField *codeText;
-
 @property (strong, nonatomic) IBOutlet UIButton *getCodeBtn;
-
 @property (strong, nonatomic) IBOutlet UILabel *tileNumLab;
+@property (strong, nonatomic) IBOutlet UIButton *closeButton;
 
 @end

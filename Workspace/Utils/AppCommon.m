@@ -90,6 +90,10 @@ UIViewController *topMostViewController() {
     [self presentViewController:obj animated:YES];
 }
 
++ (void)goLogin {
+    [self presentWithVCClassName:@"RegisterViewController"];
+}
+
 + (void)showLoading {
     [ComLoadingView showLoadingHUD:@"加载中..."];
 }

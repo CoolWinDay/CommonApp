@@ -25,7 +25,9 @@
 }
 
 - (IBAction)doLogin:(id)sender {
-    [AppCommon pushWithVCClassName:@"RegisterViewController"];
+//    [AppCommon pushWithVCClassName:@"RegisterViewController"];
+    
+    [AppCommon goLogin];
 }
 
 - (void)didReceiveMemoryWarning {
