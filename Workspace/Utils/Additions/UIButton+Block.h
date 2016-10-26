@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-
-typedef void (^ButtonActionBlock)();
+typedef void (^ButtonActionBlock)(UIButton *btn);
 
 @interface UIButton(Block)
 
 @property (readonly) NSMutableDictionary *event;
 
-- (void) handleControlEvent:(UIControlEvents)controlEvent withBlock:(ButtonActionBlock)action;
+- (void)handleControlEvent:(UIControlEvents)controlEvent withBlock:(ButtonActionBlock)action;
+- (void)handleClickWithBlock:(ButtonActionBlock)block;
 
 @end

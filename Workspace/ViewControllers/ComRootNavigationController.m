@@ -18,6 +18,12 @@
     
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.navigationBar.translucent = NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -31,6 +31,10 @@
     return nil;
 }
 
+- (RequestType)requestType {
+    return RequestGet;
+}
+
 - (Class)modelClass {
     return [BaseModel class];
 }
@@ -53,6 +57,10 @@
     }
 }
 
+- (NSDictionary *)requestParams {
+    return self.netWorking.parameters;
+}
+
 - (void)setRequestUrl {
     self.netWorking.urlBaseString = [self baseUrl];
     self.netWorking.urlPathString = [self requestUrl];
@@ -63,9 +71,9 @@
     [self setRequestUrl];
     [self setParams];
     
-    [AppCommon showLoading];
     __weak __typeof(self)weakSelf = self;
-    [self.netWorking postRequestOnSuccess:^(id responseData) {
+    [AppCommon showLoading];
+    [self.netWorking requestWithType:[self requestType] onSuccess:^(id responseData) {
         [AppCommon hideLoading];
         __strong __typeof(self)strongSelf = weakSelf;
         
@@ -100,31 +108,34 @@
 #pragma mark - 请求结果
 
 - (void)succeed:(id)response {
+    __weak __typeof(self)weakSelf = self;
     if (self.successBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.successBlock(response);
+            weakSelf.successBlock(response);
         });
     }
     if (self.completionBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.completionBlock();
+            weakSelf.completionBlock();
         });
     }
 }
 
 - (void)failed:(NSError *)error {
-    if (error.code == -999) {
-        // -999是cancel的情况，不予处理
+    if (error.code == NSURLErrorCancelled) {
+        // cancel的情况，不予处理
         return;
     }
+    
+    __weak __typeof(self)weakSelf = self;
     if (self.failedBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.failedBlock(error);
+            weakSelf.failedBlock(error);
         });
     }
     if (self.completionBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.completionBlock();
+            weakSelf.completionBlock();
         });
     }
 }
@@ -144,13 +155,11 @@
 }
 
 #pragma mark -
-
 - (ComNetworking *)netWorking {
     if (!_netWorking) {
         _netWorking = [[ComNetworking alloc] init];
     }
     return _netWorking;
 }
-
 
 @end

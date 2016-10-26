@@ -25,6 +25,7 @@ typedef void (^RequestCompletionBlock)();
 - (void)requestSuccess:(RequestSuccessBlock)successBlock failed:(RequestFailedBlock)failedBlock;
 - (void)load;
 - (void)cancel;
+- (NSDictionary *)requestParams;
 
 - (void)succeed:(id)response;
 - (void)failed:(NSError *)error;

@@ -8,6 +8,11 @@
 
 #import "ComRequest.h"
 
+typedef enum {
+    RequestGet,
+    RequestPost
+} RequestType;
+
 @interface ComNetworking : NSObject
 
 @property(nonatomic, copy) NSString *urlBaseString;
@@ -17,7 +22,7 @@
 - (instancetype)initWithBaseUrl:(NSString *)baseString path:(NSString *)pathString;
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString;
 - (void)addDataParamFromDictionary:(NSDictionary *)paramDic;
-- (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock;
+- (void)requestWithType:(RequestType)type onSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock;
 - (void)cancel;
 
 @end

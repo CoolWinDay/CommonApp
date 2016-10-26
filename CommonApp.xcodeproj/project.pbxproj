@@ -13,6 +13,9 @@
 		E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */; };
 		E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D2221CB7A91200ADCF87 /* UIView+Additions.m */; };
 		E80F665E1CCE4F5300D8494D /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E80F665D1CCE4F5300D8494D /* UIButton+Block.m */; };
+		E810EE0A1DA91F0D008C0425 /* TestAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E810EE081DA91F0D008C0425 /* TestAlertViewController.m */; };
+		E810EE0B1DA91F0D008C0425 /* TestAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E810EE091DA91F0D008C0425 /* TestAlertViewController.xib */; };
+		E810EE0E1DA94BED008C0425 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E810EE0D1DA94BED008C0425 /* UIAlertView+Block.m */; };
 		E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AA51CB21DF800E40B88 /* BookRequest.m */; };
 		E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262AD1CD8308A00100C3B /* ComCollectionView.m */; };
 		E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262AF1CD8308A00100C3B /* ComCollectionViewDataSource.m */; };
@@ -63,7 +66,6 @@
 		E88DFED11D7475470058F015 /* tool_button_user_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E88DFEC51D7475470058F015 /* tool_button_user_sel@2x.png */; };
 		E88DFED21D7475470058F015 /* tool_button_user_sel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E88DFEC61D7475470058F015 /* tool_button_user_sel@3x.png */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
-		E8BFB08F1CE32B93002E99EC /* UIAlertView+Block2.m in Sources */ = {isa = PBXBuildFile; fileRef = E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
 		E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FED1D90227100021379 /* MOBFoundation.framework */; };
 		E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FEE1D90227100021379 /* SMS_SDK.framework */; };
@@ -96,6 +98,11 @@
 		E807D2221CB7A91200ADCF87 /* UIView+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Additions.m"; sourceTree = "<group>"; };
 		E80F665C1CCE4F5300D8494D /* UIButton+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Block.h"; sourceTree = "<group>"; };
 		E80F665D1CCE4F5300D8494D /* UIButton+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Block.m"; sourceTree = "<group>"; };
+		E810EE071DA91F0D008C0425 /* TestAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAlertViewController.h; sourceTree = "<group>"; };
+		E810EE081DA91F0D008C0425 /* TestAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestAlertViewController.m; sourceTree = "<group>"; };
+		E810EE091DA91F0D008C0425 /* TestAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAlertViewController.xib; sourceTree = "<group>"; };
+		E810EE0C1DA94BED008C0425 /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		E810EE0D1DA94BED008C0425 /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
 		E83D0AA41CB21DF800E40B88 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
 		E83D0AA51CB21DF800E40B88 /* BookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
 		E84262AC1CD8308A00100C3B /* ComCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCollectionView.h; sourceTree = "<group>"; };
@@ -180,8 +187,6 @@
 		E88DFEC51D7475470058F015 /* tool_button_user_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_button_user_sel@2x.png"; sourceTree = "<group>"; };
 		E88DFEC61D7475470058F015 /* tool_button_user_sel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool_button_user_sel@3x.png"; sourceTree = "<group>"; };
 		E897D3B11C8E64D80067B3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E8BFB08D1CE32B93002E99EC /* UIAlertView+Block2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block2.h"; sourceTree = "<group>"; };
-		E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block2.m"; sourceTree = "<group>"; };
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -304,8 +309,8 @@
 				E807D2221CB7A91200ADCF87 /* UIView+Additions.m */,
 				E80F665C1CCE4F5300D8494D /* UIButton+Block.h */,
 				E80F665D1CCE4F5300D8494D /* UIButton+Block.m */,
-				E8BFB08D1CE32B93002E99EC /* UIAlertView+Block2.h */,
-				E8BFB08E1CE32B93002E99EC /* UIAlertView+Block2.m */,
+				E810EE0C1DA94BED008C0425 /* UIAlertView+Block.h */,
+				E810EE0D1DA94BED008C0425 /* UIAlertView+Block.m */,
 				E846C4231D9157BC00001ACD /* NSString+Validate.h */,
 				E846C4211D9157B000001ACD /* NSString+Validate.m */,
 				E846C4271D917B8200001ACD /* NSString+Additions.h */,
@@ -480,6 +485,9 @@
 				E88DFEAD1D74748D0058F015 /* TestScrollViewController.m */,
 				E88DFEAE1D74748D0058F015 /* TestTableViewController.h */,
 				E88DFEAF1D74748D0058F015 /* TestTableViewController.m */,
+				E810EE071DA91F0D008C0425 /* TestAlertViewController.h */,
+				E810EE081DA91F0D008C0425 /* TestAlertViewController.m */,
+				E810EE091DA91F0D008C0425 /* TestAlertViewController.xib */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -688,6 +696,7 @@
 				E88DFED21D7475470058F015 /* tool_button_user_sel@3x.png in Resources */,
 				E88DFEC91D7475470058F015 /* tool_button_buy_sel@2x.png in Resources */,
 				E88DFEB91D7475070058F015 /* MineVC.xib in Resources */,
+				E810EE0B1DA91F0D008C0425 /* TestAlertViewController.xib in Resources */,
 				E88DFEC71D7475470058F015 /* tool_button_buy_bor@2x.png in Resources */,
 				E88DFECB1D7475470058F015 /* tool_button_home_bor@2x.png in Resources */,
 				E88DFECD1D7475470058F015 /* tool_button_home_sel@2x.png in Resources */,
@@ -761,16 +770,17 @@
 				E88DFE991D7466E50058F015 /* ComTabViewController.m in Sources */,
 				E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */,
 				E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */,
-				E8BFB08F1CE32B93002E99EC /* UIAlertView+Block2.m in Sources */,
 				E8F7C0401C8D6D6900625004 /* ComApplication.m in Sources */,
 				E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */,
 				E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */,
 				E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */,
+				E810EE0E1DA94BED008C0425 /* UIAlertView+Block.m in Sources */,
 				E84262C01CD8308A00100C3B /* ComCollectionViewDelegate.m in Sources */,
 				E88DFEB01D74748D0058F015 /* ComDemoViewController.m in Sources */,
 				E84262C31CD8308A00100C3B /* ComTableViewCell.m in Sources */,
 				E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */,
 				E88DFEA51D7474380058F015 /* HomeVC.m in Sources */,
+				E810EE0A1DA91F0D008C0425 /* TestAlertViewController.m in Sources */,
 				E84262C21CD8308A00100C3B /* ComTableView.m in Sources */,
 				E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */,
 				E84262C51CD8308A00100C3B /* ComTableViewDelegate.m in Sources */,

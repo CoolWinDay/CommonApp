@@ -91,7 +91,7 @@ UIViewController *topMostViewController() {
 }
 
 + (void)showLoading {
-    [ComLoadingView showLoadingHUD:@""];
+    [ComLoadingView showLoadingHUD:@"加载中..."];
 }
 
 + (void)hideLoading {

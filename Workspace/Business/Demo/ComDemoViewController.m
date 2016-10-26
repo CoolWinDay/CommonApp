@@ -65,7 +65,8 @@
     if (!_dataArray) {
         _dataArray = @[@{@"title":@"TableView", @"vcName":@"TestTableViewController"},
                        @{@"title":@"CollectionView", @"vcName":@"TestCollectionViewController"},
-                       @{@"title":@"ScrollView", @"vcName":@"TestScrollViewController"}];
+                       @{@"title":@"ScrollView", @"vcName":@"TestScrollViewController"},
+                       @{@"title":@"AlertView", @"vcName":@"TestAlertViewController"}];
     }
     return _dataArray;
 }

@@ -19,10 +19,14 @@ static char overviewKey;
     [self addTarget:self action:@selector(callActionBlock:) forControlEvents:event];
 }
 
+- (void)handleClickWithBlock:(ButtonActionBlock)block {
+    [self handleControlEvent:UIControlEventTouchUpInside withBlock:block];
+}
+
 - (void)callActionBlock:(id)sender {
     ButtonActionBlock block = (ButtonActionBlock)objc_getAssociatedObject(self, &overviewKey);
     if (block) {
-        block();
+        block(self);
     }
 }
 

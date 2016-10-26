@@ -27,11 +27,12 @@ static MBProgressHUD  *s_progressHUD = nil;
         dispatch_once(&once, ^{
             s_progressHUD = [[MBProgressHUD alloc] initWithView:window];
             s_progressHUD.opacity = DefaultOpacity;
+            s_progressHUD.labelFont = [UIFont boldSystemFontOfSize:14.0];
         });
         [window addSubview:s_progressHUD];
     }
     
-    s_progressHUD.detailsLabelText = aString;
+    s_progressHUD.labelText = aString;
     [s_progressHUD show:NO];
 }
 
@@ -53,7 +54,7 @@ static MBProgressHUD  *s_progressHUD = nil;
     [progressHUD hide:NO afterDelay:duration];
     if (close) {
         [progressHUD handleClick:^(UIView *view) {
-            [(MBProgressHUD*)view hide:YES];
+            [(MBProgressHUD*)view hide:NO];
         }];
     }
 }

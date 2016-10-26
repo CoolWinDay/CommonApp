@@ -48,7 +48,7 @@
 //----------------------------------- block ------------------------------------
 typedef void (^voidBlock)();
 typedef void (^idBlock)(id value);
-typedef void (^intBlock)(int value);
+typedef void (^intBlock)(NSInteger value);
 typedef void (^boolBlock)(id value);
 typedef void (^errorBlock) (NSError *error);
 

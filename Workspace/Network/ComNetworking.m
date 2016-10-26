@@ -40,28 +40,45 @@
     [_parameters addEntriesFromDictionary:paramDic];
 }
 
-- (void)postRequestOnSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock
+- (void)requestWithType:(RequestType)type onSuccess:(RequestSuccessBlock)successBlock onFailed:(RequestFailedBlock)failedBlock
 {
     // 初始化Manager
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:_urlBaseString]];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    // post请求
-    _requestTask = [manager POST:_urlPathString parameters:_parameters constructingBodyWithBlock:^(id  _Nonnull formData) {
-        
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData) {
-        if (successBlock) {
-            successBlock(responseData);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        // 请求失败
-        NSLog(@"%@", [error localizedDescription]);
-        if (failedBlock) {
-            failedBlock(error);
-        }
-    }];
+    if (type == RequestGet) {
+        _requestTask = [manager GET:_urlPathString parameters:_parameters progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData) {
+            if (successBlock) {
+                successBlock(responseData);
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            // 请求失败
+            NSLog(@"%@", [error localizedDescription]);
+            if (failedBlock) {
+                failedBlock(error);
+            }
+        }];
+    }
+    else {
+        // post请求
+        _requestTask = [manager POST:_urlPathString parameters:_parameters constructingBodyWithBlock:^(id  _Nonnull formData) {
+            
+        } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseData) {
+            if (successBlock) {
+                successBlock(responseData);
+            }
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            // 请求失败
+            NSLog(@"%@", [error localizedDescription]);
+            if (failedBlock) {
+                failedBlock(error);
+            }
+        }];
+    }
 }
 
 - (void)cancel
