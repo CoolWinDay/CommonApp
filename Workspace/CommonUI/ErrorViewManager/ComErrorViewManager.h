@@ -12,13 +12,13 @@
 
 + (UIView*)showErrorViewInView:(UIView*)view withError:(NSError*)error;
 
-+ (UIView*)showErrorViewInView:(UIView*)view withError:(NSError*)error clickBlock:(voidBlock)block;
++ (UIView*)showErrorViewInView:(UIView*)view withError:(NSError*)error clickBlock:(VoidBlock)block;
 
 + (void)removeErrorViewFromView:(UIView*)view;
 
 + (UIView*)showEmptyViewInView:(UIView*)view;
 
-+ (UIView*)showEmptyViewInView:(UIView*)view clickBlock:(voidBlock)block;
++ (UIView*)showEmptyViewInView:(UIView*)view clickBlock:(VoidBlock)block;
 
 + (UIView*)showErrorString:(NSString*)string inView:(UIView*)view;
 

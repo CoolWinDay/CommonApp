@@ -16,4 +16,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *tileNumLab;
 @property (strong, nonatomic) IBOutlet UIButton *closeButton;
 
+@property (nonatomic, copy) BoolBlock resultBlock;
+
 @end

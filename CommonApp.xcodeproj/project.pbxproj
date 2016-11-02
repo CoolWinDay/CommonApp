@@ -68,6 +68,7 @@
 		E88DFEB81D7475070058F015 /* MineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E88DFEB61D7475070058F015 /* MineVC.m */; };
 		E88DFEB91D7475070058F015 /* MineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88DFEB71D7475070058F015 /* MineVC.xib */; };
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
+		E8B4D0561DCA21A300883CAB /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B4D0551DCA21A300883CAB /* UserManager.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
 		E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FED1D90227100021379 /* MOBFoundation.framework */; };
 		E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FEE1D90227100021379 /* SMS_SDK.framework */; };
@@ -76,7 +77,7 @@
 		E8DD5FF81D902DB900021379 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF71D902DB900021379 /* libz.tbd */; };
 		E8DD5FFA1D902DD000021379 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF91D902DD000021379 /* libicucore.tbd */; };
 		E8DD5FFC1D902DE000021379 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FFB1D902DE000021379 /* libstdc++.tbd */; };
-		E8F0C1F21D99685400AE6EBE /* ComRegistManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C1F11D99685400AE6EBE /* ComRegistManager.m */; };
+		E8F0C1F21D99685400AE6EBE /* ComCompontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F0C1F11D99685400AE6EBE /* ComCompontManager.m */; };
 		E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF51CAB7A3100F492B2 /* BookListModel.m */; };
 		E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F54DF81CABAF7900F492B2 /* BookModel.m */; };
 		E8F6764B1D995110009754A4 /* ComPushMsgManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F6764A1D995110009754A4 /* ComPushMsgManager.m */; };
@@ -191,6 +192,9 @@
 		E88DFEB61D7475070058F015 /* MineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineVC.m; sourceTree = "<group>"; };
 		E88DFEB71D7475070058F015 /* MineVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineVC.xib; sourceTree = "<group>"; };
 		E897D3B11C8E64D80067B3E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8B4D0541DCA21A300883CAB /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
+		E8B4D0551DCA21A300883CAB /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		E8B4D0571DCA31B500883CAB /* LogInPprotocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogInPprotocol.h; sourceTree = "<group>"; };
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -201,8 +205,8 @@
 		E8DD5FF71D902DB900021379 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		E8DD5FF91D902DD000021379 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		E8DD5FFB1D902DE000021379 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
-		E8F0C1F01D99685400AE6EBE /* ComRegistManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRegistManager.h; sourceTree = "<group>"; };
-		E8F0C1F11D99685400AE6EBE /* ComRegistManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRegistManager.m; sourceTree = "<group>"; };
+		E8F0C1F01D99685400AE6EBE /* ComCompontManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCompontManager.h; sourceTree = "<group>"; };
+		E8F0C1F11D99685400AE6EBE /* ComCompontManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComCompontManager.m; sourceTree = "<group>"; };
 		E8F54DF41CAB7A3100F492B2 /* BookListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookListModel.h; sourceTree = "<group>"; };
 		E8F54DF51CAB7A3100F492B2 /* BookListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookListModel.m; sourceTree = "<group>"; };
 		E8F54DF71CABAF7900F492B2 /* BookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookModel.h; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 			children = (
 				E8FC45AF1CE0899000B97AA2 /* AppCommon.h */,
 				E8FC45B01CE0899000B97AA2 /* AppCommon.m */,
+				E8B4D0541DCA21A300883CAB /* UserManager.h */,
+				E8B4D0551DCA21A300883CAB /* UserManager.m */,
 				E843720B1CF53B1300EF51FC /* XMLReader */,
 				E843720F1CF53B1300EF51FC /* XMLWriter */,
 				E807D2201CB7A8CB00ADCF87 /* Additions */,
@@ -337,8 +343,8 @@
 		E81B19891D7DB98B00F1DCE4 /* Compont */ = {
 			isa = PBXGroup;
 			children = (
-				E8F0C1F01D99685400AE6EBE /* ComRegistManager.h */,
-				E8F0C1F11D99685400AE6EBE /* ComRegistManager.m */,
+				E8F0C1F01D99685400AE6EBE /* ComCompontManager.h */,
+				E8F0C1F11D99685400AE6EBE /* ComCompontManager.m */,
 				E858E81E1D92C94000767C83 /* ComColorManager.h */,
 				E858E81F1D92C94000767C83 /* ComColorManager.m */,
 				E858E8171D92C05800767C83 /* ComSMSManager.h */,
@@ -469,6 +475,7 @@
 		E8561D591D7EFEB600C507CF /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E8B4D0571DCA31B500883CAB /* LogInPprotocol.h */,
 				E8561D5A1D7EFEC900C507CF /* RegisterViewController.h */,
 				E8561D5B1D7EFEC900C507CF /* RegisterViewController.m */,
 				E8561D5C1D7EFEC900C507CF /* RegisterViewController.xib */,
@@ -802,10 +809,11 @@
 				E84262C51CD8308A00100C3B /* ComTableViewDelegate.m in Sources */,
 				E807D2231CB7A91200ADCF87 /* UIView+Additions.m in Sources */,
 				E88DFEB21D74748D0058F015 /* TestScrollViewController.m in Sources */,
+				E8B4D0561DCA21A300883CAB /* UserManager.m in Sources */,
 				E8F54DF61CAB7A3100F492B2 /* BookListModel.m in Sources */,
 				E8F54DF91CABAF7900F492B2 /* BookModel.m in Sources */,
 				E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */,
-				E8F0C1F21D99685400AE6EBE /* ComRegistManager.m in Sources */,
+				E8F0C1F21D99685400AE6EBE /* ComCompontManager.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
 				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
 				E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */,

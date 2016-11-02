@@ -10,7 +10,7 @@
 
 @interface UIAlertView(Block)
 
-+ (void)alertWithMessage:(NSString *)message okBlock:(voidBlock)okBlock;
-+ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(voidBlock)cancelBlock okBlock:(voidBlock)okBlock;
++ (void)alertWithMessage:(NSString *)message okBlock:(VoidBlock)okBlock;
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(VoidBlock)cancelBlock okBlock:(VoidBlock)okBlock;
 
 @end

@@ -21,13 +21,14 @@ typedef enum {
 //统一调用此方法来push
 + (void)pushViewController:(UIViewController*)vc animated:(BOOL)animate;
 + (void)presentViewController:(UIViewController*)vc animated:(BOOL)animated;
++ (void)presentViewController:(UIViewController*)vc;
 + (void)pushWithVCClass:(Class)vcClass properties:(NSDictionary*)properties;
 + (void)pushWithVCClassName:(NSString*)className properties:(NSDictionary*)properties;
 + (void)pushWithVCClass:(Class)vcClass;
 + (void)pushWithVCClassName:(NSString*)className;
 + (void)presentWithVCClassName:(NSString*)classNam;
 
-+ (void)goLogin;
++ (void)showLogin:(BoolBlock)block;
 
 + (void)showLoading;
 + (void)hideLoading;

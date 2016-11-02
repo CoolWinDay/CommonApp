@@ -11,7 +11,7 @@
 #import "ComTabViewController.h"
 #import "ComDemoViewController.h"
 
-#import "ComRegistManager.h"
+#import "ComCompontManager.h"
 #import "ComPushMsgManager.h"
 
 @interface ComAppDelegate ()
@@ -24,7 +24,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // 各种第三方注册
-    [ComRegistManager registWithOptions:launchOptions];
+    [ComCompontManager registWithOptions:launchOptions];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ComTabViewController *tabController = [[ComTabViewController alloc] init];

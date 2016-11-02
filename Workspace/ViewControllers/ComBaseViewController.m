@@ -20,6 +20,10 @@
     self.view.backgroundColor = COLOR_BG_COMMON;
 }
 
+- (BOOL)isNeedLogin {
+    return NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

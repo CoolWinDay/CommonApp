@@ -39,6 +39,10 @@
     return [BaseModel class];
 }
 
+- (BOOL)isNeedLogin {
+    return NO;
+}
+
 #pragma mark - 请求和参数
 
 - (void)addDataParam:(NSObject *)param forKey:(NSString *)keyString {
@@ -83,11 +87,11 @@
         if (!error) {
             buildData = dic;
             if ([strongSelf respondsToSelector:@selector(buildResponse:)]){
-                buildData = [self buildResponse:dic];
+                buildData = [strongSelf buildResponse:dic];
             }
         }
         
-        [self succeed:buildData];
+        [strongSelf succeed:buildData];
     } onFailed:^(NSError *error) {
         [AppCommon hideLoading];
         __strong __typeof(self)strongSelf = weakSelf;
@@ -99,6 +103,10 @@
     self.successBlock = successBlock;
     self.failedBlock = failedBlock;
     [self load];
+}
+
+- (void)requestSuccess:(RequestSuccessBlock)successBlock {
+    [self requestSuccess:successBlock failed:nil];
 }
 
 - (void)cancel {

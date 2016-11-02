@@ -1,5 +1,5 @@
 //
-//  ComRegistManager.h
+//  ComCompontManager.h
 //  CommonApp
 //
 //  Created by lipeng on 16/9/26.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ComRegistManager : NSObject
+@interface ComCompontManager : NSObject
 
 + (void)registWithOptions:(NSDictionary *)launchOptions;
 

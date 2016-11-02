@@ -10,7 +10,7 @@
 
 @interface ComSMSManager : NSObject
 
-+ (void)getVerificationCodeWithPhoneNumber:(NSString *)phoneNumber result:(errorBlock)block;
-+ (void)commitWithPhoneNumber:(NSString *)phoneNumber verificationCode:(NSString *)verificationCode result:(errorBlock)block;
++ (void)getVerificationCodeWithPhoneNumber:(NSString *)phoneNumber result:(ErrorBlock)block;
++ (void)commitWithPhoneNumber:(NSString *)phoneNumber verificationCode:(NSString *)verificationCode result:(ErrorBlock)block;
     
 @end

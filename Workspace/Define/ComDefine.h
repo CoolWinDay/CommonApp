@@ -46,11 +46,11 @@
 
 
 //----------------------------------- block ------------------------------------
-typedef void (^voidBlock)();
-typedef void (^idBlock)(id value);
-typedef void (^intBlock)(NSInteger value);
-typedef void (^boolBlock)(id value);
-typedef void (^errorBlock) (NSError *error);
+typedef void (^VoidBlock)();
+typedef void (^IdBlock)(id value);
+typedef void (^IntBlock)(NSInteger value);
+typedef void (^BoolBlock)(BOOL value);
+typedef void (^ErrorBlock) (NSError *error);
 
 //----------------------------------- block ------------------------------------
 // 弱引用

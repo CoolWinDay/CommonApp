@@ -133,7 +133,13 @@ static int _flag;
             if (!error) {
                 [weakSelf alertViewShow:@"注册---验证成功"];
                 NSLog(@"注册---验证成功");
+                
+                [UserManager userLogin:[UserModel new]];
+                
                 [weakSelf closePage:nil];
+                if (weakSelf.resultBlock) {
+                    weakSelf.resultBlock(YES);
+                }
             }
             else {
                 [weakSelf alertViewShow:[error.userInfo objectForKey:NSLocalizedDescriptionKey]];

@@ -13,7 +13,7 @@
 
 @implementation ComSMSManager
 
-+ (void)getVerificationCodeWithPhoneNumber:(NSString *)phoneNumber result:(errorBlock)block {
++ (void)getVerificationCodeWithPhoneNumber:(NSString *)phoneNumber result:(ErrorBlock)block {
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:phoneNumber zone:ChinaTelZone customIdentifier:nil result:^(NSError *error) {
         if (block) {
             block(error);
@@ -21,7 +21,7 @@
     }];
 }
 
-+ (void)commitWithPhoneNumber:(NSString *)phoneNumber verificationCode:(NSString *)verificationCode result:(errorBlock)block {
++ (void)commitWithPhoneNumber:(NSString *)phoneNumber verificationCode:(NSString *)verificationCode result:(ErrorBlock)block {
     [SMSSDK commitVerificationCode:verificationCode phoneNumber:phoneNumber zone:ChinaTelZone result:^(NSError *error) {
         if (block) {
             block(error);

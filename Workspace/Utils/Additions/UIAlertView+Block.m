@@ -11,11 +11,11 @@
 
 @implementation UIAlertView(Block)
 
-+ (void)alertWithMessage:(NSString *)message okBlock:(voidBlock)okBlock {
++ (void)alertWithMessage:(NSString *)message okBlock:(VoidBlock)okBlock {
     [self alertWithTitle:nil message:message cancelBlock:nil okBlock:okBlock];
 }
 
-+ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(voidBlock)cancelBlock okBlock:(voidBlock)okBlock
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelBlock:(VoidBlock)cancelBlock okBlock:(VoidBlock)okBlock
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message cancelButtonItem:[RIButtonItem itemWithLabel:@"取消" action:^{
         if (cancelBlock) {
@@ -30,7 +30,7 @@
     [alertView show];
 }
 
-+ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray *)otherButtonTitles clickBlock:(intBlock)clickBlock  {
++ (void)alertWithTitle:(NSString *)title message:(NSString *)message cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSArray *)otherButtonTitles clickBlock:(IntBlock)clickBlock  {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message cancelButtonItem:[RIButtonItem itemWithLabel:cancelButtonTitle action:^{
         if (clickBlock) {
             clickBlock(0);

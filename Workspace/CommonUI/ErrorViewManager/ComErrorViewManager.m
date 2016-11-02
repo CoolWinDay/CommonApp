@@ -24,7 +24,7 @@
     return errorView;
 }
 
-+ (UIView*)showErrorViewInView:(UIView*)view withError:(NSError*)error clickBlock:(voidBlock)block {
++ (UIView*)showErrorViewInView:(UIView*)view withError:(NSError*)error clickBlock:(VoidBlock)block {
     UILabel *errorView = [[self class] initErrorViewInView:view];
     NSString *errorMsg = error.domain;
     errorView.text = @"报错啦~~~\n点击重新加载";
@@ -50,7 +50,7 @@
     [[view viewWithTag:ERROR_VIEW_TAG] removeFromSuperview];
 }
 
-+ (UIView*)showEmptyViewInView:(UIView*)view clickBlock:(voidBlock)block {
++ (UIView*)showEmptyViewInView:(UIView*)view clickBlock:(VoidBlock)block {
     UILabel *errorView = [[self class] initErrorViewInView:view];
     errorView.text = @"空的啊~~~\n点击重新加载";
     

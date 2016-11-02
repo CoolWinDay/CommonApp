@@ -11,6 +11,8 @@
 #import <sys/sysctl.h>
 #import <Security/Security.h>
 #import "ComLoadingView.h"
+#import "RegisterViewController.h"
+#import "LogInPprotocol.h"
 
 UIWindow *mainWindow() {
     id appDelegate = [UIApplication sharedApplication].delegate;
@@ -59,7 +61,19 @@ UIViewController *topMostViewController() {
 @implementation AppCommon
 
 + (void)pushViewController:(UIViewController*)vc animated:(BOOL)animated {
-    [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] pushViewController:vc animated:animated];
+    if ([vc conformsToProtocol:@protocol(LogInPprotocol)]) {
+        BOOL isNeedLogin = [vc performSelector:@selector(isNeedLogin)];
+        if (isNeedLogin && ![UserManager isLogedin]) {
+            [AppCommon showLogin:^(BOOL isSuccess) {
+                if (isSuccess) {
+                    [AppCommon pushViewController:vc animated:animated];
+                }
+            }];
+        }
+        else {
+            [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] pushViewController:vc animated:animated];
+        }
+    }
 }
 
 + (void)pushWithVCClass:(Class)vcClass properties:(NSDictionary*)properties {
@@ -81,17 +95,23 @@ UIViewController *topMostViewController() {
     [self pushWithVCClass:NSClassFromString(className) properties:nil];
 }
 
++ (void)presentViewController:(UIViewController*)vc {
+    [self presentViewController:vc animated:YES];
+}
+
 + (void)presentViewController:(UIViewController*)vc animated:(BOOL)animated {
     [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] presentViewController:vc animated:animated completion:nil];
 }
 
 + (void)presentWithVCClassName:(NSString*)className {
     id obj = [NSClassFromString(className) new];
-    [self presentViewController:obj animated:YES];
+    [self presentViewController:obj];
 }
 
-+ (void)goLogin {
-    [self presentWithVCClassName:@"RegisterViewController"];
++ (void)showLogin:(BoolBlock)block {
+    RegisterViewController *loginVC = [[RegisterViewController alloc] init];
+    loginVC.resultBlock = block;
+    [self presentViewController:loginVC animated:YES];
 }
 
 + (void)showLoading {

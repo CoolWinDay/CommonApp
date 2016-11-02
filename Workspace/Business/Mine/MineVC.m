@@ -12,8 +12,6 @@
 
 @property(nonatomic, weak) IBOutlet UIButton *loginBtn;
 
-- (IBAction)doLogin:(id)sender;
-
 @end
 
 @implementation MineVC
@@ -25,9 +23,13 @@
 }
 
 - (IBAction)doLogin:(id)sender {
-//    [AppCommon pushWithVCClassName:@"RegisterViewController"];
-    
-    [AppCommon goLogin];
+    [AppCommon showLogin:^(BOOL value) {
+        
+    }];
+}
+
+- (IBAction)doLogout:(id)sender {
+    [UserManager userLogout];
 }
 
 - (void)didReceiveMemoryWarning {

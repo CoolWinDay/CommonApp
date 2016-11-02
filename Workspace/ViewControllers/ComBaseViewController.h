@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LogInPprotocol.h"
 
-@interface ComBaseViewController : UIViewController
-
+@interface ComBaseViewController : UIViewController <LogInPprotocol>
     
 @end
