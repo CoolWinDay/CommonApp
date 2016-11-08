@@ -28,8 +28,6 @@
 		E84262C81CD830EE00100C3B /* ComCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262C71CD830EE00100C3B /* ComCollectionViewCell.m */; };
 		E84262CB1CD835C900100C3B /* BookCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */; };
 		E84262D71CD886E600100C3B /* ComBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262CE1CD886E600100C3B /* ComBaseViewController.m */; };
-		E84372141CF53B1300EF51FC /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E843720E1CF53B1300EF51FC /* XMLReader.m */; };
-		E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E84372121CF53B1300EF51FC /* XMLWriter.m */; };
 		E846C4221D9157B000001ACD /* NSString+Validate.m in Sources */ = {isa = PBXBuildFile; fileRef = E846C4211D9157B000001ACD /* NSString+Validate.m */; };
 		E846C4291D917B8200001ACD /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = E846C4281D917B8200001ACD /* NSString+Additions.m */; };
 		E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E84BD2211C8FB19F003EF94A /* UserModel.m */; };
@@ -130,10 +128,6 @@
 		E84262CA1CD835C900100C3B /* BookCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollectionViewCell.m; sourceTree = "<group>"; };
 		E84262CD1CD886E600100C3B /* ComBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComBaseViewController.h; sourceTree = "<group>"; };
 		E84262CE1CD886E600100C3B /* ComBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComBaseViewController.m; sourceTree = "<group>"; };
-		E843720D1CF53B1300EF51FC /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
-		E843720E1CF53B1300EF51FC /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
-		E84372111CF53B1300EF51FC /* XMLWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLWriter.h; sourceTree = "<group>"; };
-		E84372121CF53B1300EF51FC /* XMLWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLWriter.m; sourceTree = "<group>"; };
 		E846C4211D9157B000001ACD /* NSString+Validate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validate.m"; sourceTree = "<group>"; };
 		E846C4231D9157BC00001ACD /* NSString+Validate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validate.h"; sourceTree = "<group>"; };
 		E846C4271D917B8200001ACD /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
@@ -305,8 +299,6 @@
 				E8FC45B01CE0899000B97AA2 /* AppCommon.m */,
 				E8B4D0541DCA21A300883CAB /* UserManager.h */,
 				E8B4D0551DCA21A300883CAB /* UserManager.m */,
-				E843720B1CF53B1300EF51FC /* XMLReader */,
-				E843720F1CF53B1300EF51FC /* XMLWriter */,
 				E807D2201CB7A8CB00ADCF87 /* Additions */,
 			);
 			path = Utils;
@@ -407,24 +399,6 @@
 				E88DFE981D7466E50058F015 /* ComTabViewController.m */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		E843720B1CF53B1300EF51FC /* XMLReader */ = {
-			isa = PBXGroup;
-			children = (
-				E843720D1CF53B1300EF51FC /* XMLReader.h */,
-				E843720E1CF53B1300EF51FC /* XMLReader.m */,
-			);
-			path = XMLReader;
-			sourceTree = "<group>";
-		};
-		E843720F1CF53B1300EF51FC /* XMLWriter */ = {
-			isa = PBXGroup;
-			children = (
-				E84372111CF53B1300EF51FC /* XMLWriter.h */,
-				E84372121CF53B1300EF51FC /* XMLWriter.m */,
-			);
-			path = XMLWriter;
 			sourceTree = "<group>";
 		};
 		E84BD21F1C8FB181003EF94A /* Models */ = {
@@ -801,7 +775,6 @@
 				E84262C01CD8308A00100C3B /* ComCollectionViewDelegate.m in Sources */,
 				E88DFEB01D74748D0058F015 /* ComDemoViewController.m in Sources */,
 				E84262C31CD8308A00100C3B /* ComTableViewCell.m in Sources */,
-				E84372161CF53B1300EF51FC /* XMLWriter.m in Sources */,
 				E88DFEA51D7474380058F015 /* HomeVC.m in Sources */,
 				E810EE0A1DA91F0D008C0425 /* TestAlertViewController.m in Sources */,
 				E84262C21CD8308A00100C3B /* ComTableView.m in Sources */,
@@ -834,7 +807,6 @@
 				E846C4291D917B8200001ACD /* NSString+Additions.m in Sources */,
 				E8F7C0431C8D6DDA00625004 /* ComAppDelegate.m in Sources */,
 				E856FA431D9BF1FC00E65609 /* ComLoadingView.m in Sources */,
-				E84372141CF53B1300EF51FC /* XMLReader.m in Sources */,
 				E88DFEB11D74748D0058F015 /* TestCollectionViewController.m in Sources */,
 				E856FA461D9BF40D00E65609 /* NSObject+Additions.m in Sources */,
 				E858E8191D92C05800767C83 /* ComSMSManager.m in Sources */,

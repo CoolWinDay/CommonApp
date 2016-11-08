@@ -61,18 +61,17 @@ UIViewController *topMostViewController() {
 @implementation AppCommon
 
 + (void)pushViewController:(UIViewController*)vc animated:(BOOL)animated {
-    if ([vc conformsToProtocol:@protocol(LogInPprotocol)]) {
-        BOOL isNeedLogin = [vc performSelector:@selector(isNeedLogin)];
-        if (isNeedLogin && ![UserManager isLogedin]) {
-            [AppCommon showLogin:^(BOOL isSuccess) {
-                if (isSuccess) {
-                    [AppCommon pushViewController:vc animated:animated];
-                }
-            }];
-        }
-        else {
-            [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] pushViewController:vc animated:animated];
-        }
+    BOOL isNeedLogin = [vc conformsToProtocol:@protocol(LogInPprotocol)] && [vc performSelector:@selector(isNeedLogin)] && ![UserManager isLogedin];
+    
+    if (isNeedLogin) {
+        [AppCommon showLogin:^(BOOL isSuccess) {
+            if (isSuccess) {
+                [AppCommon pushViewController:vc animated:animated];
+            }
+        }];
+    }
+    else {
+        [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] pushViewController:vc animated:animated];
     }
 }
 
