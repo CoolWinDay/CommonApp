@@ -41,4 +41,8 @@
     return [BookListModel class];
 }
 
+- (NSString *)pageArrayKey {
+    return @"books";
+}
+
 @end

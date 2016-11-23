@@ -17,9 +17,4 @@
     return @{@"books" : [BookModel class]};
 }
 
-#pragma mark - PageDelegate
-- (NSArray *)buildPageArray {
-    return self.books;
-}
-
 @end

@@ -8,12 +8,6 @@
 
 #import "ComRequest.h"
 
-@protocol PageDelegate <NSObject>
-@required
-- (NSArray *)buildPageArray;
-
-@end
-
 @interface ComPageRequest : ComRequest
 
 /**

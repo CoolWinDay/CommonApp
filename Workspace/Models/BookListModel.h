@@ -7,9 +7,8 @@
 //
 
 #import "BaseModel.h"
-#import "ComPageRequest.h"
 
-@interface BookListModel : BaseModel <PageDelegate>
+@interface BookListModel : BaseModel
 
 @property NSString*     alt;
 @property NSInteger     count;

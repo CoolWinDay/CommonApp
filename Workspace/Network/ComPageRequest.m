@@ -41,9 +41,16 @@
     }
     
     NSArray *array = nil;
-    if ([model respondsToSelector:@selector(buildPageArray)]) {
-        array = [model buildPageArray];
+    NSString *pageArrayKey = [self pageArrayKey];
+    if (pageArrayKey.length) {
+        id pageArray = [model valueForKey:pageArrayKey];
+        if ([pageArray isKindOfClass:[NSArray class]]) {
+            array = [pageArray copy];
+        }
     }
+//    if ([model respondsToSelector:@selector(buildPageArray)]) {
+//        array = [model buildPageArray];
+//    }
     self.moreData = NO;
     if ([array count] > 0) {
         self.moreData = [array count] >= [self pageSize] ? YES : NO;
@@ -51,6 +58,10 @@
         [self.listArray addObjectsFromArray:array];
     }
     [super succeed:model];
+}
+
+- (NSString *)pageArrayKey {
+    return nil;
 }
 
 - (NSMutableArray *)listArray {
