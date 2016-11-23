@@ -31,7 +31,18 @@ typedef enum {
 + (void)showLogin:(BoolBlock)block;
 
 + (void)showLoading;
++ (void)showLoadingMsg:(NSString *)msg;
++ (void)showWindowLoading;
++ (void)showWindowLoadingMsg:(NSString *)msg;
 + (void)hideLoading;
+
+//Toast
++ (void)showToast:(NSString *)message;
+
++ (BOOL)isRightLocation;
++ (BOOL)isRightMessage;
++ (BOOL)isRightCamera;
++ (BOOL)isRightPhoto;
 
 //
 ////删除文件或文件夹

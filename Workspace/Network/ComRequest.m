@@ -39,6 +39,12 @@
     return [BaseModel class];
 }
 
+// 是否显示loading
+- (BOOL)isShowLoading {
+    return YES;
+}
+
+// 是否需要登录
 - (BOOL)isNeedLogin {
     return NO;
 }

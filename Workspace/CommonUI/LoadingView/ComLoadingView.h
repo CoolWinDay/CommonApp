@@ -38,6 +38,7 @@
  *  @param aString 内容
  */
 + (void)showLoadingHUD:(NSString *)aString;
++ (void)showLoadingHUD:(NSString *)aString onWindow:(BOOL)isOnWindow;
 /**
  *  隐藏loading
  */

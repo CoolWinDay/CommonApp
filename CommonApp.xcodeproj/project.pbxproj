@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		736B6BD82EF87EDE7FCF6DFE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8E82B16F0AC14988BB9451 /* libPods.a */; };
+		3DF6600CC6747F9C948670D6 /* libPods-CommonApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C3EC8BAA22611077B0BE43 /* libPods-CommonApp.a */; };
 		E800B5BC1C8EF4CB00F8BDEE /* ComRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E800B5BB1C8EF4CB00F8BDEE /* ComRequest.m */; };
 		E8019A061CAE223900336897 /* BookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8019A051CAE223900336897 /* BookTableViewCell.m */; };
 		E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E807D21D1CB7A6F000ADCF87 /* ComErrorViewManager.m */; };
@@ -16,6 +16,8 @@
 		E810EE0A1DA91F0D008C0425 /* TestAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E810EE081DA91F0D008C0425 /* TestAlertViewController.m */; };
 		E810EE0B1DA91F0D008C0425 /* TestAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E810EE091DA91F0D008C0425 /* TestAlertViewController.xib */; };
 		E810EE0E1DA94BED008C0425 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = E810EE0D1DA94BED008C0425 /* UIAlertView+Block.m */; };
+		E82F47751DD49FF70044F8F3 /* TestLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E82F47731DD49FF70044F8F3 /* TestLoadingViewController.m */; };
+		E82F47761DD49FF70044F8F3 /* TestLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E82F47741DD49FF70044F8F3 /* TestLoadingViewController.xib */; };
 		E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E83D0AA51CB21DF800E40B88 /* BookRequest.m */; };
 		E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262AD1CD8308A00100C3B /* ComCollectionView.m */; };
 		E84262BF1CD8308A00100C3B /* ComCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E84262AF1CD8308A00100C3B /* ComCollectionViewDataSource.m */; };
@@ -56,6 +58,8 @@
 		E8690AC71C93BEC300BFC155 /* TagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E8690AC61C93BEC300BFC155 /* TagModel.m */; };
 		E86A22461C91A9B300E34A62 /* ComNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E86A22451C91A9B300E34A62 /* ComNetworking.m */; };
 		E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E881E5651CF57C6E0021DA23 /* ComPageRequest.m */; };
+		E88876EF1DD710E100B9E609 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88876ED1DD710E100B9E609 /* WebViewController.m */; };
+		E88876F21DD711EB00B9E609 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88876F11DD711EB00B9E609 /* WebKit.framework */; };
 		E88DFE991D7466E50058F015 /* ComTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E88DFE981D7466E50058F015 /* ComTabViewController.m */; };
 		E88DFEA51D7474380058F015 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E88DFEA21D7474380058F015 /* HomeVC.m */; };
 		E88DFEA61D7474380058F015 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E88DFEA31D7474380058F015 /* HomeVC.xib */; };
@@ -68,6 +72,7 @@
 		E897D3B21C8E64D80067B3E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E897D3B11C8E64D80067B3E6 /* Assets.xcassets */; };
 		E8B4D0561DCA21A300883CAB /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8B4D0551DCA21A300883CAB /* UserManager.m */; };
 		E8C326461C891B7E00628824 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C326451C891B7E00628824 /* main.m */; };
+		E8C4D64C1DE480DB0073E6F0 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C4D64B1DE480DB0073E6F0 /* UIView+Toast.m */; };
 		E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FED1D90227100021379 /* MOBFoundation.framework */; };
 		E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FEE1D90227100021379 /* SMS_SDK.framework */; };
 		E8DD5FF41D902D8D00021379 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DD5FF31D902D8D00021379 /* MessageUI.framework */; };
@@ -87,7 +92,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		56BDED27ABF11BF389ED8CA5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		43C3EC8BAA22611077B0BE43 /* libPods-CommonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E3A8672F1F2A971CB0A939 /* Pods-CommonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommonApp/Pods-CommonApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DF5A5E935A038F38AE9B229A /* Pods-CommonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommonApp/Pods-CommonApp.release.xcconfig"; sourceTree = "<group>"; };
 		E800B5B81C8EF25B00F8BDEE /* ComUIDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComUIDefine.h; sourceTree = "<group>"; };
 		E800B5BA1C8EF4CB00F8BDEE /* ComRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComRequest.h; sourceTree = "<group>"; };
 		E800B5BB1C8EF4CB00F8BDEE /* ComRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRequest.m; sourceTree = "<group>"; };
@@ -104,6 +111,9 @@
 		E810EE091DA91F0D008C0425 /* TestAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestAlertViewController.xib; sourceTree = "<group>"; };
 		E810EE0C1DA94BED008C0425 /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
 		E810EE0D1DA94BED008C0425 /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
+		E82F47721DD49FF70044F8F3 /* TestLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestLoadingViewController.h; sourceTree = "<group>"; };
+		E82F47731DD49FF70044F8F3 /* TestLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestLoadingViewController.m; sourceTree = "<group>"; };
+		E82F47741DD49FF70044F8F3 /* TestLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestLoadingViewController.xib; sourceTree = "<group>"; };
 		E83D0AA41CB21DF800E40B88 /* BookRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookRequest.h; sourceTree = "<group>"; };
 		E83D0AA51CB21DF800E40B88 /* BookRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookRequest.m; sourceTree = "<group>"; };
 		E84262AC1CD8308A00100C3B /* ComCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCollectionView.h; sourceTree = "<group>"; };
@@ -169,6 +179,9 @@
 		E86A22451C91A9B300E34A62 /* ComNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComNetworking.m; sourceTree = "<group>"; };
 		E881E5641CF57C6E0021DA23 /* ComPageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComPageRequest.h; sourceTree = "<group>"; };
 		E881E5651CF57C6E0021DA23 /* ComPageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComPageRequest.m; sourceTree = "<group>"; };
+		E88876EC1DD710E100B9E609 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		E88876ED1DD710E100B9E609 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		E88876F11DD711EB00B9E609 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E88DFE971D7466E50058F015 /* ComTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComTabViewController.h; sourceTree = "<group>"; };
 		E88DFE981D7466E50058F015 /* ComTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComTabViewController.m; sourceTree = "<group>"; };
 		E88DFEA11D7474380058F015 /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
@@ -192,6 +205,8 @@
 		E8C326411C891B7E00628824 /* CommonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C326451C891B7E00628824 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E8C326551C891B7E00628824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8C4D64A1DE480DB0073E6F0 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		E8C4D64B1DE480DB0073E6F0 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		E8DD5FED1D90227100021379 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		E8DD5FEE1D90227100021379 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		E8DD5FF31D902D8D00021379 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -221,8 +236,6 @@
 		E8FC45AD1CE082D200B97AA2 /* ComRootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComRootNavigationController.m; sourceTree = "<group>"; };
 		E8FC45AF1CE0899000B97AA2 /* AppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCommon.h; sourceTree = "<group>"; };
 		E8FC45B01CE0899000B97AA2 /* AppCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCommon.m; sourceTree = "<group>"; };
-		ED258A55F999CBDD9F12849B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		EE8E82B16F0AC14988BB9451 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E88876F21DD711EB00B9E609 /* WebKit.framework in Frameworks */,
 				E8DD5FFC1D902DE000021379 /* libstdc++.tbd in Frameworks */,
 				E8DD5FFA1D902DD000021379 /* libicucore.tbd in Frameworks */,
 				E8DD5FF81D902DB900021379 /* libz.tbd in Frameworks */,
@@ -238,18 +252,18 @@
 				E8DD5FF01D90227100021379 /* SMS_SDK.framework in Frameworks */,
 				E8F6764F1D995A03009754A4 /* libUMessage_Sdk_1.4.0.a in Frameworks */,
 				E8DD5FEF1D90227100021379 /* MOBFoundation.framework in Frameworks */,
-				736B6BD82EF87EDE7FCF6DFE /* libPods.a in Frameworks */,
+				3DF6600CC6747F9C948670D6 /* libPods-CommonApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		45EC1009AF7D019D8848B188 /* Pods */ = {
+		0652D15531D59D2022BAB52F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				56BDED27ABF11BF389ED8CA5 /* Pods.debug.xcconfig */,
-				ED258A55F999CBDD9F12849B /* Pods.release.xcconfig */,
+				73E3A8672F1F2A971CB0A939 /* Pods-CommonApp.debug.xcconfig */,
+				DF5A5E935A038F38AE9B229A /* Pods-CommonApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -257,12 +271,13 @@
 		B1355F1D786EB808FD23079C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E88876F11DD711EB00B9E609 /* WebKit.framework */,
 				E8DD5FFB1D902DE000021379 /* libstdc++.tbd */,
 				E8DD5FF91D902DD000021379 /* libicucore.tbd */,
 				E8DD5FF71D902DB900021379 /* libz.tbd */,
 				E8DD5FF51D902D9300021379 /* JavaScriptCore.framework */,
 				E8DD5FF31D902D8D00021379 /* MessageUI.framework */,
-				EE8E82B16F0AC14988BB9451 /* libPods.a */,
+				43C3EC8BAA22611077B0BE43 /* libPods-CommonApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,6 +341,7 @@
 		E81B197B1D7DB75600F1DCE4 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				E8C4D6491DE480DB0073E6F0 /* Toast */,
 				E8F6764C1D995A03009754A4 /* UMessage_Sdk_1.4.0 */,
 				E8DD5FEC1D90227100021379 /* SMS_SDK */,
 			);
@@ -498,9 +514,14 @@
 				E88DFEAD1D74748D0058F015 /* TestScrollViewController.m */,
 				E88DFEAE1D74748D0058F015 /* TestTableViewController.h */,
 				E88DFEAF1D74748D0058F015 /* TestTableViewController.m */,
+				E82F47721DD49FF70044F8F3 /* TestLoadingViewController.h */,
+				E82F47731DD49FF70044F8F3 /* TestLoadingViewController.m */,
+				E82F47741DD49FF70044F8F3 /* TestLoadingViewController.xib */,
 				E810EE071DA91F0D008C0425 /* TestAlertViewController.h */,
 				E810EE081DA91F0D008C0425 /* TestAlertViewController.m */,
 				E810EE091DA91F0D008C0425 /* TestAlertViewController.xib */,
+				E88876EC1DD710E100B9E609 /* WebViewController.h */,
+				E88876ED1DD710E100B9E609 /* WebViewController.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -530,9 +551,9 @@
 			children = (
 				E8C326431C891B7E00628824 /* Workspace */,
 				E8C326421C891B7E00628824 /* Products */,
-				45EC1009AF7D019D8848B188 /* Pods */,
 				B1355F1D786EB808FD23079C /* Frameworks */,
 				E8F676501D995AC2009754A4 /* CommonApp.entitlements */,
+				0652D15531D59D2022BAB52F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -574,6 +595,15 @@
 				E8F9EA0F1C8E72CF0072F58D /* ComApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8C4D6491DE480DB0073E6F0 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				E8C4D64A1DE480DB0073E6F0 /* UIView+Toast.h */,
+				E8C4D64B1DE480DB0073E6F0 /* UIView+Toast.m */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 		E8DD5FEC1D90227100021379 /* SMS_SDK */ = {
@@ -627,12 +657,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8C326581C891B7E00628824 /* Build configuration list for PBXNativeTarget "CommonApp" */;
 			buildPhases = (
-				390DA617471ABF38A9EF4690 /* Check Pods Manifest.lock */,
+				072CBB1C0ED186E4CD029437 /* [CP] Check Pods Manifest.lock */,
 				E8C3263D1C891B7E00628824 /* Sources */,
 				E8C3263E1C891B7E00628824 /* Frameworks */,
 				E8C3263F1C891B7E00628824 /* Resources */,
-				47B2CA26A374A5197EF8BA4B /* Copy Pods Resources */,
-				0B607C7EA75C709A8BE5671F /* Embed Pods Frameworks */,
+				E4CCB0769982E36870BDE513 /* [CP] Embed Pods Frameworks */,
+				F7E182AD0B164CA9C300EAC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -690,6 +720,7 @@
 				E84D0A171DC0EDC0003EAC01 /* tool_button_home_sel@2x.png in Resources */,
 				E88DFEB91D7475070058F015 /* MineVC.xib in Resources */,
 				E84D0A1B1DC0EDC0003EAC01 /* tool_button_user_sel@2x.png in Resources */,
+				E82F47761DD49FF70044F8F3 /* TestLoadingViewController.xib in Resources */,
 				E84D0A151DC0EDC0003EAC01 /* tool_button_home_bor@2x.png in Resources */,
 				E84D0A191DC0EDC0003EAC01 /* tool_button_user_bor@2x.png in Resources */,
 				E810EE0B1DA91F0D008C0425 /* TestAlertViewController.xib in Resources */,
@@ -712,49 +743,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B607C7EA75C709A8BE5671F /* Embed Pods Frameworks */ = {
+		072CBB1C0ED186E4CD029437 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		390DA617471ABF38A9EF4690 /* Check Pods Manifest.lock */ = {
+		E4CCB0769982E36870BDE513 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommonApp/Pods-CommonApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		47B2CA26A374A5197EF8BA4B /* Copy Pods Resources */ = {
+		F7E182AD0B164CA9C300EAC2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommonApp/Pods-CommonApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -772,9 +803,11 @@
 				E83D0AA61CB21DF800E40B88 /* BookRequest.m in Sources */,
 				E807D21E1CB7A6F000ADCF87 /* ComErrorViewManager.m in Sources */,
 				E810EE0E1DA94BED008C0425 /* UIAlertView+Block.m in Sources */,
+				E8C4D64C1DE480DB0073E6F0 /* UIView+Toast.m in Sources */,
 				E84262C01CD8308A00100C3B /* ComCollectionViewDelegate.m in Sources */,
 				E88DFEB01D74748D0058F015 /* ComDemoViewController.m in Sources */,
 				E84262C31CD8308A00100C3B /* ComTableViewCell.m in Sources */,
+				E82F47751DD49FF70044F8F3 /* TestLoadingViewController.m in Sources */,
 				E88DFEA51D7474380058F015 /* HomeVC.m in Sources */,
 				E810EE0A1DA91F0D008C0425 /* TestAlertViewController.m in Sources */,
 				E84262C21CD8308A00100C3B /* ComTableView.m in Sources */,
@@ -788,6 +821,7 @@
 				E881E5661CF57C6E0021DA23 /* ComPageRequest.m in Sources */,
 				E8F0C1F21D99685400AE6EBE /* ComCompontManager.m in Sources */,
 				E84BD2221C8FB19F003EF94A /* UserModel.m in Sources */,
+				E88876EF1DD710E100B9E609 /* WebViewController.m in Sources */,
 				E8FC45B11CE0899000B97AA2 /* AppCommon.m in Sources */,
 				E8561D5D1D7EFEC900C507CF /* RegisterViewController.m in Sources */,
 				E84262BE1CD8308A00100C3B /* ComCollectionView.m in Sources */,
@@ -901,7 +935,7 @@
 		};
 		E8C326591C891B7E00628824 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56BDED27ABF11BF389ED8CA5 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 73E3A8672F1F2A971CB0A939 /* Pods-CommonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -913,7 +947,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Workspace/ComApp-Prefix.pch";
 				INFOPLIST_FILE = Workspace/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -928,19 +962,20 @@
 		};
 		E8C3265A1C891B7E00628824 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED258A55F999CBDD9F12849B /* Pods.release.xcconfig */;
+			baseConfigurationReference = DF5A5E935A038F38AE9B229A /* Pods-CommonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = CommonApp.entitlements;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = SQ935D3STH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Workspace/ThirdPart/SMS_SDK",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Workspace/ComApp-Prefix.pch";
 				INFOPLIST_FILE = Workspace/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,6 +983,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sinoceanland.yjq;
 				PRODUCT_NAME = CommonApp;
+				PROVISIONING_PROFILE = "083dfbac-419c-481d-bdc7-b4545ee7dce0";
+				PROVISIONING_PROFILE_SPECIFIER = yjqDisTest;
 			};
 			name = Release;
 		};

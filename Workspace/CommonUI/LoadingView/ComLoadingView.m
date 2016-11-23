@@ -17,24 +17,34 @@ static MBProgressHUD  *s_progressHUD = nil;
 @implementation ComLoadingView
 
 + (void)showLoadingHUD:(NSString *)aString {
-    UIWindow *window = mainWindow();
-    if (!window) {
+    [self showLoadingHUD:aString onWindow:NO];
+}
+
++ (void)showLoadingHUD:(NSString *)aString onWindow:(BOOL)isOnWindow {
+    UIView *view = isOnWindow ? mainWindow() : topMostViewController().view;
+    if (!view) {
         return;
     }
     
     if (!s_progressHUD) {
         static dispatch_once_t once;
         dispatch_once(&once, ^{
-            s_progressHUD = [[MBProgressHUD alloc] initWithView:window];
+            s_progressHUD = [[MBProgressHUD alloc] initWithView:view];
             s_progressHUD.opacity = DefaultOpacity;
-            s_progressHUD.labelFont = [UIFont boldSystemFontOfSize:14.0];
+            s_progressHUD.labelFont = [UIFont boldSystemFontOfSize:12.0];
+            s_progressHUD.labelColor = [UIColor colorWithWhite:0.95 alpha:1.0];
         });
-        [window addSubview:s_progressHUD];
     }
     
+    if (![view.subviews containsObject:s_progressHUD]) {
+        [view addSubview:s_progressHUD];
+    }
+    [view bringSubviewToFront:s_progressHUD];
+    
     s_progressHUD.labelText = aString;
-    [s_progressHUD show:NO];
+    [s_progressHUD show:YES];
 }
+
 
 + (void)showMsgHUD:(NSString *)aString duration:(CGFloat)duration touchClose:(BOOL)close{
     UIWindow *window = mainWindow();
@@ -65,7 +75,7 @@ static MBProgressHUD  *s_progressHUD = nil;
 
 + (void)hideLoadingHUD {
     if (s_progressHUD) {
-        [s_progressHUD hide:NO];
+        [s_progressHUD hide:YES afterDelay:0.2];
     }
 }
 

@@ -46,12 +46,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.request = [[BookRequest alloc] init];
-    [_request requestSuccess:^(id data) {
-        
-    } failed:^(NSError *error) {
-        
-    }];
+//    self.request = [[BookRequest alloc] init];
+//    [_request requestSuccess:^(id data) {
+//        
+//    } failed:^(NSError *error) {
+//        
+//    }];
     
 //    self.listRequest = [[BookListRequest alloc] init];
 //    [self.listRequest requestSuccess:^(id data) {
@@ -61,11 +61,23 @@
 //    }];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    BOOL isRightLocation = [AppCommon isRightLocation];
+    BOOL isRightMessage = [AppCommon isRightMessage];
+    BOOL isRightCamera = [AppCommon isRightCamera];
+    BOOL isRightPhoto = [AppCommon isRightPhoto];
+    
+}
+
 - (NSArray *)dataArray {
     if (!_dataArray) {
         _dataArray = @[@{@"title":@"TableView", @"vcName":@"TestTableViewController"},
                        @{@"title":@"CollectionView", @"vcName":@"TestCollectionViewController"},
                        @{@"title":@"ScrollView", @"vcName":@"TestScrollViewController"},
+                       @{@"title":@"WebView", @"vcName":@"WebViewController"},
+                       @{@"title":@"LoadingView", @"vcName":@"TestLoadingViewController"},
                        @{@"title":@"AlertView", @"vcName":@"TestAlertViewController"}];
     }
     return _dataArray;
@@ -90,7 +102,8 @@
         _tableView.cellSelectBlock = ^(UITableView *tableView, NSIndexPath *indexPath) {
             if (weakSelf.dataArray.count > indexPath.row) {
                 NSString *vcName = weakSelf.dataArray[indexPath.row][@"vcName"];
-                [AppCommon pushWithVCClassName:vcName];
+                NSString *title = weakSelf.dataArray[indexPath.row][@"title"];
+                [AppCommon pushWithVCClassName:vcName properties:@{@"title" : title}];
             }
         };
     }

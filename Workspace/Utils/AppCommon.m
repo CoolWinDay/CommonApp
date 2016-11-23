@@ -13,6 +13,13 @@
 #import "ComLoadingView.h"
 #import "RegisterViewController.h"
 #import "LogInPprotocol.h"
+#import <CoreLocation/CLLocationManager.h>
+
+#import <AVFoundation/AVCaptureDevice.h>
+#import <AVFoundation/AVMediaFormat.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreLocation/CoreLocation.h>
+#import "UIView+Toast.h"
 
 UIWindow *mainWindow() {
     id appDelegate = [UIApplication sharedApplication].delegate;
@@ -114,11 +121,53 @@ UIViewController *topMostViewController() {
 }
 
 + (void)showLoading {
-    [ComLoadingView showLoadingHUD:@"加载中..."];
+    [self showLoadingMsg:@"正在加载..."];
+}
+
++ (void)showWindowLoading {
+    [self showWindowLoadingMsg:@"正在加载..."];
+}
+
++ (void)showLoadingMsg:(NSString *)msg {
+    [ComLoadingView showLoadingHUD:msg onWindow:NO];
+}
+
++ (void)showWindowLoadingMsg:(NSString *)msg {
+    [ComLoadingView showLoadingHUD:msg onWindow:YES];
 }
 
 + (void)hideLoading {
     [ComLoadingView hideLoadingHUD];
+}
+
++ (void)showToast:(NSString *)message {
+    [topMostViewController().view makeToast:message];
+}
+
++ (BOOL)isRightLocation {
+    // 定位权限
+    // locationServicesEnabled：用户是否打开了定位功能
+    CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
+    return [CLLocationManager locationServicesEnabled] && (authStatus == kCLAuthorizationStatusAuthorizedAlways || authStatus == kCLAuthorizationStatusAuthorizedWhenInUse);
+}
+
++ (BOOL)isRightMessage {
+    UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
+    return UIUserNotificationTypeNone != setting.types;
+}
+
++ (BOOL)isRightCamera {
+    //相机权限、
+    // AVAuthorizationStatusRestricted：此应用程序没有被授权相机访问数据。可能是家长控制权限
+    // AVAuthorizationStatusDenied：用户已经明确否认了这一相机数据的应用程序访问
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    return authStatus != AVAuthorizationStatusRestricted && authStatus != AVAuthorizationStatusDenied;
+}
+
++ (BOOL)isRightPhoto {
+    //相册权限
+    ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
+    return author != kCLAuthorizationStatusRestricted && author != kCLAuthorizationStatusDenied;
 }
 
 //
