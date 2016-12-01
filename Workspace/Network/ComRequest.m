@@ -9,6 +9,7 @@
 #import "ComRequest.h"
 #import "ComNetworking.h"
 #import "BaseModel.h"
+#import "ComNetManager.h"
 
 @interface ComRequest()
 
@@ -136,22 +137,36 @@
 }
 
 - (void)failed:(NSError *)error {
-    if (error.code == NSURLErrorCancelled) {
-        // cancel的情况，不予处理
-        return;
-    }
-    
     __weak __typeof(self)weakSelf = self;
-    if (self.failedBlock) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.failedBlock(error);
-        });
-    }
+    
     if (self.completionBlock) {
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.completionBlock();
         });
     }
+    
+    if (error.code == NSURLErrorCancelled) {
+        // cancel的情况，不予处理
+        return;
+    }
+    
+//    [ComNetManager isNetwork]
+    if (error.code == NSURLErrorNetworkConnectionLost) {
+        [AppCommon showToast:@"网络未连接"];
+    }
+    else if (error.code == NSURLErrorTimedOut) {
+        [AppCommon showToast:@"请求超时"];
+    }
+    else {
+        [AppCommon showToast:@"请求失败"];
+    }
+    
+    if (self.failedBlock) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.failedBlock(error);
+        });
+    }
+    
 }
 
 - (id)buildResponse:(NSDictionary *)dic {

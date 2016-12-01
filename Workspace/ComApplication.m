@@ -8,6 +8,10 @@
 
 #import "ComApplication.h"
 
+@interface ComApplication ()
+
+@end
+
 @implementation ComApplication
 
 @end

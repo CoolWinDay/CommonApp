@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComBaseViewController.h"
 
-@interface TestLoadingViewController : UIViewController
+@interface TestLoadingViewController : ComBaseViewController
 
 @end

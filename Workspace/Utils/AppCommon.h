@@ -7,6 +7,12 @@
 //
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    ToastPositionTop,
+    ToastPositionCenter,
+    ToastPositionBottom
+} ToastPosition;
+
 UIWindow *mainWindow();
 
 UIViewController *topMostViewController();
@@ -26,6 +32,7 @@ typedef enum {
 + (void)pushWithVCClassName:(NSString*)className properties:(NSDictionary*)properties;
 + (void)pushWithVCClass:(Class)vcClass;
 + (void)pushWithVCClassName:(NSString*)className;
++ (void)popViewController;
 + (void)presentWithVCClassName:(NSString*)classNam;
 
 + (void)showLogin:(BoolBlock)block;
@@ -38,6 +45,7 @@ typedef enum {
 
 //Toast
 + (void)showToast:(NSString *)message;
++ (void)showToast:(NSString *)message position:(ToastPosition)position;
 
 + (BOOL)isRightLocation;
 + (BOOL)isRightMessage;

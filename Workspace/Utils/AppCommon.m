@@ -21,6 +21,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import "UIView+Toast.h"
 
+#import "ComApplication.h"
+
 UIWindow *mainWindow() {
     id appDelegate = [UIApplication sharedApplication].delegate;
     if (appDelegate && [appDelegate respondsToSelector:@selector(window)]) {
@@ -65,6 +67,7 @@ UIViewController *topMostViewController() {
     return topViewController;
 }
 
+
 @implementation AppCommon
 
 + (void)pushViewController:(UIViewController*)vc animated:(BOOL)animated {
@@ -78,7 +81,7 @@ UIViewController *topMostViewController() {
         }];
     }
     else {
-        [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] pushViewController:vc animated:animated];
+        [AppNavigationController pushViewController:vc animated:animated];
     }
 }
 
@@ -101,12 +104,16 @@ UIViewController *topMostViewController() {
     [self pushWithVCClass:NSClassFromString(className) properties:nil];
 }
 
++ (void)popViewController {
+    [AppNavigationController popViewControllerAnimated:YES];
+}
+
 + (void)presentViewController:(UIViewController*)vc {
     [self presentViewController:vc animated:YES];
 }
 
 + (void)presentViewController:(UIViewController*)vc animated:(BOOL)animated {
-    [(UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController] presentViewController:vc animated:animated completion:nil];
+    [((UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController]) presentViewController:vc animated:animated completion:nil];
 }
 
 + (void)presentWithVCClassName:(NSString*)className {
@@ -141,7 +148,25 @@ UIViewController *topMostViewController() {
 }
 
 + (void)showToast:(NSString *)message {
-    [topMostViewController().view makeToast:message];
+    [AppDelegate.window makeToast:message];
+}
+
++ (void)showToast:(NSString *)message position:(ToastPosition)position {
+    id positionId = CSToastPositionBottom;
+    switch (position) {
+        case ToastPositionTop:
+            positionId = CSToastPositionTop;
+            break;
+        case ToastPositionCenter:
+            positionId = CSToastPositionCenter;
+            break;
+        case ToastPositionBottom:
+            positionId = CSToastPositionBottom;
+            break;
+        default:
+            break;
+    }
+    [AppDelegate.window makeToast:message duration:[CSToastManager defaultDuration] position:positionId];
 }
 
 + (BOOL)isRightLocation {

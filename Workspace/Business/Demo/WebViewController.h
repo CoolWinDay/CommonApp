@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ComBaseViewController.h"
 
-@interface WebViewController : UIViewController
+@interface WebViewController : ComBaseViewController
 
 @end

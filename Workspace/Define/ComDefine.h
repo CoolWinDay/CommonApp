@@ -68,3 +68,10 @@ typedef void (^ErrorBlock) (NSError *error);
 
 #define kUmengAppKey @"561b44cf67e58e6189001c30"
 
+
+
+//----------------------------------- 其他的 ------------------------------------
+#define AppDelegate [UIApplication sharedApplication].delegate
+#define AppNavigationController ((UINavigationController*)[[[[UIApplication sharedApplication] windows] objectAtIndex:0] rootViewController])
+
+

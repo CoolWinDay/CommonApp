@@ -18,12 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self showRightBar:@"设置" action:^{
+        
+    }];
 }
 
 - (IBAction)showLoading:(id)sender {
     [AppCommon showToast:@"hheheheh"];
-    
+//    [self.view endEditing:NO];
 //    [AppCommon showLoading];
 //    [self performSelector:@selector(hideLoading:) withObject:nil afterDelay:3];
 }

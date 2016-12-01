@@ -36,6 +36,7 @@
     [self.view addSubview:self.tableView];
     [self.tableView autoPinEdgesToSuperviewEdges];
     
+    
 //    [[[UIAlertView alloc] initWithTitle:@"aaaa" message:@"bbb" cancelButtonItem:[RIButtonItem itemWithLabel:@"ccc"] otherButtonItems:[RIButtonItem itemWithLabel:@"aaa" action:^{
 //        
 //    }], nil] show];

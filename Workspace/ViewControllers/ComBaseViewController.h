@@ -10,5 +10,7 @@
 #import "LogInPprotocol.h"
 
 @interface ComBaseViewController : UIViewController <LogInPprotocol>
-    
+
+- (void)showRightBar:(NSString *)title action:(VoidBlock)block;
+
 @end

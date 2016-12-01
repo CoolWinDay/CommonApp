@@ -25,6 +25,12 @@
 #define COLOR_TEXT_GRAY     HEXCOLOR(0x999999)
 #define COLOR_TEXT_THEME    HEXCOLOR(0x12B0F2)
 
+//-----------------------------------  font  ------------------------------------
+#define FONT_NORMAL     [UIFont systemFontOfSize:15]
+#define FONT_MID        [UIFont systemFontOfSize:12]
+#define FONT_SMALL      [UIFont systemFontOfSize:10]
+#define FONT(size)      [UIFont systemFontOfSize:size]
+
 //-----------------------------------  旋转角度  ------------------------------------
 #define DegreesToRadians(degrees)             degrees*M_PI/180
 #define RadiansToDegrees(radians)             radians*180/M_PI
